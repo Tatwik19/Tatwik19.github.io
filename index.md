@@ -11,11 +11,22 @@ XYZ.
 
 ## Publications
 *	XYZ
+*	XYZ
+*	XYZ
 
 ## Workshop
+*	XYZ
+*	XYZ
+*	XYZ
 *	XYZ
 
 ## Thesis
 *	XYZ
+*	XYZ
+*	XYZ
+
 ## Outreach
+*	XYZ
+*	XYZ
+*	XYZ
 *	XYZ
