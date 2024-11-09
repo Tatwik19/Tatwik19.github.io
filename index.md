@@ -29,15 +29,19 @@ layout: default
 **Mechanical Technician · Internship** <span style="float:right;">Mar 2017 – May 2017</span>
 *	Diagnosed and fixed issues with mechanical components in cars. Assembled and disassembled complex parts for repair and troubleshooting malfunctions.
 
+<br />
+
 ## Education
 **Arizona State University – Mesa/Tempe, Arizona** <span style="float:right;"> **GPA: 4.00**</span><br />
 MS. Robotics and Autonomous Systems (SE) <span style="float:right;">Aug 2022 – May 2024</span><br />
-BSE. Robotics <span style="float:right;">Aug 2019 – May 2023</span><br />
+BSE. Robotics <span style="float:right;">Aug 2019 – May 2023</span>
 
+<br />
 
 ## News
 *	I successfully graduated with Master's in Robotics in May 2024!!
 
+<br />
 
 ## Projects
 *	[Robotics Dynamics and Force Control Package](https://github.com/thulsonASU/robot_sim) <span style="float:right;">April 2024</span>
@@ -64,8 +68,12 @@ BSE. Robotics <span style="float:right;">Aug 2019 – May 2023</span><br />
 *	[Interactive Decoration/Animatronics with Embedded System Control](https://github.com/Tatwik19/Tatwik19.github.io/tree/main/assets/Projects/Final%20Design%20-%20Not%20Creepy%20Elf)<span style="float:right;">Aug 2021 – Dec 2021</span>
 	- Developed a Halloween decoration using embedded systems. In-depth research was done to design a functioning Printed Circuit Board.
 
+<br />
+
 ## Awards
 Dean’s List · Certificate of Merit in ASU
+
+<br />
 
 ## Certifications
 *	Coursera Robotics Aerial Robotics
@@ -73,21 +81,34 @@ Dean’s List · Certificate of Merit in ASU
 *	Coursera Estimation and Learning
 *	Robotics in Microelectronics Manufacturing
 
+<br />
+
 ## Extracurricular Activities
-*	Winner - HGA Golf Tournament <span style="float:right;">(Category – A) March</span>
+*	Winner - HGA Golf Tournament (Category – A) <span style="float:right;"> March</span>
 
 *	Sponsorship For Emerging Talent in Golf 
     *	Sponsorship of INR 10,00,000 from Tusker Pharma Pvt Ltd
 
-*	Runner Up - HGA Golf Tournament Boys <span style="float:right;">(Category – A) March, May & September</span> 
+*	Runner Up - HGA Golf Tournament Boys (Category – A)<span style="float:right;">March, May & September</span> 
 
-*	Participated - IGU- South Zone Golf Championship <span style="float:right;">(Category – B & A) Hyderabad, Visakhapatnam, & Coorg</span>
+*	Participated - IGU- South Zone Golf Championship (Category – B & A) <span style="float:right;">Hyderabad, Visakhapatnam, & Coorg</span>
 
+<br />
+
+<!---
 ## Thesis
 *	XYZ
 
+<br />
+
 ## Publications
 *	XYZ
+<br />
 
 ## Grant
 *	XYZ
+
+-->
+
+<br />
+<br />
