@@ -58,7 +58,7 @@ BSE. Robotics <span style="float:right;">Aug 2019 – May 2023</span><br />
 *	[Industrial Workstation with Programmable Logic Controller](https://github.com/Tatwik19/Tatwik19.github.io/tree/main/assets/Projects/HAS%20PLC)<span style="float:right;">Jan 2022 – Apr 2022</span>
 	- Worked on a Rockwell PLC with industrial sensing technology, and industrial actuator and developed Supervisory control and data acquisition (SCADA) for the Human-machine interface (Machine: SMC HAS 200).
 
-*	[3DoF Robot Arm](https://github.com/Tatwik19/Tatwik19.github.io/tree/main/assets/Projects/3DoF%20Robot/EGR455%20Proj)<span style="float:right;">Aug 2021 – Dec 2021</span>
+*	[3DoF Robot Arm](https://github.com/Tatwik19/Tatwik19.github.io/tree/main/assets/Projects/3DoF%20Robot)<span style="float:right;">Aug 2021 – Dec 2021</span>
 	- Designed Bluetooth Robot Arm with inbuilt Forward/Inverse Kinematics calculator to reach target location.
 
 *	[Interactive Decoration/Animatronics with Embedded System Control](https://github.com/Tatwik19/Tatwik19.github.io/tree/main/assets/Projects/Final%20Design%20-%20Not%20Creepy%20Elf)<span style="float:right;">Aug 2021 – Dec 2021</span>
