@@ -43,7 +43,7 @@ BSE. Robotics <span style="float:right;">Aug 2019 – May 2023</span><br />
 *	[Robotics Dynamics and Force Control Package](https://github.com/thulsonASU/robot_sim) <span style="float:right;">April 2024</span>
 	- Developed Robotics Package, integrating manipulator dynamics, force control, and Interactive GUI.
 
-*	VCO2 VO2 Metabolic Monitor<span style="float:right;">Jan 2024 - April 2024<br /></span>
+*	VCO2 VO2 Metabolic Monitor <span style="float:right;">Jan 2024 - April 2024<br /></span>
 	- Designed and implemented a VCO2 and VO2 metabolic monitor, integrating CAD design, coding, and MATLAB interface with Bluetooth (BLE) connectivity for real-time data collection.
 
 *	[Mechatronics Device: Portable/Lightweight Gait Analysis](https://github.com/Tatwik19/SoulTech-Portable-Gait-Analysis-Device)<span style="float:right;">Jan 2023 – May 2023</span>
@@ -72,6 +72,16 @@ Dean’s List · Certificate of Merit in ASU
 *	Coursera Robotics Perception
 *	Coursera Estimation and Learning
 *	Robotics in Microelectronics Manufacturing
+
+## Extracurricular Activities
+*	Winner - HGA Golf Tournament <span style="float:right;">(Category – A) March</span>
+
+*	Sponsorship For Emerging Talent in Golf 
+    *	Sponsorship of INR 10,00,000 from Tusker Pharma Pvt Ltd
+
+*	Runner Up - HGA Golf Tournament Boys <span style="float:right;">(Category – A) March, May & September</span> 
+
+*	Participated - IGU- South Zone Golf Championship <span style="float:right;">(Category – B & A) Hyderabad, Visakhapatnam, & Coorg</span>
 
 ## Thesis
 *	XYZ
