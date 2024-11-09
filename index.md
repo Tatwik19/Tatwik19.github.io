@@ -71,7 +71,7 @@ BSE. Robotics <span style="float:right;">Aug 2019 – May 2023</span>
 <br />
 
 ## Awards
-Dean’s List · Certificate of Merit in ASU
+[Dean’s List · Certificate of Merit in ASU](https://github.com/Tatwik19/Tatwik19.github.io/tree/main/assets/Awards/00_Deans%20List)
 
 <br />
 
