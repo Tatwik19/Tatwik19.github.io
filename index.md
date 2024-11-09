@@ -5,7 +5,7 @@ layout: default
 <div style="text-align: justify">Passionate Roboticist with expertise in embedded systems, perception, aerial robotics, industrial automation, and autonomous vehicles. Demonstrated leadership in engineering projects, excelling in documentation, CAD design, embedded components, digital twin, and programming. Inspired to reach the pinnacle in robotics with a meticulous and determined approach to tasks.</div>
 <br />
 
-## Experience:
+## Experience
 **Marinella Research** – Chandler, Arizona<br />
 **Robotics Researcher** <span style="float:right;"> May 2024 – Present</span>
 *	Lead multidisciplinary research projects, focusing on robotics, industrial automation, digital twins, additive manufacturing, machine vision, and system engineering contributing to the next-gen industry.
@@ -29,13 +29,13 @@ layout: default
 **Mechanical Technician · Internship** <span style="float:right;">Mar 2017 – May 2017</span>
 *	Diagnosed and fixed issues with mechanical components in cars. Assembled and disassembled complex parts for repair and troubleshooting malfunctions.
 
-## Education:
+## Education
 **Arizona State University – Mesa/Tempe, Arizona** <span style="float:right;"> **GPA: 4.00**</span><br />
 MS. Robotics and Autonomous Systems (SE) <span style="float:right;">Aug 2022 – May 2024</span><br />
 BSE. Robotics <span style="float:right;">Aug 2019 – May 2023</span><br />
 
 
-## News:
+## News
 *	I successfully graduated with Master's in Robotics in May 2024!!
 
 
@@ -64,19 +64,20 @@ BSE. Robotics <span style="float:right;">Aug 2019 – May 2023</span><br />
 *	[Interactive Decoration/Animatronics with Embedded System Control](https://github.com/Tatwik19/Tatwik19.github.io/tree/main/assets/Projects/Final%20Design%20-%20Not%20Creepy%20Elf)<span style="float:right;">Aug 2021 – Dec 2021</span>
 	- Developed a Halloween decoration using embedded systems. In-depth research was done to design a PCB.
 
+## Awards
+Dean’s List · Certificate of Merit in ASU
+
+## Certifications
+*	Coursera Robotics Aerial Robotics
+*	Coursera Robotics Perception
+*	Coursera Estimation and Learning
+*	Robotics in Microelectronics Manufacturing
 
 ## Thesis
-*	XYZ
-*	XYZ
 *	XYZ
 
 ## Publications
 *	XYZ
-*	XYZ
-*	XYZ
 
 ## Grant
-*	XYZ
-*	XYZ
-*	XYZ
 *	XYZ
