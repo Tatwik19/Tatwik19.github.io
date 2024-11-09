@@ -20,19 +20,19 @@ layout: default
 **Thermo-Fluids Grader** <span style="float:right;">Jul 2023 – Aug 2023</span>
 *	Provided instructional support in Engineering Thermo-Fluids and grading.
 
-**Naval Science & Technological Laboratory (NSTL)** – Visakhapatnam, Andhra Pradesh <span style="float:right;"> May 2022 – Aug 2022 </span><br />
-**Robotics Intern**
+**Naval Science & Technological Laboratory (NSTL)** – Visakhapatnam, Andhra Pradesh<br />
+**Robotics Intern** <span style="float:right;">May 2022 – Aug 2022</span>
 *	Developed Object Detection (YOLOv5) Robot with GPS navigation with vision-based collision avoidance.
 *	Worked on Python programable NVIDIA Jetson Nano JetBot.
 
-**Audi India** – Visakhapatnam, Andhra Pradesh <span style="float:right;">Mar 2017 – May 2017</span><br />
-**Mechanical Technician · Internship**
+**Audi India** – Visakhapatnam, Andhra Pradesh<br />
+**Mechanical Technician · Internship** <span style="float:right;">Mar 2017 – May 2017</span>
 *	Diagnosed and fixed issues with mechanical components in cars. Assembled and disassembled complex parts for repair and troubleshooting malfunctions.
 
 ## Education:
 **Arizona State University – Mesa/Tempe, Arizona** <span style="float:right;"> **GPA: 4.00**</span><br />
-Master of Science in Engineering in Robotics and Autonomous Systems (SE) <span style="float:right;">Aug 2022 – May 2024</span><br />
-Bachelor of Science in Engineering in Robotics <span style="float:right;">Aug 2019 – May 2023</span><br />
+MS. Robotics and Autonomous Systems (SE) <span style="float:right;">Aug 2022 – May 2024</span><br />
+BSE. Robotics <span style="float:right;">Aug 2019 – May 2023</span><br />
 
 
 ## News:
