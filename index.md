@@ -22,7 +22,7 @@ layout: default
 
 **Naval Science & Technological Laboratory (NSTL)** – Visakhapatnam, Andhra Pradesh<br />
 **Robotics Intern** <span style="float:right;">May 2022 – Aug 2022</span>
-*	Developed Object Detection (YOLOv5) Robot with GPS navigation with vision-based collision avoidance.
+*	[Developed Object Detection (YOLOv5) Robot with GPS navigation with vision-based collision avoidance.](https://github.com/Tatwik19/Object-Detection-Robot-with-GPS-Navigation-and-Collision-Avoidance)
 *	Worked on Python programable NVIDIA Jetson Nano JetBot.
 
 **Audi India** – Visakhapatnam, Andhra Pradesh<br />
@@ -62,7 +62,7 @@ BSE. Robotics <span style="float:right;">Aug 2019 – May 2023</span><br />
 	- Designed Bluetooth Robot Arm with inbuilt Forward/Inverse Kinematics calculator to reach target location.
 
 *	[Interactive Decoration/Animatronics with Embedded System Control](https://github.com/Tatwik19/Tatwik19.github.io/tree/main/assets/Projects/Final%20Design%20-%20Not%20Creepy%20Elf)<span style="float:right;">Aug 2021 – Dec 2021</span>
-	- Developed a Halloween decoration using embedded systems. In-depth research was done to design a PCB.
+	- Developed a Halloween decoration using embedded systems. In-depth research was done to design a functioning Printed Circuit Board.
 
 ## Awards
 Dean’s List · Certificate of Merit in ASU
