@@ -7,17 +7,17 @@ layout: default
 
 ## Experience:
 **Marinella Research** – Chandler, Arizona<br />
-**Robotics Researcher** <span style="float:right;"> May 2024 – Present</span><br />
+**Robotics Researcher** <span style="float:right;"> May 2024 – Present</span>
 *	Lead multidisciplinary research projects, focusing on robotics, industrial automation, digital twins, additive manufacturing, machine vision, and system engineering contributing to the next-gen industry.
 *	Conduct feasibility studies and engineering consulting for industrial applications.
 *	Develop innovative solutions for commercial viability, emphasizing grant proposals and internal projects.
 
 **Arizona State University** – Tempe/Mesa, Arizona<br />
-**Robotics & Applied Linear Algebra Teaching Assistant** <span style="float:right;"> Jan 2023 – May 2024</span><br />
+**Robotics & Applied Linear Algebra Teaching Assistant** <span style="float:right;"> Jan 2023 – May 2024</span>
 *	Instructed design and prepared lab of robotic systems on kinematics, dynamics, modeling, and control using collaborative robots, Unmanned Ariel Vehicles, Machine Vision, etc.
 *	Teaching Assistant for graduate-level linear algebra for engineering.
 
-**Thermo-Fluids Grader** <span style="float:right;">Jul 2023 – Aug 2023</span><br />
+**Thermo-Fluids Grader** <span style="float:right;">Jul 2023 – Aug 2023</span>
 *	Provided instructional support in Engineering Thermo-Fluids and grading.
 
 **Naval Science & Technological Laboratory (NSTL)** – Visakhapatnam, Andhra Pradesh <span style="float:right;"> May 2022 – Aug 2022 </span><br />
@@ -30,7 +30,7 @@ layout: default
 *	Diagnosed and fixed issues with mechanical components in cars. Assembled and disassembled complex parts for repair and troubleshooting malfunctions.
 
 ## Education:
-**Arizona State University – Mesa/Tempe, Arizona <span style="float:right;"> GPA: 4.00**</span><br />
+**Arizona State University – Mesa/Tempe, Arizona** <span style="float:right;"> **GPA: 4.00**</span><br />
 Master of Science in Engineering in Robotics and Autonomous Systems (SE) <span style="float:right;">Aug 2022 – May 2024</span><br />
 Bachelor of Science in Engineering in Robotics <span style="float:right;">Aug 2019 – May 2023</span><br />
 
