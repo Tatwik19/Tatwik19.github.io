@@ -33,6 +33,7 @@ layout: default
 
 ## Education
 **Arizona State University – Mesa/Tempe, Arizona** <span style="float:right;"> **GPA: 4.00**</span><br />
+PhD. Robotics and Autonomous Systems <span style="float:right;">Jan 2025</span><br />
 MS. Robotics and Autonomous Systems (SE) <span style="float:right;">Aug 2022 – May 2024</span><br />
 BSE. Robotics <span style="float:right;">Aug 2019 – May 2023</span>
 
