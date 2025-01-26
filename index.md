@@ -5,8 +5,8 @@ layout: default
 <div style="text-align: justify">Passionate Roboticist with expertise in embedded systems, perception, aerial robotics, industrial automation, and autonomous vehicles. Demonstrated leadership in engineering projects, excelling in documentation, CAD design, embedded components, digital twin, and programming. Inspired to reach the pinnacle in robotics with a meticulous and determined approach to tasks.</div>
 <br />
 ## News
-*	I successfully graduated with Master's in Robotics in May 2024!!
-*	I am currently a PhD student in [Robotics and Autonomous Systems](https://msn.engineering.asu.edu/degrees/graduate/robotics-and-autonomous-systems-mechatronics-and-automation-phd/) at Arizona State University under Dr. [Xi Yu](https://search.asu.edu/profile/5170321) and Chair of Robotics Dr. [Sangram Redkar](https://search.asu.edu/profile/1114748). I am currently suported by Fulton Felowships Program.
+*	I successfully graduated with Master's in Robotics in May 2024 with full tution award!!
+*	I am currently a PhD student in [Robotics and Autonomous Systems](https://msn.engineering.asu.edu/degrees/graduate/robotics-and-autonomous-systems-mechatronics-and-automation-phd/) at Arizona State University under Dr. [Xi Yu](https://search.asu.edu/profile/5170321) and Graduate Program Chair of Robotics Dr. [Sangram Redkar](https://search.asu.edu/profile/1114748). I am currently suported by Fulton Felowships Program.
 
 <br />
 ## Experience
@@ -16,7 +16,7 @@ layout: default
 *	Conduct feasibility studies and engineering consulting for industrial applications.
 *	Develop innovative solutions for commercial viability, emphasizing grant proposals and internal projects.
 
-**Arizona State University** – Tempe/Mesa, Arizona<br />
+**[Arizona State University](https://www.asu.edu)** – Tempe/Mesa, Arizona<br />
 **Robotics & Applied Linear Algebra Teaching Assistant** <span style="float:right;"> Jan 2023 – May 2024</span>
 *	Instructed design and prepared lab of robotic systems on kinematics, dynamics, modeling, and control using collaborative robots, Unmanned Ariel Vehicles, Machine Vision, etc.
 *	Teaching Assistant for graduate-level linear algebra for engineering.
@@ -25,7 +25,7 @@ layout: default
 **Thermo-Fluids Grader** <span style="float:right;">Jul 2023 – Aug 2023</span>
 *	Provided instructional support in Engineering Thermo-Fluids and grading.
 
-**Naval Science & Technological Laboratory (NSTL)** – Visakhapatnam, Andhra Pradesh<br />
+**[Naval Science & Technological Laboratory (NSTL)](https://drdo.gov.in/drdo/labs-and-establishments/naval-science-technological-laboratory-nstl)** – Visakhapatnam, Andhra Pradesh<br />
 **Robotics Intern** <span style="float:right;">May 2022 – Aug 2022</span>
 *	[Developed Object Detection (YOLOv5) Robot with GPS navigation with vision-based collision avoidance.](https://github.com/Tatwik19/Object-Detection-Robot-with-GPS-Navigation-and-Collision-Avoidance)
 *	Worked on Python programable NVIDIA Jetson Nano JetBot.
@@ -37,7 +37,7 @@ layout: default
 <br />
 
 ## Education
-**Arizona State University – Mesa/Tempe, Arizona** <span style="float:right;"> **GPA: 4.00**</span><br />
+**Arizona State University – Mesa/Tempe, Arizona** <span style="float:right;"> **GPA: 4.00+**</span><br />
 PhD. Robotics and Autonomous Systems <span style="float:right;">Jan 2025</span><br />
 MS. Robotics and Autonomous Systems (SE) <span style="float:right;">Aug 2022 – May 2024</span><br />
 BSE. Robotics <span style="float:right;">Aug 2019 – May 2023</span>
@@ -72,7 +72,7 @@ BSE. Robotics <span style="float:right;">Aug 2019 – May 2023</span>
 <br />
 
 ## Awards
-[Dean’s List · Certificate of Merit in ASU](https://github.com/Tatwik19/Tatwik19.github.io/tree/main/assets/Awards/00_Deans%20List)
+[Dean’s List · Certificate of Merit in ASU (2019 to 2022)](https://github.com/Tatwik19/Tatwik19.github.io/tree/main/assets/Awards/00_Deans%20List)
 
 <br />
 
