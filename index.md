@@ -4,9 +4,13 @@ layout: default
 <br />
 <div style="text-align: justify">Passionate Roboticist with expertise in embedded systems, perception, aerial robotics, industrial automation, and autonomous vehicles. Demonstrated leadership in engineering projects, excelling in documentation, CAD design, embedded components, digital twin, and programming. Inspired to reach the pinnacle in robotics with a meticulous and determined approach to tasks.</div>
 <br />
+## News
+*	I successfully graduated with Master's in Robotics in May 2024!!
+*	I am currently a PhD student in [Robotics and Autonomous Systems](https://msn.engineering.asu.edu/degrees/graduate/robotics-and-autonomous-systems-mechatronics-and-automation-phd/) at Arizona State University under Dr. [Xi Yu](https://search.asu.edu/profile/5170321) and Chair of Robotics Dr. [Sangram Redkar](https://search.asu.edu/profile/1114748). I am currently suported by Fulton Felowships Program.
 
+<br />
 ## Experience
-**Marinella Research** – Chandler, Arizona<br />
+**[Marinella Research](https://www.marinellaresearch.com/)** – Chandler, Arizona<br />
 **Robotics Researcher** <span style="float:right;"> May 2024 – Present</span>
 *	Lead multidisciplinary research projects, focusing on robotics, industrial automation, digital twins, additive manufacturing, machine vision, and system engineering contributing to the next-gen industry.
 *	Conduct feasibility studies and engineering consulting for industrial applications.
@@ -16,6 +20,7 @@ layout: default
 **Robotics & Applied Linear Algebra Teaching Assistant** <span style="float:right;"> Jan 2023 – May 2024</span>
 *	Instructed design and prepared lab of robotic systems on kinematics, dynamics, modeling, and control using collaborative robots, Unmanned Ariel Vehicles, Machine Vision, etc.
 *	Teaching Assistant for graduate-level linear algebra for engineering.
+*	[Teaching Assistantship](https://graduate.asu.edu/current-students/funding-opportunities/graduate-appointments-and-assistantships/policies-and-procedures/ta) with full tution award for Master's Degree.
 
 **Thermo-Fluids Grader** <span style="float:right;">Jul 2023 – Aug 2023</span>
 *	Provided instructional support in Engineering Thermo-Fluids and grading.
@@ -36,11 +41,6 @@ layout: default
 PhD. Robotics and Autonomous Systems <span style="float:right;">Jan 2025</span><br />
 MS. Robotics and Autonomous Systems (SE) <span style="float:right;">Aug 2022 – May 2024</span><br />
 BSE. Robotics <span style="float:right;">Aug 2019 – May 2023</span>
-
-<br />
-
-## News
-*	I successfully graduated with Master's in Robotics in May 2024!!
 
 <br />
 
