@@ -1,9 +1,32 @@
-<!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+<!-- start custom head snippets -->
 
-<!-- Setup Google Analytics -->
+<!-- Meta Tags -->
+<meta name="google-site-verification" content="-U1FG3vycdInzZxOfzNonq6bvYKSXhvxG9GDdEuqLwk">
+<meta name="msvalidate.01" content="d5261dd14b514c97ba4acd09a1f38873">
+<meta name="description" content="Sai Srinivas Tatwik Meesala personal website">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- SEO Optimization -->
+{% seo %}
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- Favicon -->
+<!-- Uncomment and add your favicon if needed -->
+<!-- <link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}"> -->
+
+<!-- IE Compatibility -->
+<!--[if lt IE 9]>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+<![endif]-->
+
+<!-- Include Google Analytics -->
 {% include head-custom-google-analytics.html %}
-
-<!-- You can set your favicon here -->
-<!-- link rel="shortcut icon" type="image/x-icon" href="{{ '/favicon.ico' | relative_url }}" -->
 
 <!-- end custom head snippets -->

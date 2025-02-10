@@ -1,8 +1,35 @@
+# Site settings
 title: Sai Srinivas Tatwik Meesala
 logo: /assets/img/profiePic.jpg
-show_downloads: false
-google_analytics:
+description: "Personal website of Sai Srinivas Tatwik Meesala"
 theme: jekyll-theme-minimal
-show_ref_links: true
-email: tatwik[dot][first letter of my last name][dot]19[at]gmail[dot]com
+
+# Contact & Social Links
+email: tatwik[dot][first-letter-of-my-last-name][dot]19[at]gmail[dot]com
 linkedin: https://www.linkedin.com/in/sai-srinivas-tatwik-meesala/
+github_username: Tatwik19
+
+# Features & Customization
+show_downloads: false
+show_ref_links: true
+google_analytics:  # Add your Google Analytics tracking ID here (e.g., 'UA-XXXXX-Y')
+
+# SEO & Meta Tags
+lang: en-US
+
+# GitHub Settings (if hosted on GitHub Pages)
+github:
+  is_project_page: true
+  repository_url: https://github.com/Tatwik19/Tatwik19.github.io
+  repository_nwo: Tatwik19/Tatwik19.github.io
+  owner_url: https://github.com/Tatwik19
+  owner_name: Sai Srinivas Tatwik Meesala
+  zip_url: https://github.com/Tatwik19/Tatwik19.github.io/archive/refs/heads/main.zip
+  tar_url: https://github.com/Tatwik19/Tatwik19.github.io/archive/refs/heads/main.tar.gz
+  build_revision: 
+
+# Additional Customizations (You can add more)
+# favicon: /assets/img/favicon.ico
+# twitter_username: your_twitter_handle
+# instagram: your_instagram_link
+# facebook: your_facebook_link
