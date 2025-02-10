@@ -26,12 +26,11 @@
     <div class="wrapper">
       <header>
         <h1><a href="{{ '/' | absolute_url }}">{{ site.full_name | default: site.github.repository_name }}</a></h1>
+        <p>{{ site.description | default: site.github.project_tagline }}</p>
 
         {% if site.logo %}
           <img src="{{ site.logo | relative_url }}" alt="Profile Picture">
         {% endif %}
-
-        <p>{{ site.description | default: site.github.project_tagline }}</p>
 
         {% if site.show_ref_links %}
           <div class="social-icons">
