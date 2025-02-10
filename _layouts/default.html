@@ -2,6 +2,25 @@
 <html lang="{{ site.lang | default: 'en-US' }}">
   <head>
     {% include head-custom.html %}
+    <style>
+      .social-icons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .social-icons a {
+        font-size: 2rem; /* Larger icons */
+        color: inherit; /* Inherit text color */
+        text-decoration: none; /* Remove underline */
+      }
+
+      .social-icons a:hover {
+        color: #0073e6; /* Optional hover color */
+      }
+    </style>
   </head>
   <body>
     <div class="wrapper">
@@ -15,11 +34,11 @@
         <p>{{ site.description | default: site.github.project_tagline }}</p>
 
         {% if site.show_ref_links %}
-          <p class="view">
-            <a href="mailto:{{ site.email }}"><i class="fas fa-envelope"></i> Email</a> |
-            <a href="{{ site.linkedin }}" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> |
-            <a href="{{ site.github.owner_url }}" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-          </p>
+          <div class="social-icons">
+            <a href="mailto:{{ site.email }}" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="{{ site.linkedin }}" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="{{ site.github.owner_url }}" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          </div>
         {% endif %}
 
         {% if site.show_downloads %}
@@ -36,7 +55,7 @@
       </section>
 
       <footer>
-        <!-- Removed GitHub project maintenance text -->
+        <!-- No content in footer for now -->
       </footer>
     </div>
 
