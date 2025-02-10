@@ -1,7 +1,7 @@
 # Site settings
 title: Sai Srinivas Tatwik Meesala
 logo: /assets/img/profiePic.jpg
-description: "Personal website of Sai Srinivas Tatwik Meesala"
+# description: "Personal website of Sai Srinivas Tatwik Meesala"
 theme: jekyll-theme-minimal
 
 # Contact & Social Links
