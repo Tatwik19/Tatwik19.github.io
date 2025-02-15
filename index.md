@@ -2,7 +2,7 @@
 layout: default
 ---
 <br />
-<div style="text-align: justify">Passionate Roboticist with expertise in embedded systems, perception, aerial robotics, industrial automation, and autonomous vehicles. Demonstrated leadership in engineering projects, excelling in documentation, CAD design, embedded components, digital twin, and programming. Inspired to reach the pinnacle in robotics with a meticulous and determined approach to tasks.</div>
+<div style="text-align: justify">Roboticist with expertise in embedded systems, perception, aerial robotics, industrial automation, and autonomous vehicles. Demonstrated leadership in engineering projects, excelling in documentation, CAD design, embedded components, digital twin, and programming. Inspired to reach the pinnacle in robotics with a meticulous and determined approach to tasks.
 <br />
 ## News
 
@@ -15,11 +15,10 @@ td, th {
 
 | <!-- -->    | <!-- -->    |
 |:----------:|-------------|
-| Jan 2024         | I am currently a PhD student in [Robotics and Autonomous Systems](https://msn.engineering.asu.edu/degrees/graduate/robotics-and-autonomous-systems-mechatronics-and-automation-phd/) at Arizona State University under [Dr. Xi Yu](https://search.asu.edu/profile/5170321) and Graduate Program Chair of Robotics [Dr. Sangram Redkar](https://search.asu.edu/profile/1114748). I am currently suported by Fulton Felowships Program.         |
-| Mar 2023         | I successfully graduated with Master's in Robotics in May 2024 with full tuition award!!         |
-
-
+| Jan 2024         |I am currently a PhD student in [Robotics and Autonomous Systems](https://msn.engineering.asu.edu/degrees/graduate/robotics-and-autonomous-systems-mechatronics-and-automation-phd/) at Arizona State University under [Dr. Xi Yu](https://search.asu.edu/profile/5170321) and Graduate Program Chair of Robotics [Dr. Sangram Redkar](https://search.asu.edu/profile/1114748). I am currently suported by Fulton Felowships Program.|
+| Mar 2023         |I successfully graduated with Master's in Robotics in May 2024 with full tuition award!!|
 <br />
+
 ## Experience
 **[Marinella Research](https://www.marinellaresearch.com/)** – Chandler, Arizona<br />
 **Robotics Researcher** <span style="float:right;"> May 2024 – Present</span>
@@ -121,6 +120,6 @@ BSE. Robotics <span style="float:right;">Aug 2019 – May 2023</span>
 *	XYZ
 
 -->
-
+</div>
 <br />
 <br />
