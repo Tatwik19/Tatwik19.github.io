@@ -16,14 +16,14 @@ td, th {
 
 | <!-- -->    | <!-- -->    |
 |:----------:|-------------|
-| Jan 2024         |<just style="text-align: justify">I am currently a PhD student in [Robotics and Autonomous Systems](https://msn.engineering.asu.edu/degrees/graduate/robotics-and-autonomous-systems-mechatronics-and-automation-phd/) at Arizona State University under [Dr. Xi Yu](https://search.asu.edu/profile/5170321) and Graduate Program Chair of Robotics [Dr. Sangram Redkar](https://search.asu.edu/profile/1114748). I am currently suported by Fulton Felowships Program.</just>|
-| Mar 2023         |<just style="text-align: justify">I successfully graduated with Master's in Robotics in May 2024 with full tuition award!!</just>|
+| Jan 2024         | I am currently a PhD student in [Robotics and Autonomous Systems](https://msn.engineering.asu.edu/degrees/graduate/robotics-and-autonomous-systems-mechatronics-and-automation-phd/) at Arizona State University under [Dr. Xi Yu](https://search.asu.edu/profile/5170321) and Graduate Program Chair of Robotics [Dr. Sangram Redkar](https://search.asu.edu/profile/1114748). I am currently suported by Fulton Felowships Program.|
+| Mar 2023         | I successfully graduated with Master's in Robotics in May 2024 with full tuition award!!|
 <br />
 
 ## Experience
 **[Marinella Research](https://www.marinellaresearch.com/)** – Chandler, Arizona<br />
 **Robotics Researcher** <span style="float:right;"> May 2024 – Present</span>
-<just style="text-align: justify"
+<just style="text-align: justify">
 *	Lead multidisciplinary research projects, focusing on robotics, industrial automation, digital twins, additive manufacturing, machine vision, and system engineering contributing to the next-gen industry.
 *	Conduct feasibility studies and engineering consulting for industrial applications.
 *	Develop innovative solutions for commercial viability, emphasizing grant proposals and internal projects.
