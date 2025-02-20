@@ -15,8 +15,8 @@ td, th {
 
 | <!-- -->    | <!-- -->    |
 |:----------:|-------------|
-| Jan 2024         | I am currently a PhD student in [Robotics and Autonomous Systems](https://msn.engineering.asu.edu/degrees/graduate/robotics-and-autonomous-systems-mechatronics-and-automation-phd/) at Arizona State University under [Dr. Xi Yu](https://search.asu.edu/profile/5170321) and Graduate Program Chair of Robotics [Dr. Sangram Redkar](https://search.asu.edu/profile/1114748). I am currently suported by Fulton Felowships Program.         |
-| Mar 2023         | I successfully graduated with Master's in Robotics in May 2024 with full tuition award!!         |
+| Jan 2024         | I am currently a PhD student in [Robotics and Autonomous Systems](https://msn.engineering.asu.edu/degrees/graduate/robotics-and-autonomous-systems-mechatronics-and-automation-phd/) at Arizona State University under [Dr. Xi Yu](https://search.asu.edu/profile/5170321) and Graduate Program Chair of Robotics [Dr. Sangram Redkar](https://search.asu.edu/profile/1114748). I am currently supported by Fulton Fellowship Program.         |
+| Mar 2023         | I successfully graduated with a Master's in Robotics in May 2024 with a full tuition award!!         |
 
 
 <br />
@@ -66,7 +66,7 @@ BSE. Robotics <span style="float:right;">Aug 2019 – May 2023</span>
 	- Developed compact and portable footwear for gait analysis to improve gait balance for patients at the Barrow Institute.
 
 *	[Semi-Autonomous Twin Hoist System](https://github.com/Tatwik19/24-Increasing-Changeover-Capabilities-at-Isola)<span style="float:right;">Aug 2023 – May 2023</span>
-	- Designed two independent hoists to pick up and change copper rolls (700lbs) used for PCB manufacturing.
+	- Designed two independent hoists to pick up and change copper rolls (700 lbs) used for PCB manufacturing.
 
 *	[Wearable Robotics with Embedded System Control](https://github.com/Tatwik19/Team205-Watching-Distance)<span style="float:right;">Jan 2022 – Apr 2022</span>
 	- Developed an Embedded System that uses data collected from sensors to control the actuators with wireless WiFi control to help stoke patients.
