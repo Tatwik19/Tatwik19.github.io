@@ -43,10 +43,12 @@ AeroFusion develops a sensor-driven framework that enables a biologically inspir
 
 ## Architecture
 
+```bash
 /image_raw → YOLOv5_Detector → /blimp/detected_position
 /imu_data + /barometer_data + /balloon_input → InvKine → /forces
 /forces → F_to_ESC → /ESC_balloon_input
 /ESC_Manual_input + /ESC_balloon_input → ModeSwitch → /ESC_input → ESC_Driver
+```
 
 <br/>
 
@@ -108,3 +110,4 @@ ros2 launch auto_control updated_launch.py
 
 # GUI bridge + camera stream
 ros2 launch blimp_gui rosbridge_camera_launch.py
+```
