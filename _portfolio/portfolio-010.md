@@ -11,8 +11,6 @@ excerpt:
 collection: portfolio
 ---
 
-<br/>
-
 
 Check the website [here](https://inchworm-foldable-robotics.github.io/)
 
@@ -25,6 +23,8 @@ Check the website [here](https://inchworm-foldable-robotics.github.io/)
   <source src="https://raw.githubusercontent.com/Inchworm-Foldable-Robotics/Inchworm-Foldable-Robotics.github.io/master/assets/04_Results/P4_Inchworm_Good.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
+
+<br/>
 
 ArcFold is an inchworm‑inspired crawling robot based on the locomotion of [Manduca sexta larvae](https://en.wikipedia.org/wiki/Manduca_sexta). The robot uses rigid foldable linkages and friction‑modulated pads to realize a planar, two‑anchor lift‑and‑drag gait whose parameters can be modeled, fabricated, and systematically varied.  
 
