@@ -54,8 +54,6 @@ These insights motivate a foldable, rigid‑link crawler with two friction‑mod
 
 ## References
 
-Numbers correspond to the references used in the Assignment 1 report; full bibliographic details are provided there. 
-
 [1] N. P. L. Griethuijsen and B. A. Trimmer, “Crawling kinematics of Manduca sexta larvae on horizontal and vertical substrates,” *J. Exp. Biol.*, 2009.
 
 [2] H. T. Lin and B. A. Trimmer, “Multi‑contact ground reaction forces of crawling Manduca sexta,” *J. Exp. Biol.*, 2010 (with 2011 corrigendum).
