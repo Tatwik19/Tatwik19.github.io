@@ -56,7 +56,7 @@ BSE. Robotics <span style="float:right;">Aug 2019 – May 2023</span>
 
 <br />
 
-## Certifications
+<!-- ## Certifications
 
 *	Coursera Robotics Aerial Robotics
 *	Coursera Robotics Perception
@@ -74,7 +74,7 @@ BSE. Robotics <span style="float:right;">Aug 2019 – May 2023</span>
 
 *	Runner Up - HGA Golf Tournament Boys (Category – A)<span style="float:right;">March, May & September</span> 
 
-*	Participated - IGU- South Zone Golf Championship (Category – B & A) <span style="float:right;">Hyderabad, Visakhapatnam, & Coorg</span>
+*	Participated - IGU- South Zone Golf Championship (Category – B & A) <span style="float:right;">Hyderabad, Visakhapatnam, & Coorg</span> -->
 
 <br />
 <br />
