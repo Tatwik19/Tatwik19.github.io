@@ -14,6 +14,10 @@ redirect_from:
 
 ## News
 
+## News
+
+## News
+
 <style>
 table {
     width: 100%;
@@ -32,13 +36,18 @@ td:last-child {
     text-align: justify;
 }
 </style>
+
 <table>
     <tr>
-        <td>Jan 2024</td>
-        <td>I am currently a PhD student in <a href="https://msn.engineering.asu.edu/degrees/graduate/robotics-and-autonomous-systems-mechatronics-and-automation-phd/">Robotics and Autonomous Systems</a> at Arizona State University under Graduate Program Chair of Robotics <a href="https://search.asu.edu/profile/1114748">Dr. Sangram Redkar</a>.</td>
+        <td>Jul 2026</td>
+        <td>I visited Taipei, Taiwan to support the ASU/Wego Summer Robotics Workshop at <a href="https://www.wghs.tp.edu.tw/nss/s/eng/index">Taipei Wego Private Bilingual Senior High School</a>. The workshop focused on robotics, computer vision, and context-aware autonomous systems for student learning and engagement.</td>
     </tr>
     <tr>
-        <td>Mar 2023</td>
-        <td>I successfully graduated with a Master's in Robotics in May 2024 with a full tuition award!!</td>
+        <td>Jan 2024</td>
+        <td>I started my PhD in <a href="https://msn.engineering.asu.edu/degrees/graduate/robotics-and-autonomous-systems-mechatronics-and-automation-phd/">Robotics and Autonomous Systems</a> at Arizona State University under Graduate Program Chair of Robotics <a href="https://search.asu.edu/profile/1114748">Dr. Sangram Redkar</a>.</td>
+    </tr>
+    <tr>
+        <td>May 2024</td>
+        <td>I graduated with a Master's in Robotics from Arizona State University with a full tuition award.</td>
     </tr>
 </table>
