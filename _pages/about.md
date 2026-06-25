@@ -14,10 +14,6 @@ redirect_from:
 
 ## News
 
-## News
-
-## News
-
 <style>
 table {
     width: 100%;
