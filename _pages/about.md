@@ -36,7 +36,7 @@ td:last-child {
 <table>
     <tr>
         <td>Jul 2026</td>
-        <td>I visited Taipei, Taiwan to support the ASU/Wego Summer Robotics Workshop at <a href="https://www.wghs.tp.edu.tw/nss/s/eng/index">Taipei Wego Private Bilingual Senior High School</a>. The workshop focused on robotics, computer vision, and context-aware autonomous systems for student learning and engagement.</td>
+        <td>As part of the <a href="https://www.globalchamber.org/events/2026/05/08/collaborator/us-taiwan-technology-partnership-forum-2026/">US-Taiwan Technology Partnership</a> and <a href="https://www.us-taiwan.org/events/us-taiwan-technology-partnership-forum-2026/">US-Taiwan Technology Partnership Forum</a>, I visited Taiwan for the Summer 2026 Engineering Experience (July 20–24) with ASU Prep Global and Taipei Wego Private Senior High School to support a hands-on STEM and robotics initiative.</td>
     </tr>
     <tr>
         <td>Jan 2024</td>
