@@ -8,11 +8,16 @@ date: 2023-08-01
 location: "Arizona"
 ---
 
-Served as a Teaching Assistant for Robotic Systems I during the **Fall 2023** semester.  
-Prepared lab and assisted students in understanding key concepts and applications in robotics.  
+Served as a Teaching Assistant for Robotic Systems I during the **Fall 2023 and Fall 2025** semesters.
+
+Previously completed the course as a graduate student, providing additional perspective while supporting lectures, laboratories, and student projects.
 
 Course Links:
 - [Fall 2023](https://catalog.apps.asu.edu/catalog/classes/classlist?keywords=96295&searchType=all&term=2237#detailsOpen=96295-131765)
+- [Fall 2025](https://catalog.apps.asu.edu/catalog/classes/classlist?keywords=77720&searchType=all&term=2257#detailsOpen=77720-131765)
+
+Prepared lab and assisted students in understanding key concepts and applications in robotics.  
+
 
 ## Course Description
 This course covers the analysis and design of robotic systems, with a focus on:

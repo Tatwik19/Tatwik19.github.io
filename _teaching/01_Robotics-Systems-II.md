@@ -8,12 +8,16 @@ date: 2023-01-01
 location: "Arizona"
 ---
 
-Served as a Teaching Assistant for Robotic Systems II during the **Spring 2023 and Spring 2024** semesters.  
+Served as a Teaching Assistant for Robotic Systems II during the **Spring 2023, Spring 2024, and Spring 2026** semesters.
+
+Previously completed the undergraduate version of the course (EGR 456) before serving as a Teaching Assistant.
+
 [Prepared lab](https://raw.githack.com/Tatwik19/Tatwik19.github.io/master/files/RoboticsCoBotLabs.pdf) and assisted students in understanding key concepts and applications in robotics.  
 
 Course Links:
 - [Spring 2023](https://catalog.apps.asu.edu/catalog/classes/classlist?keywords=26986&searchType=all&term=2231#detailsOpen=26986-130856)
 - [Spring 2024](https://catalog.apps.asu.edu/catalog/classes/classlist?keywords=37592&searchType=all&term=2241#detailsOpen=37592-131768)
+- [Spring 2026](https://catalog.apps.asu.edu/catalog/classes/classlist?keywords=28011&searchType=all&term=2261#detailsOpen=28011-131768)
 
 ## Course Description
 This course covers the analysis and design of robotic systems, with a focus on:
