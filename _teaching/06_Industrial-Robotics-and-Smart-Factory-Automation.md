@@ -8,7 +8,7 @@ date: 2026-08-01
 location: "Arizona"
 ---
 
-Served as a Teaching Assistant for **RAS 598: Industrial Robotics & Smart Factory Automation** during the **Speing 2026** **Summer 2026** semester.
+Served as a Teaching Assistant for **RAS 598: Industrial Robotics & Smart Factory Automation** during the **Spring 2026** and **Summer 2026** semester.
 
 Prepared laboratory exercises and assisted students in industrial robotics, PLC programming, Human-Machine Interfaces (HMIs), smart manufacturing, and Industry 4.0 technologies.
 
