@@ -41,8 +41,7 @@ Within a short period, student teams designed and demonstrated several fully fun
 ### Autonomous Tic-Tac-Toe Robot
 A fully autonomous robotic system capable of playing Tic-Tac-Toe using AI and computer vision.
 
-Project:
-https://canva.link/npfx9jqnitexu4f
+- [Project](https://canva.link/npfx9jqnitexu4f)
 
 ### Industrial Vision-Guided Robotic Sorting System
 An industrial automation demonstration integrating:
@@ -52,25 +51,21 @@ An industrial automation demonstration integrating:
 - Conveyor System
 - Vision-Guided Robotic Manipulation
 
-Presentation:
-https://drive.google.com/open?id=1xh4QMLFgZKkVuZ8eVU0LnghLbKOtRymLqIXA9dkXqLI
+- [Presentation](https://drive.google.com/open?id=1xh4QMLFgZKkVuZ8eVU0LnghLbKOtRymLqIXA9dkXqLI)
 
-Video:
-https://drive.google.com/open?id=1lRPV7UaYAxXpJAVo28KHiQKWe1mhgaPa
+- [Video](https://drive.google.com/open?id=1lRPV7UaYAxXpJAVo28KHiQKWe1mhgaPa)
 
 ### AI-Based Garbage Sorting System
 
 Students developed an AI-assisted waste classification system capable of automatically categorizing different types of garbage.
 
-Presentation:
-https://docs.google.com/presentation/d/110aOjUPmoS0PSAb9OCavCKvbkpDwsB4qhG-xm6xwv0o/edit?usp=drivesdk
+- [Presentation](https://docs.google.com/presentation/d/110aOjUPmoS0PSAb9OCavCKvbkpDwsB4qhG-xm6xwv0o/edit?usp=drivesdk)
 
 ### AI Face Recognition System
 
 A computer vision application for automated member identification using facial recognition.
 
-Project:
-https://www.canva.com/design/DAHQLaY3nRQ/pFSyAmR90Ki0IPI2LRwLXg/view
+- [Project](https://www.canva.com/design/DAHQLaY3nRQ/pFSyAmR90Ki0IPI2LRwLXg/view)
 
 ## Reflections
 
