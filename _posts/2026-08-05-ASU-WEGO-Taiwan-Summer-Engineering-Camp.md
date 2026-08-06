@@ -12,7 +12,6 @@ tags:
   - Engineering Education
 ---
 
-<!-- ## ASU + WEGO Taiwan Summer Engineering Camp -->
 
 I had the opportunity to represent **Arizona State University** at the **ASU + WEGO Taiwan Summer Engineering Camp** hosted by **Taipei Wego Private Bilingual Senior High School** in Taipei, Taiwan.
 
