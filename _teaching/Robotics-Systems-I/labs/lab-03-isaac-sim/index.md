@@ -1409,39 +1409,26 @@ Articulation Controller.inputs:velocityCommand
 
 The final drive graph must contain these connections:
 
-```text
-On Playback Tick.tick
-    → ROS 2 Subscribe Twist.execIn
+```mermaid
+flowchart TD
+    Tick["On Playback Tick"] -.->|"execIn"| Sub["ROS 2 Subscribe Twist"]
+    Tick -.->|"execIn"| Diff["Differential Controller"]
+    Tick -.->|"execIn"| Art["Articulation Controller"]
 
-On Playback Tick.tick
-    → Differential Controller.execIn
+    Context["ROS 2 Context"] -->|"context"| Sub
 
-On Playback Tick.tick
-    → Articulation Controller.execIn
+    Sub -->|"linearVelocity"| Scale["Scale To/From Stage Units"]
+    Scale -->|"result"| BreakL["Break Linear Vector"]
+    BreakL -->|"x"| Diff
 
-ROS 2 Context.context
-    → ROS 2 Subscribe Twist.context
+    Sub -->|"angularVelocity"| BreakA["Break Angular Vector"]
+    BreakA -->|"z"| Diff
 
-ROS 2 Subscribe Twist.linearVelocity
-    → Scale To/From Stage Units.value
+    Diff -->|"velocityCommand"| Art
 
-Scale To/From Stage Units.result
-    → Break Linear Vector.tuple
-
-Break Linear Vector.x
-    → Differential Controller.linearVelocity
-
-ROS 2 Subscribe Twist.angularVelocity
-    → Break Angular Vector.tuple
-
-Break Angular Vector.z
-    → Differential Controller.angularVelocity
-
-Differential Controller.velocityCommand
-    → Articulation Controller.velocityCommand
-
-Construct Array.array
-    → Articulation Controller.jointNames
+    Left["Constant Token\nwheel_left_joint"] -->|"value"| Arr["Construct Array"]
+    Right["Constant Token\nwheel_right_joint"] -->|"value"| Arr
+    Arr -->|"array"| Art
 ```
 
 ## C11. Test the drive graph
