@@ -7,6 +7,20 @@ date: 2026-09-12
 classes: wide
 ---
 
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  mermaid.initialize({ startOnLoad: false, theme: "default" });
+  document.querySelectorAll("pre > code.language-mermaid").forEach(function (code) {
+    var pre = code.parentElement;
+    var div = document.createElement("div");
+    div.className = "mermaid";
+    div.textContent = code.textContent;
+    pre.replaceWith(div);
+  });
+  mermaid.run();
+});
+</script>
 
 **Instructor:** Prof. [Sangram Redkar](mailto:Sangram.Redkar@asu.edu)
 
@@ -19,23 +33,24 @@ classes: wide
 
 ## 1. Lab Overview
 
-In this laboratory, you will convert a prepared TurtleBot 3 simulation model into a ROS 2-enabled mobile robot.
+This laboratory transforms a prepared TurtleBot 3 simulation model into a ROS 2-enabled mobile robot. You will progressively add and validate the core capabilities needed for autonomous operation in simulation.
 
-You will progressively add and verify:
+### At a glance
 
-1. ROS 2 simulation time
-2. A ROS 2 velocity command interface
-3. Differential-drive control
-4. A 2D RTX lidar sensor
-5. A camera sensor
-6. Odometry
-7. The robot TF tree
-8. ROS 2 topic communication
-9. ROS 2 Quality of Service settings
-10. Map-based localization using AMCL
-11. Nav2 path planning and navigation
+By the end of the lab, you will have built a working ROS 2 mobile robot in Isaac Sim and verified that it can:
 
-You will construct the system one layer at a time. At the end of the laboratory, the simulated TurtleBot must receive a navigation goal in RViz2 and drive to the desired location.
+- publish simulation time on `/clock`
+- receive velocity commands on `/cmd_vel`
+- drive with differential-wheel control
+- publish LIDAR data on `/scan`
+- publish camera data on `/camera/image_raw`
+- publish odometry and TF transforms
+- localize using AMCL and a saved map
+- navigate to a goal using Nav2
+
+The system is assembled step by step, and each section ends with a validation checkpoint to confirm that the robot is functioning correctly.
+
+> Important: This lab is intentionally structured as a layered robotics integration exercise. Complete each section in order, and do not proceed until the current checkpoint is working.
 
 The required system architecture is:
 
@@ -603,6 +618,18 @@ ROS 2 nodes must use Isaac Sim simulation time. You will create a graph that pub
 
 Do not continue until `/clock` is working.
 
+```mermaid
+flowchart LR
+    Tick["On Playback Tick"]
+    Time["Isaac Read Simulation Time"]
+    Context["ROS 2 Context"]
+    Clock["ROS 2 Publish Clock"]
+
+    Tick --> Clock
+    Time --> Clock
+    Context --> Clock
+```
+
 ## B1. Select the graph parent
 
 In the Stage panel, select:
@@ -861,16 +888,18 @@ The command will be converted into wheel velocities using a differential-drive c
 
 The required signal flow is:
 
-```text
-/cmd_vel
-    ↓
-ROS 2 Subscribe Twist
-    ↓
-Differential Controller
-    ↓
-Articulation Controller
-    ↓
-TurtleBot wheel joints
+```mermaid
+flowchart LR
+    Cmd["/cmd_vel"]
+    Twist["ROS 2 Subscribe Twist"]
+    Diff["Differential Controller"]
+    Articulation["Articulation Controller"]
+    Wheels["TurtleBot wheel joints"]
+
+    Cmd --> Twist
+    Twist --> Diff
+    Diff --> Articulation
+    Articulation --> Wheels
 ```
 
 The differential-drive parameters are:
@@ -1401,6 +1430,18 @@ base_scan
 The official Isaac Sim RTX lidar tutorial is available at:
 
 [Isaac Sim 6.0.1 RTX Lidar Sensors](https://docs.isaacsim.omniverse.nvidia.com/6.0.1/ros2_tutorials/tutorial_ros2_rtx_lidar.html)
+
+```mermaid
+flowchart LR
+    Lidar["RTX Lidar"]
+    Render["Render Product"]
+    Helper["ROS 2 RTX Lidar Helper"]
+    Scan["/scan"]
+
+    Lidar --> Render
+    Render --> Helper
+    Helper --> Scan
+```
 
 ## D1. Stop simulation
 
@@ -2256,6 +2297,20 @@ The official Isaac Sim transform and odometry tutorial is available at:
 
 [Isaac Sim 6.0.1 ROS 2 Transform Trees and Odometry](https://docs.isaacsim.omniverse.nvidia.com/6.0.1/ros2_tutorials/tutorial_ros2_tf.html)
 
+```mermaid
+flowchart TD
+    OdomNode["Isaac Compute Odometry"]
+    OdomTopic["/odom"]
+    RawTF["odom to base_footprint TF"]
+    LinkTF["robot link TF tree"]
+    TFTopic["/tf"]
+
+    OdomNode --> OdomTopic
+    OdomNode --> RawTF
+    RawTF --> TFTopic
+    LinkTF --> TFTopic
+```
+
 ## F1. Select the robot root
 
 In the Stage panel, select:
@@ -2881,6 +2936,22 @@ Save:
 
 ```text
 ~/RAS545/Lab3/work/Lab3_06_qos_verified.usda
+```
+
+---
+
+```mermaid
+flowchart LR
+    Map["Map Server"]
+    AMCL["AMCL"]
+    TF["map to odom"]
+    Nav2["Nav2"]
+    Cmd["/cmd_vel"]
+
+    Map --> AMCL
+    AMCL --> TF
+    TF --> Nav2
+    Nav2 --> Cmd
 ```
 
 ---
@@ -4227,5 +4298,3 @@ Before submitting, verify every item.
 - [ ] Code and configuration files submitted.
 - [ ] Diagnostic outputs included.
 - [ ] Teaching staff notified for check-off.
-```
-
