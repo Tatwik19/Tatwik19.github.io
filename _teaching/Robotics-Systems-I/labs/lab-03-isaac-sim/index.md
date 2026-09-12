@@ -1,13 +1,12 @@
 ---
-title: "Lab 3: Isaac Sim Installation and First Simulation"
+title: "Lab 3: TurtleBot 3 ROS 2 Integration, Sensors, Localization, and Navigation"
 layout: single
 permalink: /teaching/Robotics-Systems-I/labs/lab-03-isaac-sim/
 author_profile: true
+date: 2026-09-12
+classes: wide
 ---
 
-# RAS 545 Laboratory
-
-## Lab 3: TurtleBot 3 ROS 2 Integration, Sensors, Localization, and Navigation
 
 **Instructor:** Prof. [Sangram Redkar](mailto:Sangram.Redkar@asu.edu)
 
