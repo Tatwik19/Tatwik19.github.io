@@ -1,7 +1,8 @@
 ---
-title: "Lab 3: TurtleBot 3 ROS 2 Integration, Sensors, Localization, and Navigation"
+title: "Lab 3: TurtleBot 3 ROS2 Integration, Sensors, Localization, and Navigation"
 layout: single
 permalink: /teaching/Robotics-Systems-I/labs/lab-03-isaac-sim/
+date: 2026-09-12
 author_profile: false
 classes: wide
 ---
@@ -20,6 +21,17 @@ document.addEventListener("DOMContentLoaded", function () {
   mermaid.run();
 });
 </script>
+<style>
+@media print {
+  .mermaid,
+  pre,
+  table,
+  blockquote {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+</style>
 
 **Instructor:** Prof. [Sangram Redkar](mailto:Sangram.Redkar@asu.edu)
 
@@ -32,11 +44,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
 ## 1. Lab Overview
 
-This laboratory transforms a prepared TurtleBot 3 simulation model into a ROS 2-enabled mobile robot. You will progressively add and validate the core capabilities needed for autonomous operation in simulation.
+This laboratory transforms a prepared TurtleBot 3 simulation model into a ROS2-enabled mobile robot. You will progressively add and validate the core capabilities needed for autonomous operation in simulation.
 
 ### At a glance
 
-By the end of this lab, you will build a complete ROS 2 mobile robot in Isaac Sim and verify that it can:
+By the end of this lab, you will build a complete ROS2 mobile robot in Isaac Sim and verify that it can:
 
 - publish simulation time on `/clock`
 - receive velocity commands on `/cmd_vel`
@@ -53,7 +65,7 @@ The system is assembled incrementally, and each section ends with a validation c
 
 After completing this laboratory, you will be able to:
 
-- configure and validate real-time ROS 2 communication in Isaac Sim
+- configure and validate real-time ROS2 communication in Isaac Sim
 - build a differential-drive mobile robot controller
 - publish sensor data from a simulated LIDAR and camera
 - publish odometry and TF information for robot localization
@@ -72,9 +84,9 @@ Isaac Sim
 ├── TurtleBot articulation
 ├── Camera sensor
 ├── RTX lidar sensor
-├── ROS 2 Action Graphs
+├── ROS2 Action Graphs
 │
-└── ROS 2
+└── ROS2
     ├── /clock
     ├── /cmd_vel
     ├── /odom
@@ -144,8 +156,8 @@ You will begin with the supplied TurtleBot USD file. The supplied file contains:
 
 The supplied file intentionally does not contain:
 
-- ROS 2 Action Graphs
-- A ROS 2 clock publisher
+- ROS2 Action Graphs
+- A ROS2 clock publisher
 - A velocity command subscriber
 - A lidar sensor
 - A camera mounted on the robot
@@ -169,7 +181,7 @@ By the end of this laboratory, you will be able to:
 - Verify that a robot has physics and articulation settings.
 - Create an Isaac Sim Action Graph.
 - Add and connect OmniGraph nodes.
-- Create a ROS 2 context.
+- Create a ROS2 context.
 - Publish Isaac Sim simulation time to `/clock`.
 - Subscribe to `geometry_msgs/msg/Twist`.
 - Convert linear and angular velocity commands into wheel velocities.
@@ -180,10 +192,10 @@ By the end of this laboratory, you will be able to:
 - Publish RGB camera images and camera information.
 - Publish nav_msgs/msg/Odometry.
 - Publish and inspect TF transforms.
-- Understand ROS 2 Quality of Service.
+- Understand ROS2 Quality of Service.
 - Run map-based localization with AMCL.
 - Use RViz2 to set an initial pose and send a navigation goal.
-- Use ROS 2 diagnostic commands to identify configuration errors.
+- Use ROS2 diagnostic commands to identify configuration errors.
 
 ---
 
@@ -194,7 +206,7 @@ By the end of this laboratory, you will be able to:
 The computer must have the following software installed and validated:
 
 - Ubuntu Linux
-- ROS 2 Humble
+- ROS2 Humble
 - Isaac Sim 6.0.1
 - RViz2
 - Nav2
@@ -208,19 +220,19 @@ Open a terminal and run:
 source /opt/ros/humble/setup.bash
 ```
 
-Set the ROS 2 domain to zero:
+Set the ROS2 domain to zero:
 
 ```bash
 export ROS_DOMAIN_ID=0
 ```
 
-Verify ROS 2:
+Verify ROS2:
 
 ```bash
 ros2 --version
 ```
 
-Verify that ROS 2 can discover itself:
+Verify that ROS2 can discover itself:
 
 ```bash
 ros2 topic list
@@ -392,7 +404,7 @@ Important values include:
 | Wheel distance | Distance between wheel centers | `0.16 m` |
 | Wheel radius | Wheel radius | `0.025 m` |
 
-Do not remove or recreate the robot physics. The purpose of this laboratory is ROS 2 integration, not reconstruction of the TurtleBot model.
+Do not remove or recreate the robot physics. The purpose of this laboratory is ROS2 integration, not reconstruction of the TurtleBot model.
 
 ---
 
@@ -400,7 +412,7 @@ Do not remove or recreate the robot physics. The purpose of this laboratory is R
 
 ## A1. Open Isaac Sim
 
-First source ROS 2:
+First source ROS2:
 
 ```bash
 source /opt/ros/humble/setup.bash
@@ -577,7 +589,7 @@ Repeat for:
 /turtlebot3_burger/wheel_right_link
 ```
 
-## A5. Test the simulation without ROS 2
+## A5. Test the simulation without ROS2
 
 Press the Play button at the top of Isaac Sim.
 
@@ -617,11 +629,11 @@ Do not overwrite the original starter file.
 
 ---
 
-# Part B: Create the ROS 2 Clock Graph
+# Part B: Create the ROS2 Clock Graph
 
 ## Objective
 
-ROS 2 nodes must use Isaac Sim simulation time. You will create a graph that publishes simulation time on:
+ROS2 nodes must use Isaac Sim simulation time. You will create a graph that publishes simulation time on:
 
 ```text
 /clock
@@ -630,6 +642,8 @@ ROS 2 nodes must use Isaac Sim simulation time. You will create a graph that pub
 Do not continue until `/clock` is working.
 
 ## How to Read an Isaac Sim Action Graph
+
+> **Node-name convention:** In Isaac Sim 6.0.1, ROS bridge node names use `ROS2` without a space. For example, search for `ROS2 Context`, not `ROS 2 Context`. The surrounding explanation may continue to use the normal phrase “ROS 2.”
 
 An Action Graph contains two different types of connections.
 
@@ -641,7 +655,7 @@ A node may have the correct data connection but still not operate if its executi
 ```mermaid
 flowchart TD
     Tick["On Playback Tick"] -.->|"EXECUTION signal"| Publish["Publisher or Controller"]
-    Context["ROS 2 Context"] -->|"context handle"| Publish
+    Context["ROS2 Context"] -->|"context handle"| Publish
     Data["Sensor or simulation data"] -->|"DATA"| Publish
     Time["Isaac Read Simulation Time"] -->|"timestamp"| Publish
 ```
@@ -650,11 +664,11 @@ Read every graph in this order:
 
 1. Find the `On Playback Tick` node.
 2. Follow the dashed execution arrows.
-3. Find the `ROS 2 Context` node.
+3. Find the `ROS2 Context` node.
 4. Follow the context connection.
 5. Follow the solid data arrows.
 6. Check every node's Property panel.
-7. Press Play and validate the result in ROS 2.
+7. Press Play and validate the result in ROS2.
 
 > **Important:** A graph is not complete when the nodes are merely present. A graph is complete only when the nodes, properties, and connections are correct.
 
@@ -662,26 +676,26 @@ Read every graph in this order:
 
 ```mermaid
 flowchart TD
-    Tick["On Playback Tick"] -.->|"execIn"| Clock["ROS 2 Publish Clock"]
+    Tick["On Playback Tick"] -.->|"execIn"| Clock["ROS2 Publish Clock"]
     Time["Isaac Read Simulation Time"] -->|"timeStamp"| Clock
-    Context["ROS 2 Context"] -->|"context"| Clock
-    Clock -->|"/clock"| ROS["ROS 2 network"]
+    Context["ROS2 Context"] -->|"context"| Clock
+    Clock -->|"/clock"| ROS["ROS2 network"]
 ```
 
 ### Clock Graph: Required Port Connections
 
 | Source node | Output port | Destination node | Input port | Connection type |
 |---|---|---|---|---|
-| `On Playback Tick` | `tick` | `ROS 2 Publish Clock` | `execIn` | Execution |
-| `ROS 2 Context` | `context` | `ROS 2 Publish Clock` | `context` | Data |
-| `Isaac Read Simulation Time` | `simulationTime` | `ROS 2 Publish Clock` | `timeStamp` | Data |
+| `On Playback Tick` | `tick` | `ROS2 Publish Clock` | `execIn` | Execution |
+| `ROS2 Context` | `context` | `ROS2 Publish Clock` | `context` | Data |
+| `Isaac Read Simulation Time` | `simulationTime` | `ROS2 Publish Clock` | `timeStamp` | Data |
 
 The final graph must visually resemble:
 
 ```mermaid
 flowchart TD
-    Tick["On Playback Tick"] -.->|"1. execution"| Clock["ROS 2 Publish Clock"]
-    Context["ROS 2 Context"] -->|"2. context"| Clock
+    Tick["On Playback Tick"] -.->|"1. execution"| Clock["ROS2 Publish Clock"]
+    Context["ROS2 Context"] -->|"2. context"| Clock
     Time["Isaac Read Simulation Time"] -->|"3. timestamp"| Clock
 ```
 
@@ -734,9 +748,9 @@ The expected graph path is:
 In the Action Graph node search panel, search for and add these nodes:
 
 1. `On Playback Tick`
-2. `ROS 2 Context`
+2. `ROS2 Context`
 3. `Isaac Read Simulation Time`
-4. `ROS 2 Publish Clock`
+4. `ROS2 Publish Clock`
 
 Place the nodes from left to right in this order:
 
@@ -745,7 +759,7 @@ On Playback Tick
         │
         ├── Isaac Read Simulation Time
         │
-        └── ROS 2 Publish Clock
+        └── ROS2 Publish Clock
 ```
 
 Use the following recommended layout. The exact pixel position is not required, but keeping the graph arranged this way makes it easier to debug.
@@ -753,9 +767,9 @@ Use the following recommended layout. The exact pixel position is not required, 
 ```text
 Left column                  Middle column             Right column
 
-On Playback Tick  ────────▶  ROS 2 Publish Clock
+On Playback Tick  ────────▶  ROS2 Publish Clock
                                       ▲
-ROS 2 Context  ──────────────────────┘
+ROS2 Context  ──────────────────────┘
                                       ▲
 Isaac Read Simulation Time ───────────┘
 ```
@@ -765,18 +779,18 @@ Recommended approximate graph-editor positions:
 | Node | Approximate X position | Approximate Y position |
 |---|---:|---:|
 | `On Playback Tick` | `50` | `100` |
-| `ROS 2 Context` | `50` | `250` |
+| `ROS2 Context` | `50` | `250` |
 | `Isaac Read Simulation Time` | `300` | `400` |
-| `ROS 2 Publish Clock` | `650` | `200` |
+| `ROS2 Publish Clock` | `650` | `200` |
 
 These positions are only for visual organization. The graph will function correctly at other positions.
 
-## B4. Configure the ROS 2 Context node
+## B4. Configure the ROS2 Context node
 
 Select:
 
 ```text
-ROS 2 Context
+ROS2 Context
 ```
 
 In the Property panel, configure:
@@ -792,14 +806,14 @@ If the field is named `useDomainIDEnvVar`, set it to:
 False
 ```
 
-The ROS 2 Context node must provide its context output to the ROS 2 Publish Clock node.
+The ROS2 Context node must provide its context output to the ROS2 Publish Clock node.
 
 Connect:
 
 ```text
-ROS 2 Context.outputs:context
+ROS2 Context.outputs:context
     →
-ROS 2 Publish Clock.inputs:context
+ROS2 Publish Clock.inputs:context
 ```
 
 ## B5. Configure Isaac Read Simulation Time
@@ -832,12 +846,12 @@ The output should be:
 simulationTime
 ```
 
-## B6. Configure the ROS 2 Publish Clock node
+## B6. Configure the ROS2 Publish Clock node
 
 Select:
 
 ```text
-ROS 2 Publish Clock
+ROS2 Publish Clock
 ```
 
 Set:
@@ -845,7 +859,6 @@ Set:
 ```text
 Topic Name = /clock
 Queue Size = 10
-Use System Time = False
 ```
 
 If `qosProfile` is available, leave it at its default value.
@@ -855,7 +868,7 @@ Connect:
 ```text
 On Playback Tick.outputs:tick
     →
-ROS 2 Publish Clock.inputs:execIn
+ROS2 Publish Clock.inputs:execIn
 ```
 
 Connect:
@@ -863,20 +876,20 @@ Connect:
 ```text
 Isaac Read Simulation Time.outputs:simulationTime
     →
-ROS 2 Publish Clock.inputs:timeStamp
+ROS2 Publish Clock.inputs:timeStamp
 ```
 
 The final connections must include:
 
 ```text
 On Playback Tick.tick
-    → ROS 2 Publish Clock.execIn
+    → ROS2 Publish Clock.execIn
 
-ROS 2 Context.context
-    → ROS 2 Publish Clock.context
+ROS2 Context.context
+    → ROS2 Publish Clock.context
 
 Isaac Read Simulation Time.simulationTime
-    → ROS 2 Publish Clock.timeStamp
+    → ROS2 Publish Clock.timeStamp
 ```
 
 ## B7. Test `/clock`
@@ -925,10 +938,10 @@ If `/clock` does not appear:
 
 1. Confirm Isaac Sim is playing.
 2. Confirm the graph path is `/World/ROS_Clock`.
-3. Confirm the ROS 2 Context is connected.
-4. Confirm `On Playback Tick.tick` is connected to `ROS 2 Publish Clock.execIn`.
+3. Confirm the ROS2 Context is connected.
+4. Confirm `On Playback Tick.tick` is connected to `ROS2 Publish Clock.execIn`.
 5. Confirm the topic name is exactly `/clock`.
-6. Confirm the terminal sourced ROS 2 Humble.
+6. Confirm the terminal sourced ROS2 Humble.
 
 ### Validation checkpoint B
 
@@ -940,12 +953,14 @@ ros2 topic echo /clock --once
 
 #### Evidence to Capture
 
+<!-- ![Annotated ROS2 clock Action Graph](/assets/images/lab-03/ros-clock-graph.png) -->
+
 Take one screenshot showing:
 
 - The complete `ROS_Clock` Action Graph.
 - All four nodes.
 - All three connections.
-- The Property panel for `ROS 2 Publish Clock`.
+- The Property panel for `ROS2 Publish Clock`.
 - The topic name `/clock`.
 
 The screenshot must be readable. Do not submit a screenshot in which the node names or wires cannot be read.
@@ -962,7 +977,7 @@ Save the stage as:
 
 ## Objective
 
-You will create a ROS 2 subscriber for:
+You will create a ROS2 subscriber for:
 
 ```text
 /cmd_vel
@@ -981,14 +996,14 @@ The required signal flow is:
 ```mermaid
 flowchart TD
     Cmd["/cmd_vel<br/>geometry_msgs/msg/Twist"]
-    Sub["ROS 2 Subscribe Twist"]
+    Sub["ROS2 Subscribe Twist"]
     Linear["linearVelocity"]
     Angular["angularVelocity"]
     Scale["Scale To/From Stage Units"]
     BreakLinear["Break 3 Vector<br/>linear"]
     BreakAngular["Break 3 Vector<br/>angular"]
     Diff["Differential Controller"]
-    Array["Construct Array<br/>wheel joint names"]
+    Array["Make Array<br/>wheel joint names"]
     Art["Articulation Controller"]
     Wheels["wheel_left_joint<br/>wheel_right_joint"]
 
@@ -1007,7 +1022,7 @@ The graph also requires an execution signal:
 
 ```mermaid
 flowchart TD
-    Tick["On Playback Tick"] -.->|"execIn"| Sub["ROS 2 Subscribe Twist"]
+    Tick["On Playback Tick"] -.->|"execIn"| Sub["ROS2 Subscribe Twist"]
     Tick -.->|"execIn"| Diff["Differential Controller"]
     Tick -.->|"execIn"| Art["Articulation Controller"]
 ```
@@ -1072,16 +1087,18 @@ The expected graph path is:
 Add the following nodes:
 
 1. `On Playback Tick`
-2. `ROS 2 Context`
-3. `ROS 2 Subscribe Twist`
+2. `ROS2 Context`
+3. `ROS2 Subscribe Twist`
 4. `Scale To/From Stage Units`
 5. `Break 3 Vector`
 6. `Break 3 Vector`
 7. `Differential Controller`
 8. `Constant Token`
 9. `Constant Token`
-10. `Construct Array`
+10. `Make Array`
 11. `Articulation Controller`
+
+> **Version note:** Search for `Make Array`. If your Isaac Sim installation displays the equivalent node as `Construct Array`, use that node but rename the node instance to `make_array` so that all port references remain consistent.
 
 Rename the nodes so they are easy to identify:
 
@@ -1090,12 +1107,12 @@ on_playback_tick
 ros2_context
 ros2_subscribe_twist
 scale_linear_velocity
-break_angular_velocity
 break_linear_velocity
+break_angular_velocity
 differential_controller
 constant_left_joint
 constant_right_joint
-construct_joint_array
+make_array
 articulation_controller
 ```
 
@@ -1103,23 +1120,23 @@ If Isaac Sim automatically assigns different names, that is acceptable. The node
 
 ### Drive Graph Connection Table
 
-Use this table while connecting wires. Connect one row at a time and check it before continuing.
+Connect one row at a time. After each connection, verify that the wire remains attached to the correct port.
 
 | Step | Source node | Output port | Destination node | Input port |
 |---:|---|---|---|---|
-| 1 | `On Playback Tick` | `tick` | `ROS 2 Subscribe Twist` | `execIn` |
-| 2 | `On Playback Tick` | `tick` | `Differential Controller` | `execIn` |
-| 3 | `On Playback Tick` | `tick` | `Articulation Controller` | `execIn` |
-| 4 | `ROS 2 Context` | `context` | `ROS 2 Subscribe Twist` | `context` |
-| 5 | `ROS 2 Subscribe Twist` | `linearVelocity` | `Scale To/From Stage Units` | `value` |
-| 6 | `Scale To/From Stage Units` | `result` | `Break Linear Vector` | `tuple` |
-| 7 | `Break Linear Vector` | `x` | `Differential Controller` | `linearVelocity` |
-| 8 | `ROS 2 Subscribe Twist` | `angularVelocity` | `Break Angular Vector` | `tuple` |
-| 9 | `Break Angular Vector` | `z` | `Differential Controller` | `angularVelocity` |
-| 10 | `Differential Controller` | `velocityCommand` | `Articulation Controller` | `velocityCommand` |
-| 11 | `Constant Token: left` | `value` | `Construct Array` | `input0` |
-| 12 | `Constant Token: right` | `value` | `Construct Array` | `input1` |
-| 13 | `Construct Array` | `array` | `Articulation Controller` | `jointNames` |
+| 1 | `on_playback_tick` | `outputs:tick` | `ros2_subscribe_twist` | `inputs:execIn` |
+| 2 | `on_playback_tick` | `outputs:tick` | `differential_controller` | `inputs:execIn` |
+| 3 | `on_playback_tick` | `outputs:tick` | `articulation_controller` | `inputs:execIn` |
+| 4 | `ros2_context` | `outputs:context` | `ros2_subscribe_twist` | `inputs:context` |
+| 5 | `ros2_subscribe_twist` | `outputs:linearVelocity` | `scale_linear_velocity` | `inputs:value` |
+| 6 | `scale_linear_velocity` | `outputs:result` | `break_linear_velocity` | `inputs:tuple` |
+| 7 | `break_linear_velocity` | `outputs:x` | `differential_controller` | `inputs:linearVelocity` |
+| 8 | `ros2_subscribe_twist` | `outputs:angularVelocity` | `break_angular_velocity` | `inputs:tuple` |
+| 9 | `break_angular_velocity` | `outputs:z` | `differential_controller` | `inputs:angularVelocity` |
+| 10 | `differential_controller` | `outputs:velocityCommand` | `articulation_controller` | `inputs:velocityCommand` |
+| 11 | `constant_left_joint` | `outputs:value` | `make_array` | `inputs:input0` |
+| 12 | `constant_right_joint` | `outputs:value` | `make_array` | `inputs:input1` |
+| 13 | `make_array` | `outputs:array` | `articulation_controller` | `inputs:jointNames` |
 
 > **Common error:** Connect `angularVelocity.z`, not `angularVelocity.x` or `angularVelocity.y`.
 
@@ -1127,9 +1144,9 @@ Use this table while connecting wires. Connect one row at a time and check it be
 
 > **Common error:** The wheel order must be `wheel_left_joint` followed by `wheel_right_joint`.
 
-## C4. Configure the ROS 2 Context
+## C4. Configure the ROS2 Context
 
-Select the ROS 2 Context node.
+Select the ROS2 Context node.
 
 Set:
 
@@ -1141,9 +1158,9 @@ Use Domain ID Environment Variable = Disabled
 Connect:
 
 ```text
-ROS 2 Context.outputs:context
+ROS2 Context.outputs:context
     →
-ROS 2 Subscribe Twist.inputs:context
+ROS2 Subscribe Twist.inputs:context
 ```
 
 ## C5. Configure the Twist subscriber
@@ -1151,7 +1168,7 @@ ROS 2 Subscribe Twist.inputs:context
 Select:
 
 ```text
-ROS 2 Subscribe Twist
+ROS2 Subscribe Twist
 ```
 
 Set:
@@ -1181,7 +1198,7 @@ Connect:
 ```text
 On Playback Tick.outputs:tick
     →
-ROS 2 Subscribe Twist.inputs:execIn
+ROS2 Subscribe Twist.inputs:execIn
 ```
 
 Do not connect the subscriber execution output to the differential controller execution input. The differential controller must execute every simulation frame.
@@ -1197,7 +1214,7 @@ break_linear_velocity
 Connect:
 
 ```text
-ROS 2 Subscribe Twist.outputs:linearVelocity
+ROS2 Subscribe Twist.outputs:linearVelocity
     →
 Scale To/From Stage Units.inputs:value
 ```
@@ -1205,7 +1222,7 @@ Scale To/From Stage Units.inputs:value
 Set the scale node conversion to:
 
 ```text
-Convert to Stage Units
+Convert to stage units
 ```
 
 Connect:
@@ -1245,7 +1262,7 @@ break_angular_velocity
 Connect:
 
 ```text
-ROS 2 Subscribe Twist.outputs:angularVelocity
+ROS2 Subscribe Twist.outputs:angularVelocity
     →
 break_angular_velocity.inputs:tuple
 ```
@@ -1338,7 +1355,7 @@ Connect:
 ```text
 constant_left_joint.outputs:value
     →
-Construct Array.inputs:input0
+make_array.inputs:input0
 ```
 
 Connect:
@@ -1346,13 +1363,13 @@ Connect:
 ```text
 constant_right_joint.outputs:value
     →
-Construct Array.inputs:input1
+make_array.inputs:input1
 ```
 
 Select:
 
 ```text
-Construct Array
+Make Array
 ```
 
 Set:
@@ -1365,9 +1382,9 @@ Array Type = token[]
 Connect:
 
 ```text
-Construct Array.outputs:array
+make_array.outputs:array
     →
-Articulation Controller.inputs:jointNames
+articulation_controller.inputs:jointNames
 ```
 
 ## C10. Configure the Articulation Controller
@@ -1410,11 +1427,11 @@ The final drive graph must contain these connections:
 
 ```mermaid
 flowchart TD
-    Tick["On Playback Tick"] -.->|"execIn"| Sub["ROS 2 Subscribe Twist"]
+    Tick["On Playback Tick"] -.->|"execIn"| Sub["ROS2 Subscribe Twist"]
     Tick -.->|"execIn"| Diff["Differential Controller"]
     Tick -.->|"execIn"| Art["Articulation Controller"]
 
-    Context["ROS 2 Context"] -->|"context"| Sub
+    Context["ROS2 Context"] -->|"context"| Sub
 
     Sub -->|"linearVelocity"| Scale["Scale To/From Stage Units"]
     Scale -->|"result"| BreakL["Break Linear Vector"]
@@ -1425,7 +1442,7 @@ flowchart TD
 
     Diff -->|"velocityCommand"| Art
 
-    Left["Constant Token\nwheel_left_joint"] -->|"value"| Arr["Construct Array"]
+    Left["Constant Token\nwheel_left_joint"] -->|"value"| Arr["Make Array"]
     Right["Constant Token\nwheel_right_joint"] -->|"value"| Arr
     Arr -->|"array"| Art
 ```
@@ -1440,15 +1457,15 @@ Before pressing Play, compare your graph with this structure:
 flowchart TD
     Tick["On Playback Tick"]
 
-    Context["ROS 2 Context"]
-    Twist["ROS 2 Subscribe Twist"]
+    Context["ROS2 Context"]
+    Twist["ROS2 Subscribe Twist"]
     Scale["Scale To/From Stage Units"]
     LinearBreak["Break 3 Vector<br/>linear"]
     AngularBreak["Break 3 Vector<br/>angular"]
     Diff["Differential Controller"]
     Left["Constant Token<br/>wheel_left_joint"]
     Right["Constant Token<br/>wheel_right_joint"]
-    Array["Construct Array"]
+    Array["Make Array"]
     Art["Articulation Controller"]
 
     Tick -.-> Twist
@@ -1565,6 +1582,8 @@ The robot must:
 
 #### Evidence to Capture
 
+<!-- ![Annotated ROS2 drive Action Graph](/assets/images/lab-03/ros-drive-graph.png) -->
+
 Take one screenshot showing:
 
 - The complete `ROS_Drive` graph.
@@ -1617,8 +1636,8 @@ flowchart TD
     Tick["On Playback Tick"] -.->|"exec"| Run["Isaac Run One Simulation Frame"]
     Run -->|"step"| Product["Isaac Create Render Product"]
     Lidar["Lidar2D<br/>/turtlebot3_burger/base_scan/Lidar2D"] -->|"cameraPrim"| Product
-    Product -->|"renderProductPath"| Helper["ROS 2 RTX Lidar Helper"]
-    Context["ROS 2 Context"] -->|"context"| Helper
+    Product -->|"renderProductPath"| Helper["ROS2 RTX Lidar Helper"]
+    Context["ROS2 Context"] -->|"context"| Helper
     Product -->|"execOut"| Helper
     Helper -->|"/scan"| Scan["sensor_msgs/msg/LaserScan"]
 ```
@@ -1630,9 +1649,10 @@ Type = laser_scan
 Topic Name = /scan
 Frame ID = base_scan
 Enabled = True
-Use System Time = False
 Queue Size = 10
 ```
+
+If the helper exposes a `Use System Time` property, leave it disabled unless the instructor explicitly instructs otherwise.
 
 ## D1. Stop simulation
 
@@ -1790,13 +1810,13 @@ In Isaac Sim 6.0, the sensor tick rate controls the publish rate. The older `fra
 The lidar system contains two separate parts:
 
 1. The physical or simulated sensor prim.
-2. The ROS 2 Action Graph that publishes the sensor data.
+2. The ROS2 Action Graph that publishes the sensor data.
 
 ```mermaid
 flowchart TD
     Sensor["/turtlebot3_burger/base_scan/Lidar2D"]
     Product["Isaac Create Render Product"]
-    Helper["ROS 2 RTX Lidar Helper"]
+    Helper["ROS2 RTX Lidar Helper"]
     Topic["/scan"]
     Frame["frame_id: base_scan"]
 
@@ -1855,10 +1875,10 @@ The expected graph path is:
 Add:
 
 1. `On Playback Tick`
-2. `ROS 2 Context`
+2. `ROS2 Context`
 3. `Isaac Run One Simulation Frame`
 4. `Isaac Create Render Product`
-5. `ROS 2 RTX Lidar Helper`
+5. `ROS2 RTX Lidar Helper`
 
 Arrange them:
 
@@ -1869,12 +1889,14 @@ Isaac Run One Simulation Frame
         ↓
 Isaac Create Render Product
         ↓
-ROS 2 RTX Lidar Helper
+ROS2 RTX Lidar Helper
 ```
 
 ## D8. Configure the lidar graph
 
-Configure the ROS 2 Context:
+<!-- ![Annotated LIDAR graph and sensor properties](/assets/images/lab-03/lidar-graph.png) -->
+
+Configure the ROS2 Context:
 
 ```text
 Domain ID = 0
@@ -1897,15 +1919,16 @@ Height = 480
 
 The exact resolution is not used by the LaserScan message, but these values provide a predictable render-product configuration.
 
-Configure `ROS 2 RTX Lidar Helper`:
+Configure `ROS2 RTX Lidar Helper`:
 
 ```text
 Type = laser_scan
 Topic Name = /scan
 Frame ID = base_scan
 Enabled = True
-Use System Time = False
 ```
+
+If the helper exposes a `Use System Time` property, leave it disabled unless told otherwise.
 
 If `qosProfile` is available, leave it at the default value.
 
@@ -1944,7 +1967,7 @@ Connect:
 ```text
 Isaac Create Render Product.outputs:execOut
     →
-ROS 2 RTX Lidar Helper.inputs:execIn
+ROS2 RTX Lidar Helper.inputs:execIn
 ```
 
 Connect:
@@ -1952,15 +1975,15 @@ Connect:
 ```text
 Isaac Create Render Product.outputs:renderProductPath
     →
-ROS 2 RTX Lidar Helper.inputs:renderProductPath
+ROS2 RTX Lidar Helper.inputs:renderProductPath
 ```
 
 Connect:
 
 ```text
-ROS 2 Context.outputs:context
+ROS2 Context.outputs:context
     →
-ROS 2 RTX Lidar Helper.inputs:context
+ROS2 RTX Lidar Helper.inputs:context
 ```
 
 Set the render product camera prim exactly to:
@@ -2092,7 +2115,7 @@ Take one screenshot showing:
 - The `Lidar2D` prim under `base_scan`.
 - The lidar transform values.
 - The complete `ROS_Lidar2D` graph.
-- The ROS 2 RTX Lidar Helper properties.
+- The ROS2 RTX Lidar Helper properties.
 - `/scan` visible in RViz2.
 
 Save:
@@ -2122,11 +2145,11 @@ Camera_1
 
 The official Isaac Sim camera tutorial is available at:
 
-[Isaac Sim 6.0.1 ROS 2 Cameras](https://docs.isaacsim.omniverse.nvidia.com/6.0.1/ros2_tutorials/tutorial_ros2_camera.html)
+[Isaac Sim 6.0.1 ROS2 Cameras](https://docs.isaacsim.omniverse.nvidia.com/6.0.1/ros2_tutorials/tutorial_ros2_camera.html)
 
 ### Camera Graph Overview
 
-The camera graph has one render-product pipeline and two ROS 2 outputs.
+The camera graph has one render-product pipeline and two ROS2 outputs.
 
 ```mermaid
 flowchart TD
@@ -2134,24 +2157,24 @@ flowchart TD
     Run -->|"step"| Product["Isaac Create Render Product"]
     Camera["Camera_1<br/>/turtlebot3_burger/base_footprint/Camera_1"] -->|"cameraPrim"| Product
 
-    Product -->|"renderProductPath"| RGB["ROS 2 Camera Helper"]
-    Product -->|"renderProductPath"| Info["ROS 2 Camera Info Helper"]
+    Product -->|"renderProductPath"| RGB["ROS2 Camera Helper"]
+    Product -->|"renderProductPath"| Info["ROS2 Camera Info Helper"]
 
-    Context["ROS 2 Context"] -->|"context"| RGB
+    Context["ROS2 Context"] -->|"context"| RGB
     Context -->|"context"| Info
 
     RGB -->|"/camera/image_raw"| Image["sensor_msgs/msg/Image"]
     Info -->|"/camera/camera_info"| CameraInfo["sensor_msgs/msg/CameraInfo"]
 ```
 
-The camera graph must produce two independent ROS 2 topics:
+The camera graph must produce two independent ROS2 topics:
 
 ```text
 /camera/image_raw
 /camera/camera_info
 ```
 
-> **Important:** The `ROS 2 Camera Helper` and `ROS 2 Camera Info Helper` are separate nodes. Each must receive the render-product path.
+> **Important:** The `ROS2 Camera Helper` and `ROS2 Camera Info Helper` are separate nodes. Each must receive the render-product path.
 
 ## E1. Stop simulation
 
@@ -2269,10 +2292,16 @@ Clipping Range Far = 100.0 m
 
 If the camera exposes an aperture setting, leave the default value.
 
-If the camera exposes a sensor tick-rate property, set:
+If the camera has an `OmniSensorAPI` sensor-rate property, set:
 
 ```text
-Sensor Tick Rate = 10 Hz
+omni:sensor:tickRate = 10 Hz
+```
+
+Do not use `frameSkipCount` to define the camera rate unless specifically instructed by the teaching staff. Leave deprecated or unused rate fields at their default value and verify the actual rate using:
+
+```bash
+ros2 topic hz /camera/image_raw
 ```
 
 ## E6. Create the camera Action Graph
@@ -2312,15 +2341,17 @@ The expected graph path is:
 Add:
 
 1. `On Playback Tick`
-2. `ROS 2 Context`
+2. `ROS2 Context`
 3. `Isaac Run One Simulation Frame`
 4. `Isaac Create Render Product`
-5. `ROS 2 Camera Helper`
-6. `ROS 2 Camera Info Helper`
+5. `ROS2 Camera Helper`
+6. `ROS2 Camera Info Helper`
 
 ## E8. Configure the camera nodes
 
-Configure ROS 2 Context:
+<!-- ![Annotated camera properties and camera graph](/assets/images/lab-03/camera-graph.png) -->
+
+Configure ROS2 Context:
 
 ```text
 Domain ID = 0
@@ -2336,26 +2367,28 @@ Width = 640
 Height = 480
 ```
 
-Configure ROS 2 Camera Helper:
+Configure ROS2 Camera Helper:
 
 ```text
 Type = rgb
 Topic Name = /camera/image_raw
 Frame ID = Camera_1
 Enabled = True
-Use System Time = False
 Queue Size = 10
 ```
 
-Configure ROS 2 Camera Info Helper:
+If the helper exposes a `Use System Time` property, leave it disabled unless told otherwise.
+
+Configure ROS2 Camera Info Helper:
 
 ```text
 Topic Name = /camera/camera_info
 Frame ID = Camera_1
 Enabled = True
-Use System Time = False
 Queue Size = 10
 ```
+
+If the helper exposes a `Use System Time` property, leave it disabled unless told otherwise.
 
 If a node contains a `frameSkipCount` field, leave it at the default value. In Isaac Sim 6.0, the sensor tick rate should be used to control the sensor rate.
 
@@ -2367,12 +2400,12 @@ If a node contains a `frameSkipCount` field, leave it at the default value. In I
 |---|---|---|---|
 | `On Playback Tick` | `tick` | `Isaac Run One Simulation Frame` | `execIn` |
 | `Isaac Run One Simulation Frame` | `step` | `Isaac Create Render Product` | `execIn` |
-| `Isaac Create Render Product` | `execOut` | `ROS 2 Camera Helper` | `execIn` |
-| `Isaac Create Render Product` | `execOut` | `ROS 2 Camera Info Helper` | `execIn` |
-| `Isaac Create Render Product` | `renderProductPath` | `ROS 2 Camera Helper` | `renderProductPath` |
-| `Isaac Create Render Product` | `renderProductPath` | `ROS 2 Camera Info Helper` | `renderProductPath` |
-| `ROS 2 Context` | `context` | `ROS 2 Camera Helper` | `context` |
-| `ROS 2 Context` | `context` | `ROS 2 Camera Info Helper` | `context` |
+| `Isaac Create Render Product` | `execOut` | `ROS2 Camera Helper` | `execIn` |
+| `Isaac Create Render Product` | `execOut` | `ROS2 Camera Info Helper` | `execIn` |
+| `Isaac Create Render Product` | `renderProductPath` | `ROS2 Camera Helper` | `renderProductPath` |
+| `Isaac Create Render Product` | `renderProductPath` | `ROS2 Camera Info Helper` | `renderProductPath` |
+| `ROS2 Context` | `context` | `ROS2 Camera Helper` | `context` |
+| `ROS2 Context` | `context` | `ROS2 Camera Info Helper` | `context` |
 
 > **Checkpoint:** The render-product output must connect to both camera helper nodes.
 
@@ -2397,7 +2430,7 @@ Connect:
 ```text
 Isaac Create Render Product.outputs:execOut
     →
-ROS 2 Camera Helper.inputs:execIn
+ROS2 Camera Helper.inputs:execIn
 ```
 
 Connect:
@@ -2405,7 +2438,7 @@ Connect:
 ```text
 Isaac Create Render Product.outputs:execOut
     →
-ROS 2 Camera Info Helper.inputs:execIn
+ROS2 Camera Info Helper.inputs:execIn
 ```
 
 Connect:
@@ -2413,7 +2446,7 @@ Connect:
 ```text
 Isaac Create Render Product.outputs:renderProductPath
     →
-ROS 2 Camera Helper.inputs:renderProductPath
+ROS2 Camera Helper.inputs:renderProductPath
 ```
 
 Connect:
@@ -2421,23 +2454,23 @@ Connect:
 ```text
 Isaac Create Render Product.outputs:renderProductPath
     →
-ROS 2 Camera Info Helper.inputs:renderProductPath
+ROS2 Camera Info Helper.inputs:renderProductPath
 ```
 
 Connect:
 
 ```text
-ROS 2 Context.outputs:context
+ROS2 Context.outputs:context
     →
-ROS 2 Camera Helper.inputs:context
+ROS2 Camera Helper.inputs:context
 ```
 
 Connect:
 
 ```text
-ROS 2 Context.outputs:context
+ROS2 Context.outputs:context
     →
-ROS 2 Camera Info Helper.inputs:context
+ROS2 Camera Info Helper.inputs:context
 ```
 
 ## E10. Test camera topics
@@ -2516,7 +2549,7 @@ If the image is black:
 1. Verify that Isaac Sim is playing.
 2. Verify that the render product is enabled.
 3. Verify that the camera is facing the environment.
-4. Verify that the ROS 2 Camera Helper type is `rgb`.
+4. Verify that the ROS2 Camera Helper type is `rgb`.
 5. Verify that the topic is `/camera/image_raw`.
 6. Confirm that the camera is not inside the robot mesh.
 
@@ -2589,22 +2622,22 @@ world → odom
 
 The official Isaac Sim transform and odometry tutorial is available at:
 
-[Isaac Sim 6.0.1 ROS 2 Transform Trees and Odometry](https://docs.isaacsim.omniverse.nvidia.com/6.0.1/ros2_tutorials/tutorial_ros2_tf.html)
+[Isaac Sim 6.0.1 ROS2 Transform Trees and Odometry](https://docs.isaacsim.omniverse.nvidia.com/6.0.1/ros2_tutorials/tutorial_ros2_tf.html)
 
 ```mermaid
 flowchart TD
     Tick["On Playback Tick"] -.->|"exec"| ComputeOdom["Isaac Compute Odometry"]
 
-    ComputeOdom -->|"position<br/>orientation<br/>velocities"| Odom["ROS 2 Publish Odometry"]
-    ComputeOdom -->|"position<br/>orientation"| RawTF["ROS 2 Publish Raw Transform Tree"]
+    ComputeOdom -->|"position<br/>orientation<br/>velocities"| Odom["ROS2 Publish Odometry"]
+    ComputeOdom -->|"position<br/>orientation"| RawTF["ROS2 Publish Raw Transform Tree"]
 
-    ComputeTF["Isaac Compute Transform Tree"] -->|"robot link transforms"| LinkTF["ROS 2 Publish Transform Tree"]
+    ComputeTF["Isaac Compute Transform Tree"] -->|"robot link transforms"| LinkTF["ROS2 Publish Transform Tree"]
 
     Odom -->|"/odom"| OdomTopic["nav_msgs/msg/Odometry"]
     RawTF -->|"odom → base_footprint"| TF["/tf"]
     LinkTF -->|"base_footprint → links"| TF
 
-    Context["ROS 2 Context"] --> Odom
+    Context["ROS2 Context"] --> Odom
     Context --> RawTF
     Context --> LinkTF
 
@@ -2681,15 +2714,15 @@ The expected graph path is:
 Add:
 
 1. `On Playback Tick`
-2. `ROS 2 Context`
+2. `ROS2 Context`
 3. `Isaac Read Simulation Time`
 4. `Isaac Compute Odometry`
-5. `ROS 2 Publish Odometry`
-6. `ROS 2 Publish Raw Transform Tree`
+5. `ROS2 Publish Odometry`
+6. `ROS2 Publish Raw Transform Tree`
 7. `Isaac Compute Transform Tree`
-8. `ROS 2 Publish Transform Tree`
+8. `ROS2 Publish Transform Tree`
 
-## F4. Configure the ROS 2 Context
+## F4. Configure the ROS2 Context
 
 Set:
 
@@ -2751,12 +2784,12 @@ On Playback Tick.outputs:tick
 Isaac Compute Odometry.inputs:execIn
 ```
 
-## F7. Configure ROS 2 Publish Odometry
+## F7. Configure ROS2 Publish Odometry
 
 Select:
 
 ```text
-ROS 2 Publish Odometry
+ROS2 Publish Odometry
 ```
 
 Set:
@@ -2766,15 +2799,14 @@ Chassis Frame ID = base_footprint
 Odom Frame ID = odom
 Topic Name = /odom
 Queue Size = 10
-Use System Time = False
 ```
 
 Connect:
 
 ```text
-ROS 2 Context.outputs:context
+ROS2 Context.outputs:context
     →
-ROS 2 Publish Odometry.inputs:context
+ROS2 Publish Odometry.inputs:context
 ```
 
 Connect:
@@ -2782,7 +2814,7 @@ Connect:
 ```text
 Isaac Compute Odometry.outputs:execOut
     →
-ROS 2 Publish Odometry.inputs:execIn
+ROS2 Publish Odometry.inputs:execIn
 ```
 
 Connect:
@@ -2790,7 +2822,7 @@ Connect:
 ```text
 Isaac Compute Odometry.outputs:position
     →
-ROS 2 Publish Odometry.inputs:position
+ROS2 Publish Odometry.inputs:position
 ```
 
 Connect:
@@ -2798,7 +2830,7 @@ Connect:
 ```text
 Isaac Compute Odometry.outputs:orientation
     →
-ROS 2 Publish Odometry.inputs:orientation
+ROS2 Publish Odometry.inputs:orientation
 ```
 
 Connect:
@@ -2806,7 +2838,7 @@ Connect:
 ```text
 Isaac Compute Odometry.outputs:linearVelocity
     →
-ROS 2 Publish Odometry.inputs:linearVelocity
+ROS2 Publish Odometry.inputs:linearVelocity
 ```
 
 Connect:
@@ -2814,7 +2846,7 @@ Connect:
 ```text
 Isaac Compute Odometry.outputs:angularVelocity
     →
-ROS 2 Publish Odometry.inputs:angularVelocity
+ROS2 Publish Odometry.inputs:angularVelocity
 ```
 
 Connect:
@@ -2822,7 +2854,7 @@ Connect:
 ```text
 Isaac Read Simulation Time.outputs:simulationTime
     →
-ROS 2 Publish Odometry.inputs:timeStamp
+ROS2 Publish Odometry.inputs:timeStamp
 ```
 
 ## F8. Configure the odom-to-base transform
@@ -2830,7 +2862,7 @@ ROS 2 Publish Odometry.inputs:timeStamp
 Select:
 
 ```text
-ROS 2 Publish Raw Transform Tree
+ROS2 Publish Raw Transform Tree
 ```
 
 This node must publish the transform:
@@ -2846,24 +2878,23 @@ Parent Frame ID = odom
 Child Frame ID = base_footprint
 Topic Name = /tf
 Queue Size = 10
-Use System Time = False
 Static Publisher = False
 ```
 
 Connect:
 
 ```text
-ROS 2 Context.outputs:context
+ROS2 Context.outputs:context
     →
-ROS 2 Publish Raw Transform Tree.inputs:context
+ROS2 Publish Raw Transform Tree.inputs:context
 ```
 
 Connect:
 
 ```text
-On Playback Tick.outputs:tick
+Isaac Compute Odometry.outputs:execOut
     →
-ROS 2 Publish Raw Transform Tree.inputs:execIn
+ROS2 Publish Raw Transform Tree.inputs:execIn
 ```
 
 Connect:
@@ -2871,7 +2902,7 @@ Connect:
 ```text
 Isaac Compute Odometry.outputs:position
     →
-ROS 2 Publish Raw Transform Tree.inputs:translation
+ROS2 Publish Raw Transform Tree.inputs:translation
 ```
 
 Connect:
@@ -2879,7 +2910,7 @@ Connect:
 ```text
 Isaac Compute Odometry.outputs:orientation
     →
-ROS 2 Publish Raw Transform Tree.inputs:rotation
+ROS2 Publish Raw Transform Tree.inputs:rotation
 ```
 
 Connect:
@@ -2887,7 +2918,7 @@ Connect:
 ```text
 Isaac Read Simulation Time.outputs:simulationTime
     →
-ROS 2 Publish Raw Transform Tree.inputs:timeStamp
+ROS2 Publish Raw Transform Tree.inputs:timeStamp
 ```
 
 Do not set the parent frame to `world`.
@@ -2934,12 +2965,12 @@ If the node accepts the robot root as a single target, use:
 
 The robot root already contains the Isaac Robot API and robot link list.
 
-## F10. Configure ROS 2 Publish Transform Tree
+## F10. Configure ROS2 Publish Transform Tree
 
 Select:
 
 ```text
-ROS 2 Publish Transform Tree
+ROS2 Publish Transform Tree
 ```
 
 Set:
@@ -2947,16 +2978,15 @@ Set:
 ```text
 Topic Name = /tf
 Queue Size = 10
-Use System Time = False
 Static Publisher = False
 ```
 
 Connect:
 
 ```text
-ROS 2 Context.outputs:context
+ROS2 Context.outputs:context
     →
-ROS 2 Publish Transform Tree.inputs:context
+ROS2 Publish Transform Tree.inputs:context
 ```
 
 Connect:
@@ -2972,7 +3002,7 @@ Connect:
 ```text
 Isaac Compute Transform Tree.outputs:execOut
     →
-ROS 2 Publish Transform Tree.inputs:execIn
+ROS2 Publish Transform Tree.inputs:execIn
 ```
 
 Connect:
@@ -2980,7 +3010,7 @@ Connect:
 ```text
 Isaac Compute Transform Tree.outputs:parentFrames
     →
-ROS 2 Publish Transform Tree.inputs:parentFrames
+ROS2 Publish Transform Tree.inputs:parentFrames
 ```
 
 Connect:
@@ -2988,7 +3018,7 @@ Connect:
 ```text
 Isaac Compute Transform Tree.outputs:childFrames
     →
-ROS 2 Publish Transform Tree.inputs:childFrames
+ROS2 Publish Transform Tree.inputs:childFrames
 ```
 
 Connect:
@@ -2996,7 +3026,7 @@ Connect:
 ```text
 Isaac Compute Transform Tree.outputs:translations
     →
-ROS 2 Publish Transform Tree.inputs:translations
+ROS2 Publish Transform Tree.inputs:translations
 ```
 
 Connect:
@@ -3004,7 +3034,7 @@ Connect:
 ```text
 Isaac Compute Transform Tree.outputs:orientations
     →
-ROS 2 Publish Transform Tree.inputs:orientations
+ROS2 Publish Transform Tree.inputs:orientations
 ```
 
 Connect:
@@ -3012,7 +3042,7 @@ Connect:
 ```text
 Isaac Read Simulation Time.outputs:simulationTime
     →
-ROS 2 Publish Transform Tree.inputs:timeStamp
+ROS2 Publish Transform Tree.inputs:timeStamp
 ```
 
 ### TF Graph Connection Table
@@ -3020,19 +3050,19 @@ ROS 2 Publish Transform Tree.inputs:timeStamp
 | Source | Output | Destination | Input |
 |---|---|---|---|
 | `On Playback Tick` | `tick` | `Isaac Compute Odometry` | `execIn` |
-| `On Playback Tick` | `tick` | `ROS 2 Publish Raw Transform Tree` | `execIn` |
+| `Isaac Compute Odometry` | `execOut` | `ROS2 Publish Raw Transform Tree` | `execIn` |
 | `On Playback Tick` | `tick` | `Isaac Compute Transform Tree` | `execIn` |
-| `Isaac Compute Odometry` | `execOut` | `ROS 2 Publish Odometry` | `execIn` |
-| `Isaac Compute Odometry` | `position` | `ROS 2 Publish Odometry` | `position` |
-| `Isaac Compute Odometry` | `orientation` | `ROS 2 Publish Odometry` | `orientation` |
-| `Isaac Compute Odometry` | `linearVelocity` | `ROS 2 Publish Odometry` | `linearVelocity` |
-| `Isaac Compute Odometry` | `angularVelocity` | `ROS 2 Publish Odometry` | `angularVelocity` |
-| `Isaac Compute Odometry` | `position` | `ROS 2 Publish Raw Transform Tree` | `translation` |
-| `Isaac Compute Odometry` | `orientation` | `ROS 2 Publish Raw Transform Tree` | `rotation` |
-| `Isaac Compute Transform Tree` | `parentFrames` | `ROS 2 Publish Transform Tree` | `parentFrames` |
-| `Isaac Compute Transform Tree` | `childFrames` | `ROS 2 Publish Transform Tree` | `childFrames` |
-| `Isaac Compute Transform Tree` | `translations` | `ROS 2 Publish Transform Tree` | `translations` |
-| `Isaac Compute Transform Tree` | `orientations` | `ROS 2 Publish Transform Tree` | `orientations` |
+| `Isaac Compute Odometry` | `execOut` | `ROS2 Publish Odometry` | `execIn` |
+| `Isaac Compute Odometry` | `position` | `ROS2 Publish Odometry` | `position` |
+| `Isaac Compute Odometry` | `orientation` | `ROS2 Publish Odometry` | `orientation` |
+| `Isaac Compute Odometry` | `linearVelocity` | `ROS2 Publish Odometry` | `linearVelocity` |
+| `Isaac Compute Odometry` | `angularVelocity` | `ROS2 Publish Odometry` | `angularVelocity` |
+| `Isaac Compute Odometry` | `position` | `ROS2 Publish Raw Transform Tree` | `translation` |
+| `Isaac Compute Odometry` | `orientation` | `ROS2 Publish Raw Transform Tree` | `rotation` |
+| `Isaac Compute Transform Tree` | `parentFrames` | `ROS2 Publish Transform Tree` | `parentFrames` |
+| `Isaac Compute Transform Tree` | `childFrames` | `ROS2 Publish Transform Tree` | `childFrames` |
+| `Isaac Compute Transform Tree` | `translations` | `ROS2 Publish Transform Tree` | `translations` |
+| `Isaac Compute Transform Tree` | `orientations` | `ROS2 Publish Transform Tree` | `orientations` |
 
 > **Minimum TF requirement:** The graph must produce `odom → base_footprint` before localization is started.
 
@@ -3040,36 +3070,40 @@ ROS 2 Publish Transform Tree.inputs:timeStamp
 
 Press Play.
 
-In a sourced terminal, run:
+Generate the TF graph:
 
 ```bash
-ros2 topic info /tf --verbose
+ros2 run tf2_tools view_frames
 ```
 
-Expected Isaac Sim publishers include:
+Before localization is started, the TF tree must contain:
 
 ```text
-_Graph_ROS_Odometry_TFOdom2Robot
-_Graph_ROS_Odometry_TFRobot
+odom
+└── base_footprint
+    ├── base_link
+    ├── base_scan
+    ├── wheel_left_link
+    ├── wheel_right_link
+    ├── caster_back_link
+    └── Camera_1
 ```
 
-AMCL will be added later and will publish:
+The required dynamic transform is:
 
 ```text
-amcl
+odom → base_footprint
 ```
 
-There must not be a publisher named:
+The robot-link transforms must be connected below `base_footprint`.
 
-```text
-_Graph_ROS_Odometry_TFWorld2Odom
-```
-
-There must not be a transform:
+The TF tree must not contain:
 
 ```text
 world → odom
 ```
+
+Do not use the exact Isaac Sim ROS publisher name as the primary validation method. The graph path and node names can change the generated ROS node name.
 
 ## F12. Verify odometry
 
@@ -3159,6 +3193,8 @@ ros2 run tf2_tools view_frames
 ```
 #### Evidence to Capture
 
+<!-- ![Annotated odometry and TF graph](/assets/images/lab-03/odometry-tf-graph.png) -->
+
 Take one screenshot showing:
 
 - The complete `ROS_OdomTF` graph.
@@ -3184,9 +3220,9 @@ flowchart TD
     Start["Expected ROS topic or robot behavior is missing"]
     Playing{"Is Isaac Sim playing?"}
     Tick{"Is On Playback Tick connected?"}
-    Context{"Is ROS 2 Context connected?"}
+    Context{"Is ROS2 Context connected?"}
     Property{"Are topic, frame, and target prim properties correct?"}
-    Topic{"Does the ROS 2 topic exist?"}
+    Topic{"Does the ROS2 topic exist?"}
     Rate{"Is the topic rate greater than zero?"}
     Fix["Repair the graph and test again"]
     Success["Proceed to the next checkpoint"]
@@ -3224,15 +3260,15 @@ ros2 run tf2_ros tf2_echo odom base_footprint \
   --ros-args -p use_sim_time:=true
 ```
 
-# Part G: Understand and Test ROS 2 QoS
+# Part G: Understand and Test ROS2 QoS
 
 ## Objective
 
-Quality of Service controls how ROS 2 publishers and subscribers exchange messages. In this section, you will inspect the QoS settings of the main topics used by the robot and explain why different data streams require different communication guarantees.
+Quality of Service controls how ROS2 publishers and subscribers exchange messages. In this section, you will inspect the QoS settings of the main topics used by the robot and explain why different data streams require different communication guarantees.
 
-The official ROS 2 documentation is available at:
+The official ROS2 documentation is available at:
 
-[ROS 2 Humble Quality of Service Settings](https://docs.ros.org/en/humble/Concepts/Intermediate/About-Quality-of-Service-Settings.html)
+[ROS2 Humble Quality of Service Settings](https://docs.ros.org/en/humble/Concepts/Intermediate/About-Quality-of-Service-Settings.html)
 
 The important QoS properties are:
 
@@ -3522,6 +3558,8 @@ The map should use transient-local durability so that new subscribers can receiv
 
 ## H5. Open RViz2
 
+<!-- ![RViz localization view with map, laser scan, TF, and robot model](/assets/images/lab-03/rviz-localization.png) -->
+
 Start RViz2:
 
 ```bash
@@ -3564,11 +3602,22 @@ Set:
 Topic = /scan
 ```
 
-Set the laser frame to:
+Do not enter a separate laser-frame value in RViz2. RViz2 uses the frame contained in the LaserScan message.
+
+Verify the message frame from a terminal:
+
+```bash
+ros2 topic echo /scan --once
+```
+
+The message must contain:
 
 ```text
-base_scan
+header:
+  frame_id: base_scan
 ```
+
+If the frame is not `base_scan`, repair the `Frame ID` property of the `ROS2 RTX Lidar Helper` node.
 
 Add:
 
@@ -3669,7 +3718,7 @@ You will start the Nav2 planning and control system and send the robot to a goal
 Keep the following running:
 
 - Isaac Sim
-- ROS 2 clock
+- ROS2 clock
 - Drive Action Graph
 - Lidar graph
 - Camera graph
@@ -3741,7 +3790,7 @@ Nav2 costmaps commonly report that they subscribe to:
 scan
 ```
 
-This corresponds to the absolute ROS 2 topic:
+This corresponds to the absolute ROS2 topic:
 
 ```text
 /scan
@@ -3808,6 +3857,8 @@ If the local costmap is empty:
 5. Verify Isaac Sim is playing.
 
 ## I6. Send a navigation goal
+
+<!-- ![RViz navigation goal and planned path](/assets/images/lab-03/rviz-navigation-goal.png) -->
 
 In RViz2, select:
 
@@ -3970,7 +4021,7 @@ _Graph_ROS_Odometry_TFWorld2Odom
 
 ---
 
-# 6. Required Deliverables
+# Required Deliverables
 
 This section summarizes the required artifacts for submission. Keep every checkpoint file and collect all relevant screenshots, command output, and validation evidence before the final check-off.
 
@@ -4024,7 +4075,7 @@ Submit one formal lab report containing:
 4. Procedure
 5. Results
 6. Screenshots
-7. ROS 2 topic tables
+7. ROS2 topic tables
 8. TF tree
 9. QoS analysis
 10. Troubleshooting observations
@@ -4070,29 +4121,29 @@ The video must clearly show:
 
 - The simulation is running.
 - The robot is receiving commands.
-- The robot moves under ROS 2 control.
+- The robot moves under ROS2 control.
 - The robot reaches the navigation goal.
 
 ## 6.4 Code and configuration
 
 Submit:
 
-- Any ROS 2 launch commands or launch files.
-- Any custom ROS 2 Python scripts.
+- Any ROS2 launch commands or launch files.
+- Any custom ROS2 Python scripts.
 - Any custom configuration files.
 - The map YAML file used.
-- The ROS 2 topic and diagnostic command logs.
+- The ROS2 topic and diagnostic command logs.
 - Any scripts used to validate the setup.
 
 ---
 
-# 7. Lab Check-Off
+# Lab Check-Off
 
 Notify the teaching staff immediately after:
 
 1. The USD stage saves successfully.
-2. All required ROS 2 graphs are created.
-3. The ROS 2 workspace compiles successfully, if a workspace is required.
+2. All required ROS2 graphs are created.
+3. The ROS2 workspace compiles successfully, if a workspace is required.
 4. `/clock` is publishing.
 5. `/cmd_vel` controls the robot.
 6. `/scan` publishes a valid LaserScan.
@@ -4106,9 +4157,9 @@ The check-off demonstration must show a working system, not only screenshots or 
 
 ---
 
-# 8. Troubleshooting Guide
+# Troubleshooting Guide
 
-Use this section as a quick-reference guide when the robot does not appear to be working. Start with the lowest-level check: whether Isaac Sim is playing, whether the graph is connected, and whether the topic exists in ROS 2.
+Use this section as a quick-reference guide when the robot does not appear to be working. Start with the lowest-level check: whether Isaac Sim is playing, whether the graph is connected, and whether the topic exists in ROS2.
 
 ## 8.1 Isaac Sim opens but ROS topics do not appear
 
@@ -4123,19 +4174,19 @@ ros2 topic list
 Then verify:
 
 - Isaac Sim is playing.
-- The ROS 2 bridge extension is enabled.
-- The ROS 2 Context node exists.
+- The ROS2 bridge extension is enabled.
+- The ROS2 Context node exists.
 - The graph has an `On Playback Tick` node.
 - The graph is connected to the required publisher or subscriber.
-- Isaac Sim was started after sourcing ROS 2.
+- Isaac Sim was started after sourcing ROS2.
 
 ## 8.2 `/clock` does not exist
 
 Check:
 
 ```text
-ROS 2 Publish Clock topicName = /clock
-ROS 2 Context domain ID = 0
+ROS2 Publish Clock topicName = /clock
+ROS2 Context domain ID = 0
 On Playback Tick.tick → Publish Clock.execIn
 Read Simulation Time.simulationTime → Publish Clock.timeStamp
 Context.context → Publish Clock.context
@@ -4321,7 +4372,7 @@ Confirm:
 
 ```text
 Isaac Compute Odometry.execOut
-    → ROS 2 Publish Odometry.execIn
+    → ROS2 Publish Odometry.execIn
 ```
 
 Confirm simulation time is connected.
@@ -4353,32 +4404,36 @@ That transform conflicts with AMCL.
 
 ## 8.11 The TF tree contains `world → odom`
 
-This is an error for this laboratory.
-
-Find the graph node named:
+If the TF graph contains:
 
 ```text
-TFWorld2Odom
+world → odom
 ```
 
-Delete it from the Action Graph.
-
-Keep:
+select the transform publisher that has:
 
 ```text
-TFOdom2Robot
-TFRobot
+Parent Frame ID = world
+Child Frame ID = odom
 ```
 
-Stop and restart Isaac Sim playback.
+Delete or deactivate that publisher.
 
-Verify:
+This laboratory must publish:
+
+```text
+odom → base_footprint
+```
+
+The laboratory does not require a `TFWorld2Odom` node. Do not create a world-to-odom transform.
+
+Verify the result:
 
 ```bash
-ros2 topic info /tf --verbose
+ros2 run tf2_tools view_frames
 ```
 
-The `TFWorld2Odom` publisher must be absent.
+The graph must contain `odom → base_footprint` and must not contain `world → odom`.
 
 ## 8.12 `map → base_footprint` does not exist
 
@@ -4511,13 +4566,13 @@ Wait several seconds and verify that:
 
 - Isaac Sim is playing.
 - `/clock` is publishing.
-- All ROS 2 nodes use `use_sim_time:=true`.
+- All ROS2 nodes use `use_sim_time:=true`.
 - The sensor timestamps are simulation timestamps.
 - The odometry and TF graphs use Isaac simulation time.
 
-Restart only the affected ROS 2 node if necessary.
+Restart only the affected ROS2 node if necessary.
 
-## 8.17 ROS 2 topics exist but the subscriber receives no data
+## 8.17 ROS2 topics exist but the subscriber receives no data
 
 Inspect the topic:
 
@@ -4536,11 +4591,11 @@ QoS incompatibility can prevent communication even when the topic name is correc
 
 ---
 
-# 9. Required Report Questions
+# Required Report Questions
 
 Answer the following questions in complete sentences.
 
-1. What is the function of the ROS 2 Context node?
+1. What is the function of the ROS2 Context node?
 2. Why must Isaac Sim publish `/clock` when using `use_sim_time:=true`?
 3. What is the difference between `/cmd_vel`, `/odom`, `/scan`, and `/tf`?
 4. How does the Differential Controller convert robot velocity into wheel velocities?
@@ -4553,7 +4608,7 @@ Answer the following questions in complete sentences.
 11. Why is publishing both `world → odom` and `map → odom` problematic?
 12. What is the purpose of transient-local durability for `/map`?
 13. Why are live sensor topics normally not treated like a stored map?
-14. What is the difference between a topic, service, and action in ROS 2?
+14. What is the difference between a topic, service, and action in ROS2?
 15. What is the purpose of the global costmap?
 16. What is the purpose of the local costmap?
 17. What diagnostic command would you use if `/scan` exists but Nav2 cannot use it?
@@ -4563,7 +4618,7 @@ Answer the following questions in complete sentences.
 
 ---
 
-# 10. Key Learning Summary
+# Key Learning Summary
 
 The system works because each component has a defined responsibility:
 
@@ -4638,20 +4693,20 @@ world → odom
 
 ---
 
-# 11. Additional Learning Resources
+# Additional Learning Resources
 
-- [Isaac Sim 6.0.1: Driving TurtleBot Using ROS 2 Messages](https://docs.isaacsim.omniverse.nvidia.com/6.0.1/ros2_tutorials/tutorial_ros2_drive_turtlebot.html)
-- [Isaac Sim 6.0.1: ROS 2 Clock](https://docs.isaacsim.omniverse.nvidia.com/6.0.1/ros2_tutorials/tutorial_ros2_clock.html)
-- [Isaac Sim 6.0.1: ROS 2 Cameras](https://docs.isaacsim.omniverse.nvidia.com/6.0.1/ros2_tutorials/tutorial_ros2_camera.html)
+- [Isaac Sim 6.0.1: Driving TurtleBot Using ROS2 Messages](https://docs.isaacsim.omniverse.nvidia.com/6.0.1/ros2_tutorials/tutorial_ros2_drive_turtlebot.html)
+- [Isaac Sim 6.0.1: ROS2 Clock](https://docs.isaacsim.omniverse.nvidia.com/6.0.1/ros2_tutorials/tutorial_ros2_clock.html)
+- [Isaac Sim 6.0.1: ROS2 Cameras](https://docs.isaacsim.omniverse.nvidia.com/6.0.1/ros2_tutorials/tutorial_ros2_camera.html)
 - [Isaac Sim 6.0.1: RTX Lidar Sensors](https://docs.isaacsim.omniverse.nvidia.com/6.0.1/ros2_tutorials/tutorial_ros2_rtx_lidar.html)
-- [Isaac Sim 6.0.1: ROS 2 Transform Trees and Odometry](https://docs.isaacsim.omniverse.nvidia.com/6.0.1/ros2_tutorials/tutorial_ros2_tf.html)
-- [Isaac Sim 6.0.1: ROS 2 Navigation](https://docs.isaacsim.omniverse.nvidia.com/6.0.1/ros2_tutorials/tutorial_ros2_navigation.html)
-- [ROS 2 Humble Quality of Service Settings](https://docs.ros.org/en/humble/Concepts/Intermediate/About-Quality-of-Service-Settings.html)
+- [Isaac Sim 6.0.1: ROS2 Transform Trees and Odometry](https://docs.isaacsim.omniverse.nvidia.com/6.0.1/ros2_tutorials/tutorial_ros2_tf.html)
+- [Isaac Sim 6.0.1: ROS2 Navigation](https://docs.isaacsim.omniverse.nvidia.com/6.0.1/ros2_tutorials/tutorial_ros2_navigation.html)
+- [ROS2 Humble Quality of Service Settings](https://docs.ros.org/en/humble/Concepts/Intermediate/About-Quality-of-Service-Settings.html)
 - [Nav2 Mapping and Localization](https://docs.nav2.org/rolling/configuration_and_development/first_time_robot_setup_guide/sensors/mapping_localization/)
 
 ---
 
-# 12. Final Completion Checklist
+# Final Completion Checklist
 
 Before submitting, verify every item.
 
@@ -4661,7 +4716,7 @@ Before submitting, verify every item.
 - [ ] Robot remains on the ground.
 - [ ] Robot physics was not deleted.
 - [ ] Robot articulation was not deleted.
-- [ ] ROS 2 clock graph exists.
+- [ ] ROS2 clock graph exists.
 - [ ] Drive graph exists.
 - [ ] Lidar sensor exists.
 - [ ] Lidar graph exists.
@@ -4669,7 +4724,7 @@ Before submitting, verify every item.
 - [ ] Camera graph exists.
 - [ ] Odometry graph exists.
 - [ ] Every Action Graph has a visible `On Playback Tick` execution connection.
-- [ ] Every ROS 2 publisher has a connected ROS 2 Context.
+- [ ] Every ROS2 publisher has a connected ROS2 Context.
 - [ ] Every timestamped publisher uses Isaac simulation time.
 - [ ] Every sensor has the correct parent prim and frame ID.
 - [ ] Every Action Graph has been photographed before moving to the next checkpoint.
@@ -4677,7 +4732,7 @@ Before submitting, verify every item.
 - [ ] `TFWorld2Odom` does not exist.
 - [ ] Stage saves successfully.
 
-## ROS 2
+## ROS2
 
 - [ ] `/clock` publishes.
 - [ ] `/cmd_vel` exists.
