@@ -774,16 +774,6 @@ ROS2 Context  ──────────────────────
 Isaac Read Simulation Time ───────────┘
 ```
 
-Recommended approximate graph-editor positions:
-
-| Node | Approximate X position | Approximate Y position |
-|---|---:|---:|
-| `On Playback Tick` | `50` | `100` |
-| `ROS2 Context` | `50` | `250` |
-| `Isaac Read Simulation Time` | `300` | `400` |
-| `ROS2 Publish Clock` | `650` | `200` |
-
-These positions are only for visual organization. The graph will function correctly at other positions.
 
 ## B4. Configure the ROS2 Context node
 
