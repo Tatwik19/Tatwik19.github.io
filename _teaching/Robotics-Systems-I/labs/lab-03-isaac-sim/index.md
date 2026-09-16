@@ -1090,21 +1090,15 @@ Add the following nodes:
 
 > **Version note:** Search for `Make Array`. If your Isaac Sim installation displays the equivalent node as `Construct Array`, use that node but rename the node instance to `make_array` so that all port references remain consistent.
 
-<!-- Rename the nodes so they are easy to identify:
+Rename the nodes so they are easy to identify:
 
 ```text
-on_playback_tick
-ros2_context
-ros2_subscribe_twist
 scale_linear_velocity
 break_linear_velocity
 break_angular_velocity
-differential_controller
 constant_left_joint
 constant_right_joint
-make_array
-articulation_controller
-``` -->
+```
 
 If Isaac Sim automatically assigns different names, that is acceptable. The node types and properties must be correct.
 
