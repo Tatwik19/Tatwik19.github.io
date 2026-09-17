@@ -1,7 +1,7 @@
 ---
 title: "Lab 3: TurtleBot 3 ROS2 Integration, Sensors, Localization, and Navigation"
 layout: single
-permalink: /teaching/Robotics-Systems-I/labs/lab-03-isaac-sim/
+permalink: /labs/lab-03-isaac-sim/
 date: 2026-09-12
 author_profile: false
 classes: wide
