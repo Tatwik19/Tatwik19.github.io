@@ -5,6 +5,7 @@ permalink: /labs/lab-03-isaac-sim/
 date: 2026-09-12
 author_profile: false
 classes: wide
+hide_page_metadata: true
 ---
 
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
