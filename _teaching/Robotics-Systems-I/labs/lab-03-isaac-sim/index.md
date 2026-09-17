@@ -1113,9 +1113,9 @@ Connect one row at a time. After each connection, verify that the wire remains a
 | 3 | `on_playback_tick` | `outputs:tick` | `articulation_controller` | `inputs:execIn` |
 | 4 | `ros2_context` | `outputs:context` | `ros2_subscribe_twist` | `inputs:context` |
 | 5 | `ros2_subscribe_twist` | `outputs:linearVelocity` | `scale_linear_velocity` | `inputs:value` |
-| 6 | `scale_linear_velocity` | `outputs:result` | `break_linear_velocity` | `inputs:tuple` |
+| 6 | `scale_linear_velocity` | `outputs:result` | `break_linear_velocity` | `inputs:vector` |
 | 7 | `break_linear_velocity` | `outputs:x` | `differential_controller` | `inputs:linearVelocity` |
-| 8 | `ros2_subscribe_twist` | `outputs:angularVelocity` | `break_angular_velocity` | `inputs:tuple` |
+| 8 | `ros2_subscribe_twist` | `outputs:angularVelocity` | `break_angular_velocity` | `inputs:vector` |
 | 9 | `break_angular_velocity` | `outputs:z` | `differential_controller` | `inputs:angularVelocity` |
 | 10 | `differential_controller` | `outputs:velocityCommand` | `articulation_controller` | `inputs:velocityCommand` |
 | 11 | `constant_left_joint` | `outputs:value` | `make_array` | `inputs:input0` |
