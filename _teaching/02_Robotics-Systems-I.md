@@ -14,7 +14,7 @@ Served as a Teaching Assistant for Robotics Systems I during the **Fall 2023 and
 
 - [Fall 2023](https://catalog.apps.asu.edu/catalog/classes/classlist?keywords=96295&searchType=all&term=2237#detailsOpen=96295-131765)
 - [Fall 2025](https://catalog.apps.asu.edu/catalog/classes/classlist?keywords=77720&searchType=all&term=2257#detailsOpen=77720-131765)
-- Fall 2026 (course link will be added when available)
+- Fall 2026 - [Section 1](https://catalog.apps.asu.edu/catalog/classes/classlist?keywords=75156&searchType=all&term=2267#detailsOpen=75156-131765) [Section 2](https://catalog.apps.asu.edu/catalog/classes/classlist?keywords=87112&searchType=all&term=2267#detailsOpen=87112-131765)
 
 Prepared laboratory exercises and supported instruction in industrial collaborative robotics, manipulation, computer vision, kinematics, and AI-enabled robotics.
 
