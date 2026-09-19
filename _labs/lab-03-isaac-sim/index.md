@@ -39,7 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
 **Authors:**
 
 - Sai Srinivas Tatwik Meesala: [smeesala@asu.edu](mailto:smeesala@asu.edu)
+
 - Prajval Arora: [parora24@asu.edu](mailto:parora24@asu.edu)
+
 ---
 
 ## 1. Lab Overview
