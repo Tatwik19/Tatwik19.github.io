@@ -40,8 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 - Sai Srinivas Tatwik Meesala: [smeesala@asu.edu](mailto:smeesala@asu.edu)
 - Prajval Arora: [parora24@asu.edu](mailto:parora24@asu.edu)
-- Rajesh S Aouti: [raouti@asu.edu](mailto:raouti@asu.edu)
-
 ---
 
 ## 1. Lab Overview
@@ -253,6 +251,8 @@ student_handout_turtlebot3_ros2_scene.usda
 turtlebot3_map.yaml
 turtlebot3_map.pgm
 ```
+
+Download the supplied USD scene file here: [student_handout_turtlebot3_ros2_scene.usda](https://drive.google.com/open?id=145-zNYgi4R1KAI2FLV9ktzn_v1z0Xt1R&usp=drive_fs)
 
 The map YAML file must reference the map image using a valid path.
 
