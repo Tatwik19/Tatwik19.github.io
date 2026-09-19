@@ -367,35 +367,10 @@ The report must contain:
 8. Explanation of visual geometry versus physical geometry.
 9. Key learnings.
 10. Conclusion.
-11. References, including the NVIDIA tutorial.
+11. References.
 
 For each part, include the procedure followed, the corresponding checkpoint filename, the screenshot filename, the observed result, any error and correction, and one key learning. The report must explain why the cube remains stationary without physics and why it falls after the rigid-body and collider preset is added.
 
-## Visual Media Guidance
-
-GitHub Pages can render repository-hosted images, animated GIFs, and HTML5 videos. Keep media in a repository folder such as:
-
-```text
-assets/images/lab-01/
-assets/videos/lab-01/
-```
-
-Use Markdown for images and GIFs:
-
-```markdown
-![Cube with physics](../../assets/images/lab-01/cube-with-physics.gif)
-```
-
-Use HTML for locally hosted MP4 videos:
-
-```html
-<video controls width="720">
-  <source src="../../assets/videos/lab-01/cube-physics.mp4" type="video/mp4">
-  Your browser does not support embedded video.
-</video>
-```
-
-Keep the original full-resolution evidence in the submission folder and use resized copies or short clips on the web page when needed. Do not commit private files, credentials, or excessively large raw recordings.
 
 # Lab Check-Off
 
