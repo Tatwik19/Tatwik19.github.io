@@ -39,7 +39,8 @@ document.addEventListener("DOMContentLoaded", function () {
 **Authors:**
 
 - Sai Srinivas Tatwik Meesala: [smeesala@asu.edu](mailto:smeesala@asu.edu)
-- Rajesh S Aouti: [raouti@asu.edu](mailto:raouti@asu.edu)
+- Prajval Arora: [parora24@asu.edu](mailto:parora24@asu.edu)
+- <!--Rajesh S Aouti: [raouti@asu.edu](mailto:raouti@asu.edu) - OVERTHROWN!-->
 
 ---
 
@@ -118,6 +119,7 @@ map
         ├── caster_back_link
         └── Camera_1
 ```
+
 
 Do not create or publish:
 
@@ -238,6 +240,7 @@ Verify that ROS2 can discover itself:
 ```bash
 ros2 topic list
 ```
+<img width="777" height="686" alt="Screenshot from 2026-09-16 01-49-44" src="https://github.com/user-attachments/assets/5533b094-9c1b-47a6-93be-b66536751d17" />
 
 At this point, `/clock`, `/scan`, `/odom`, and `/tf` may not exist yet. They will be created during this laboratory.
 
@@ -347,6 +350,7 @@ The supplied stage uses these paths:
 /turtlebot3_burger/wheel_left_link
 /turtlebot3_burger/wheel_right_link
 ```
+<img width="414" height="413" alt="Screenshot from 2026-09-16 02-24-40" src="https://github.com/user-attachments/assets/c47d852a-114c-4987-afdf-53de3b2955e7" />
 
 The robot root prim is:
 
@@ -386,6 +390,7 @@ X = 1
 Y = 1
 Z = 1
 ```
+<img width="541" height="220" alt="Screenshot from 2026-09-18 23-13-26" src="https://github.com/user-attachments/assets/d543594f-9ed6-4b40-9860-1345b665e35e" />
 
 Do not change the robot root transform during the first part of the laboratory.
 
@@ -492,6 +497,7 @@ visuals
 colliders
 joints
 ```
+<img width="439" height="874" alt="Screenshot from 2026-09-15 01-44-08" src="https://github.com/user-attachments/assets/3b8a49dd-5d04-448d-8915-6e7f606e2d90" />
 
 The starter file should not contain completed ROS Action Graphs.
 
@@ -533,6 +539,7 @@ Open the Property panel:
 ```text
 Window → Property
 ```
+<img width="454" height="646" alt="Screenshot from 2026-09-15 01-44-46" src="https://github.com/user-attachments/assets/c400e5c4-1409-4037-96f4-e1df6e7aad37" />
 
 Find the Transform section.
 
@@ -723,6 +730,7 @@ Open:
 ```text
 Window → Graph Editors → Action Graph
 ```
+<img width="542" height="554" alt="Screenshot from 2026-09-15 01-48-20" src="https://github.com/user-attachments/assets/37df4988-ad49-48cd-8a0b-7b8708f15aad" />
 
 An Action Graph panel should appear.
 
@@ -752,6 +760,7 @@ In the Action Graph node search panel, search for and add these nodes:
 2. `ROS2 Context`
 3. `Isaac Read Simulation Time`
 4. `ROS2 Publish Clock`
+<img width="302" height="367" alt="image" src="https://github.com/user-attachments/assets/fb570d22-591f-4a1b-8d2e-4dc97bed4861" />
 
 Place the nodes from left to right in this order:
 
@@ -796,6 +805,7 @@ If the field is named `useDomainIDEnvVar`, set it to:
 ```text
 False
 ```
+<img width="532" height="465" alt="Screenshot from 2026-09-16 01-42-09" src="https://github.com/user-attachments/assets/60a2247b-456f-42ae-b242-29f23dbe1c7e" />
 
 The ROS2 Context node must provide its context output to the ROS2 Publish Clock node.
 
@@ -828,6 +838,7 @@ set it to:
 ```text
 False
 ```
+<img width="532" height="465" alt="Screenshot from 2026-09-16 01-42-41" src="https://github.com/user-attachments/assets/1854ebc1-f635-4710-ac22-73aad3ac8827" />
 
 Leave reference time numerator and denominator at their default values.
 
@@ -851,6 +862,7 @@ Set:
 Topic Name = /clock
 Queue Size = 10
 ```
+<img width="532" height="465" alt="Screenshot from 2026-09-16 01-44-49" src="https://github.com/user-attachments/assets/57fe4ca8-f4ca-46b2-b01a-52c2849bff88" />
 
 If `qosProfile` is available, leave it at its default value.
 
@@ -882,6 +894,7 @@ ROS2 Context.context
 Isaac Read Simulation Time.simulationTime
     → ROS2 Publish Clock.timeStamp
 ```
+<img width="1027" height="576" alt="011_ROS_Clock" src="https://github.com/user-attachments/assets/99e9b5b6-f4c5-4aa9-a58a-ecba57f7fb9f" />
 
 ## B7. Test `/clock`
 
@@ -922,6 +935,7 @@ ros2 topic hz /clock
 ```
 
 The rate should be greater than zero.
+<img width="777" height="686" alt="Screenshot from 2026-09-16 01-49-44" src="https://github.com/user-attachments/assets/70f0e701-7948-4a03-ae00-cb66f9decc81" />
 
 Press Ctrl+C to stop `ros2 topic hz`.
 
@@ -955,6 +969,7 @@ Take one screenshot showing:
 - The topic name `/clock`.
 
 The screenshot must be readable. Do not submit a screenshot in which the node names or wires cannot be read.
+<img width="1831" height="1109" alt="image" src="https://github.com/user-attachments/assets/721de5c9-d4d9-49c8-89e8-421419db905f" />
 
 Save the stage as:
 
@@ -1104,6 +1119,7 @@ constant_right_joint
 If Isaac Sim automatically assigns different names, that is acceptable. The node types and properties must be correct.
 
 ### Drive Graph Connection Table
+<img width="1831" height="1109" alt="image" src="https://github.com/user-attachments/assets/375a5783-b805-4cb1-9e07-ba762730b839" />
 
 Connect one row at a time. After each connection, verify that the wire remains attached to the correct port.
 
@@ -1474,6 +1490,7 @@ flowchart TD
 > **Checkpoint:** If your graph does not contain three dashed execution wires from `On Playback Tick`, stop and repair the graph before testing.
 
 Press Play in Isaac Sim.
+<img width="184" height="86" alt="image" src="https://github.com/user-attachments/assets/e1569838-0a38-40c5-a841-cf48bb178c50" />
 
 In a sourced terminal, verify that the command topic exists:
 
@@ -1527,6 +1544,102 @@ Ctrl+C
 ```
 
 Send another zero command.
+````md
+## F13. Test keyboard teleoperation
+
+Install the keyboard teleoperation package:
+
+```bash
+sudo apt update
+sudo apt install -y ros-humble-teleop-twist-keyboard
+````
+
+Open a new terminal and source ROS 2:
+
+```bash
+source /opt/ros/humble/setup.bash
+export ROS_DOMAIN_ID=0
+```
+
+Verify the command topic:
+
+```bash
+ros2 topic list | grep cmd_vel
+```
+
+Expected output:
+
+```text
+/cmd_vel
+```
+
+Verify that Isaac Sim is subscribed:
+
+```bash
+ros2 topic info /cmd_vel -v
+```
+
+The output should show at least one subscriber.
+
+Make sure Isaac Sim is open and the simulation is playing.
+
+Start keyboard teleoperation:
+
+```bash
+ros2 run teleop_twist_keyboard teleop_twist_keyboard \
+--ros-args -r cmd_vel:=/cmd_vel
+```
+
+Use these keys:
+
+```text
+        u    i    o
+        j    k    l
+        m    ,    .
+```
+
+Keyboard controls:
+
+```text
+i = move forward
+, = move backward
+j = rotate counterclockwise
+l = rotate clockwise
+u = move forward and rotate counterclockwise
+o = move forward and rotate clockwise
+m = move backward and rotate counterclockwise
+. = move backward and rotate clockwise
+k = stop
+q = increase speed
+z = decrease speed
+```
+
+The robot should respond to the keyboard commands.
+
+To stop the robot immediately:
+
+```text
+Press k
+```
+
+Stop the teleoperation node:
+
+```text
+Ctrl+C
+```
+
+Send a final zero-velocity command:
+
+```bash
+ros2 topic pub --once /cmd_vel geometry_msgs/msg/Twist \
+"{linear: {x: 0.0, y: 0.0, z: 0.0}, angular: {x: 0.0, y: 0.0, z: 0.0}}"
+```
+
+The robot must stop moving before continuing.
+
+```
+```
+
 
 ### Drive troubleshooting
 
@@ -2595,8 +2708,8 @@ Take one screenshot showing:
   - `Z = 0.200`
 - Camera rotation:
   - `X = 90`
-  - `Y = 0`
-  - `Z = -90`
+  - `Y = -90`
+  - `Z = 0`
 - The complete `ROS_Camera` graph.
 - The camera image in `rqt_image_view`.
 
@@ -2732,10 +2845,10 @@ The expected graph path is:
 ```text
 /turtlebot3_burger/ROS_OdomTF
 ```
-
+````md
 ## F3. Add the odometry and TF nodes
 
-Add:
+Add these nodes:
 
 1. `On Playback Tick`
 2. `ROS2 Context`
@@ -2743,10 +2856,43 @@ Add:
 4. `Isaac Compute Odometry`
 5. `ROS2 Publish Odometry`
 6. `ROS2 Publish Raw Transform Tree`
-7. `Isaac Compute Transform Tree`
-8. `ROS2 Publish Transform Tree`
+7. `ROS2 Publish Transform Tree`
 
-## F4. Configure the ROS2 Context
+Do not add:
+
+```text
+Isaac Compute Transform Tree
+````
+
+---
+
+## F4. Configure On Playback Tick
+
+Select:
+
+```text
+On Playback Tick
+```
+
+No property changes are required.
+
+Use:
+
+```text
+outputs:tick
+```
+
+to trigger the odometry and TF publisher nodes.
+
+---
+
+## F5. Configure ROS2 Context
+
+Select:
+
+```text
+ROS2 Context
+```
 
 Set:
 
@@ -2755,7 +2901,17 @@ Domain ID = 0
 Use Domain ID Environment Variable = Disabled
 ```
 
-## F5. Configure simulation time
+Use:
+
+```text
+outputs:context
+```
+
+for all ROS2 publisher context inputs.
+
+---
+
+## F6. Configure Isaac Read Simulation Time
 
 Select:
 
@@ -2763,21 +2919,23 @@ Select:
 Isaac Read Simulation Time
 ```
 
-If `resetOnStop` exists, set:
+Set:
 
 ```text
 resetOnStop = False
 ```
 
-Use its output:
+Use:
 
 ```text
-simulationTime
+outputs:simulationTime
 ```
 
-as the timestamp for the odometry and TF publisher nodes.
+for the timestamp input of all publisher nodes.
 
-## F6. Configure Isaac Compute Odometry
+---
+
+## F7. Configure Isaac Compute Odometry
 
 Select:
 
@@ -2791,9 +2949,17 @@ Set:
 Chassis Prim = /turtlebot3_burger/base_footprint
 ```
 
-<img width="1000" height="663" alt="image" src="https://github.com/user-attachments/assets/0febb653-acb9-43b4-810e-49dbbe0c2d9a" />
+If the Stage panel includes `/World`, use:
 
-The node calculates:
+```text
+Chassis Prim = /World/turtlebot3_burger/base_footprint
+```
+
+Use the exact path displayed in the Stage panel.
+
+No other property changes are required.
+
+The node outputs:
 
 ```text
 position
@@ -2810,7 +2976,9 @@ On Playback Tick.outputs:tick
 Isaac Compute Odometry.inputs:execIn
 ```
 
-## F7. Configure ROS2 Publish Odometry
+---
+
+## F8. Configure ROS2 Publish Odometry
 
 Select:
 
@@ -2818,13 +2986,22 @@ Select:
 ROS2 Publish Odometry
 ```
 
-Set:
+Set these properties:
 
 ```text
 Chassis Frame ID = base_footprint
 Odom Frame ID = odom
 Topic Name = /odom
 Queue Size = 10
+```
+
+Leave these properties unchanged or empty:
+
+```text
+Node Namespace = empty
+QoS Profile = default
+Publish Raw Velocities = False
+Robot Front = default
 ```
 
 Connect:
@@ -2883,7 +3060,9 @@ Isaac Read Simulation Time.outputs:simulationTime
 ROS2 Publish Odometry.inputs:timeStamp
 ```
 
-## F8. Configure the odom-to-base transform
+---
+
+## F9. Configure ROS2 Publish Raw Transform Tree
 
 Select:
 
@@ -2891,13 +3070,13 @@ Select:
 ROS2 Publish Raw Transform Tree
 ```
 
-This node must publish the transform:
+This node publishes:
 
 ```text
 odom → base_footprint
 ```
 
-Set:
+Set these properties:
 
 ```text
 Parent Frame ID = odom
@@ -2905,6 +3084,20 @@ Child Frame ID = base_footprint
 Topic Name = /tf
 Queue Size = 10
 Static Publisher = False
+```
+
+Leave these properties unchanged or empty:
+
+```text
+Node Namespace = empty
+QoS Profile = default
+```
+
+Do not set:
+
+```text
+Parent Frame ID = world
+Child Frame ID = odom
 ```
 
 Connect:
@@ -2947,49 +3140,7 @@ Isaac Read Simulation Time.outputs:simulationTime
 ROS2 Publish Raw Transform Tree.inputs:timeStamp
 ```
 
-Do not set the parent frame to `world`.
-
-Do not set the child frame to `odom`.
-
-The required values are:
-
-```text
-Parent Frame ID = odom
-Child Frame ID = base_footprint
-```
-
-## F9. Configure the robot link transform tree
-
-Select:
-
-```text
-Isaac Compute Transform Tree
-```
-
-Set:
-
-```text
-Parent Prim = /turtlebot3_burger/base_footprint
-```
-
-Set the target prims to:
-
-```text
-/turtlebot3_burger/base_link
-/turtlebot3_burger/base_scan
-/turtlebot3_burger/caster_back_link
-/turtlebot3_burger/wheel_left_link
-/turtlebot3_burger/wheel_right_link
-/turtlebot3_burger/base_footprint/Camera_1
-```
-
-If the node accepts the robot root as a single target, use:
-
-```text
-/turtlebot3_burger
-```
-
-The robot root already contains the Isaac Robot API and robot link list.
+---
 
 ## F10. Configure ROS2 Publish Transform Tree
 
@@ -2999,12 +3150,71 @@ Select:
 ROS2 Publish Transform Tree
 ```
 
+This node publishes the robot link transforms below the selected parent prim.
+
 Set:
+
+```text
+Parent Prim = /turtlebot3_burger/base_footprint
+```
+
+If the Stage panel includes `/World`, use:
+
+```text
+Parent Prim = /World/turtlebot3_burger/base_footprint
+```
+
+Use the exact path displayed in the Stage panel.
+
+Under `Target Prims`, click `Add Target...` and add:
+
+```text
+/turtlebot3_burger/base_link
+/turtlebot3_burger/base_scan
+/turtlebot3_burger/caster_back_link
+/turtlebot3_burger/wheel_left_link
+/turtlebot3_burger/wheel_right_link
+/turtlebot3_burger/Camera_1
+```
+
+If the camera is nested under `base_footprint`, use:
+
+```text
+/turtlebot3_burger/base_footprint/Camera_1
+```
+
+If the Stage panel includes `/World`, use the corresponding `/World/...` paths.
+
+Set these properties:
 
 ```text
 Topic Name = /tf
 Queue Size = 10
 Static Publisher = False
+```
+
+Leave these properties unchanged or empty:
+
+```text
+Node Namespace = empty
+QoS Profile = default
+```
+
+The following inputs are generated internally by this node and should not be manually connected:
+
+```text
+Child Frames
+Parent Frames
+Translations
+Orientations
+```
+
+Connect:
+
+```text
+On Playback Tick.outputs:tick
+    →
+ROS2 Publish Transform Tree.inputs:execIn
 ```
 
 Connect:
@@ -3018,79 +3228,92 @@ ROS2 Publish Transform Tree.inputs:context
 Connect:
 
 ```text
-On Playback Tick.outputs:tick
-    →
-Isaac Compute Transform Tree.inputs:execIn
-```
-
-Connect:
-
-```text
-Isaac Compute Transform Tree.outputs:execOut
-    →
-ROS2 Publish Transform Tree.inputs:execIn
-```
-
-Connect:
-
-```text
-Isaac Compute Transform Tree.outputs:parentFrames
-    →
-ROS2 Publish Transform Tree.inputs:parentFrames
-```
-
-Connect:
-
-```text
-Isaac Compute Transform Tree.outputs:childFrames
-    →
-ROS2 Publish Transform Tree.inputs:childFrames
-```
-
-Connect:
-
-```text
-Isaac Compute Transform Tree.outputs:translations
-    →
-ROS2 Publish Transform Tree.inputs:translations
-```
-
-Connect:
-
-```text
-Isaac Compute Transform Tree.outputs:orientations
-    →
-ROS2 Publish Transform Tree.inputs:orientations
-```
-
-Connect:
-
-```text
 Isaac Read Simulation Time.outputs:simulationTime
     →
 ROS2 Publish Transform Tree.inputs:timeStamp
 ```
 
-### TF Graph Connection Table
+---
 
-| Source | Output | Destination | Input |
-|---|---|---|---|
-| `On Playback Tick` | `tick` | `Isaac Compute Odometry` | `execIn` |
-| `Isaac Compute Odometry` | `execOut` | `ROS2 Publish Raw Transform Tree` | `execIn` |
-| `On Playback Tick` | `tick` | `Isaac Compute Transform Tree` | `execIn` |
-| `Isaac Compute Odometry` | `execOut` | `ROS2 Publish Odometry` | `execIn` |
-| `Isaac Compute Odometry` | `position` | `ROS2 Publish Odometry` | `position` |
-| `Isaac Compute Odometry` | `orientation` | `ROS2 Publish Odometry` | `orientation` |
-| `Isaac Compute Odometry` | `linearVelocity` | `ROS2 Publish Odometry` | `linearVelocity` |
-| `Isaac Compute Odometry` | `angularVelocity` | `ROS2 Publish Odometry` | `angularVelocity` |
-| `Isaac Compute Odometry` | `position` | `ROS2 Publish Raw Transform Tree` | `translation` |
-| `Isaac Compute Odometry` | `orientation` | `ROS2 Publish Raw Transform Tree` | `rotation` |
-| `Isaac Compute Transform Tree` | `parentFrames` | `ROS2 Publish Transform Tree` | `parentFrames` |
-| `Isaac Compute Transform Tree` | `childFrames` | `ROS2 Publish Transform Tree` | `childFrames` |
-| `Isaac Compute Transform Tree` | `translations` | `ROS2 Publish Transform Tree` | `translations` |
-| `Isaac Compute Transform Tree` | `orientations` | `ROS2 Publish Transform Tree` | `orientations` |
+## Complete Odometry and TF Connection Table
 
-> **Minimum TF requirement:** The graph must produce `odom → base_footprint` before localization is started.
+| Source Node                  | Output            | Target Node                       | Input             | Purpose                                     |
+| ---------------------------- | ----------------- | --------------------------------- | ----------------- | ------------------------------------------- |
+| `On Playback Tick`           | `tick`            | `Isaac Compute Odometry`          | `execIn`          | Triggers odometry calculation               |
+| `On Playback Tick`           | `tick`            | `ROS2 Publish Transform Tree`     | `execIn`          | Triggers robot-link TF publishing           |
+| `ROS2 Context`               | `context`         | `ROS2 Publish Odometry`           | `context`         | Provides ROS2 context                       |
+| `ROS2 Context`               | `context`         | `ROS2 Publish Raw Transform Tree` | `context`         | Provides ROS2 context                       |
+| `ROS2 Context`               | `context`         | `ROS2 Publish Transform Tree`     | `context`         | Provides ROS2 context                       |
+| `Isaac Read Simulation Time` | `simulationTime`  | `ROS2 Publish Odometry`           | `timeStamp`       | Timestamps odometry messages                |
+| `Isaac Read Simulation Time` | `simulationTime`  | `ROS2 Publish Raw Transform Tree` | `timeStamp`       | Timestamps the odom transform               |
+| `Isaac Read Simulation Time` | `simulationTime`  | `ROS2 Publish Transform Tree`     | `timeStamp`       | Timestamps robot-link TF messages           |
+| `Isaac Compute Odometry`     | `execOut`         | `ROS2 Publish Odometry`           | `execIn`          | Triggers `/odom` publishing                 |
+| `Isaac Compute Odometry`     | `execOut`         | `ROS2 Publish Raw Transform Tree` | `execIn`          | Triggers `odom → base_footprint` publishing |
+| `Isaac Compute Odometry`     | `position`        | `ROS2 Publish Odometry`           | `position`        | Publishes robot position                    |
+| `Isaac Compute Odometry`     | `orientation`     | `ROS2 Publish Odometry`           | `orientation`     | Publishes robot orientation                 |
+| `Isaac Compute Odometry`     | `linearVelocity`  | `ROS2 Publish Odometry`           | `linearVelocity`  | Publishes linear velocity                   |
+| `Isaac Compute Odometry`     | `angularVelocity` | `ROS2 Publish Odometry`           | `angularVelocity` | Publishes angular velocity                  |
+| `Isaac Compute Odometry`     | `position`        | `ROS2 Publish Raw Transform Tree` | `translation`     | Publishes odom translation                  |
+| `Isaac Compute Odometry`     | `orientation`     | `ROS2 Publish Raw Transform Tree` | `rotation`        | Publishes odom rotation                     |
+
+---
+
+## Required Topics
+
+```text
+/odom
+/tf
+```
+
+---
+
+## Required TF Structure
+
+The resulting TF tree should be:
+
+```text
+map
+└── odom
+    └── base_footprint
+        ├── base_link
+        ├── base_scan
+        ├── wheel_left_link
+        ├── wheel_right_link
+        ├── caster_back_link
+        └── Camera_1
+```
+
+Before localization starts, the minimum required transform is:
+
+```text
+odom → base_footprint
+```
+
+Do not publish:
+
+```text
+world → odom
+```
+
+Do not set:
+
+```text
+Parent Frame ID = world
+Child Frame ID = odom
+```
+
+Do not add:
+
+```text
+Isaac Compute Transform Tree
+```
+
+Do not create competing parents for the same frame.
+
+```
+```
+<img width="1037" height="974" alt="image" src="https://github.com/user-attachments/assets/0b7e0fae-b359-4cc2-9da6-68633e42cc6c" />
+
 
 ## F11. Check the TF publisher list
 
@@ -3165,6 +3388,7 @@ Verify:
 header.frame_id: odom
 child_frame_id: base_footprint
 ```
+<img width="736" height="508" alt="image" src="https://github.com/user-attachments/assets/2bae7fd7-939e-4a28-a751-5d0c4c9a7477" />
 
 ## F13. Verify the lower TF link
 
@@ -3180,6 +3404,7 @@ Expected result:
 - Translation values are displayed.
 - Rotation values are displayed.
 - The command does not remain at “Waiting for transform.”
+<img width="736" height="400" alt="image" src="https://github.com/user-attachments/assets/2186e832-a83f-4e40-8a38-98706f99aaca" />
 
 ## F14. Verify the robot TF tree
 
@@ -3217,6 +3442,8 @@ ros2 run tf2_ros tf2_echo odom base_footprint \
   --ros-args -p use_sim_time:=true
 ros2 run tf2_tools view_frames
 ```
+<img width="784" height="696" alt="image" src="https://github.com/user-attachments/assets/109fc52b-2485-437f-af50-fe3fd05d5515" />
+
 #### Evidence to Capture
 
 <!-- ![Annotated odometry and TF graph](/assets/images/lab-03/odometry-tf-graph.png) -->
