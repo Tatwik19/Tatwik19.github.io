@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 - Sai Srinivas Tatwik Meesala: [smeesala@asu.edu](mailto:smeesala@asu.edu)
 - Prajval Arora: [parora24@asu.edu](mailto:parora24@asu.edu)
-- <!--Rajesh S Aouti: [raouti@asu.edu](mailto:raouti@asu.edu) - OVERTHROWN!-->
+- Rajesh S Aouti: [raouti@asu.edu](mailto:raouti@asu.edu)
 
 ---
 
