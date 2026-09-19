@@ -8,9 +8,7 @@ date: 2023-08-01
 location: "Arizona"
 ---
 
-Served as a Teaching Assistant for Robotics Systems I during the **Fall 2023 and Fall 2025** semesters.
-
-Previously completed the course as a graduate student, providing additional perspective while supporting lectures, laboratories, and student projects.
+Served as a Teaching Assistant for Robotics Systems I during the **Fall 2023 and Fall 2025** semesters. Previously completed the course as a graduate student.
 
 ## Course Links
 
@@ -18,40 +16,44 @@ Previously completed the course as a graduate student, providing additional pers
 - [Fall 2025](https://catalog.apps.asu.edu/catalog/classes/classlist?keywords=77720&searchType=all&term=2257#detailsOpen=77720-131765)
 - Fall 2026 (course link will be added when available)
 
-Prepared labs and assisted students in understanding key concepts and applications in robotics.
+Prepared laboratory exercises and supported instruction in industrial collaborative robotics, manipulation, computer vision, kinematics, and AI-enabled robotics.
 
 ## Course Description
 
-This course covers the analysis and design of robotic systems, with a focus on:
+Robotics Systems I covers the analysis, simulation, and design of robotic systems, with a focus on digital twins and:
 
 - Kinematics and dynamics
 - Coordinate transformations
-- Modeling, simulation, and deployment of robotic mechanisms
+- Digital twins, modeling, simulation, and deployment of robotic mechanisms
 
-## Student Learning Outcomes
+## Laboratory Topics
 
-- Apply kinematic and dynamic principles to robotic systems
-- Understand real-world engineering applications of robotics
-- Utilize software tools such as MATLAB and SolidWorks for robotic system analysis and design
-- Apply these concepts to industrial collaborative robots (cobots)
-- Integrate perception concepts for enhanced robotic functionality
+The semester laboratory sequence covers:
 
-### Laboratory Topics
+- **Robot operation and programming:** Safe operation, coordinate systems, motion planning, and basic programming of collaborative robots
+- **Manipulation:** Programmatic pick-and-place operations using end-effectors, taught positions, and repeatable motion sequences
+- **Computer vision:** Camera-based object detection, classification, and automated sorting
+- **Kinematics:** Forward and inverse kinematics using computational tools, symbolic methods, and robot feedback
 
-Throughout the semester, students complete laboratory exercises covering:
+## Laboratory Materials
 
-- Safe operation and basic programming of a robotic arm
-- Robot motion, coordinate systems, and drawing tasks
-- Pick-and-place operations
-- Computer vision, object detection, classification, and sorting
-- Forward and inverse kinematics
+- [Lab 1: Robot operation, coordinate recording, and drawing](https://docs.google.com/document/d/1r35rZIE6eMJbCOgBKYOnjAsMB5S-O09UPr9EwQXki4o/edit?usp=sharing)
+- [Lab 2: Pick-and-place with suction and gripper end effectors](https://docs.google.com/document/d/17_BqXxWtdaiDhxp681hOeHnW3Vf4kSwFNafQMaXsWKs/edit?usp=sharing)
+- [Lab 3: Object detection, classification, and sorting](https://docs.google.com/document/d/1Tejjj5kBQG3ShH-OzFCNmrdtLfogi62vPuU-OiIAGu0/edit?usp=sharing)
+- [Lab 4: Forward and inverse kinematics](https://docs.google.com/document/d/1bNFyRt0YSWybgjF3IyrESDEmCBnzn-idEBhzCC7MDIo/edit?usp=sharing)
 
 ## Assessments
 
-- [First robot handshaking](https://docs.google.com/document/d/1r35rZIE6eMJbCOjBKYOnjAsMB5S-O09UPr9EwQXki4o/edit?usp=sharing)
-- [Pick-and-place with suction cup and gripper using Python](https://docs.google.com/document/d/17_BqXxWtdaiDhxp681hOeHnW3Vf4kSwFNafQMaXsWKs/edit?usp=sharing)
-- [Object detection, classification, and sorting using computer vision](https://docs.google.com/document/d/1Tejjj5kBQG3ShH-OzFCNmrdtLfogi62vPuU-OiIAGu0/edit?usp=sharing)
-- [Lab: forward and inverse kinematics](https://docs.google.com/document/d/1bNFyRt0YSWybgjF3IyrESDEmCBnzn-idEBhzCC7MDIo/edit?usp=sharing)
-- Midterm 1: A camera-assisted Tic-Tac-Toe-playing robot
-- Midterm 2: A 4 × 4 maze-solving robot using vision, calibration, path planning, and motion control
-- Final Project: A physical AI system in which a robot uses an LLM/VLM-based agent to understand natural-language or spoken instructions and perform context-aware manipulation tasks
+- **Midterm 1:** Camera-assisted Tic-Tac-Toe-playing robot
+- **Midterm 2:** 4x4 maze-solving robot using vision, calibration, path planning, and motion control
+- **Final Project:** Physical AI system using an LLM/VLM-based agent to interpret natural-language or spoken instructions and perform context-aware manipulation
+
+## Isaac Sim Laboratory Sequence
+
+Prepared an additional three-laboratory sequence introducing digital twins, physics-based simulation, manipulation, ROS 2, and autonomous navigation:
+
+- [Lab 1: Isaac Sim Fundamentals and Physics](https://tatwik19.github.io/labs/lab-01-isaac-sim/)
+- [Lab 2: Six-Degree-of-Freedom Robot](https://tatwik19.github.io/labs/lab-02-isaac-sim/)
+- [Lab 3: TurtleBot 3 and ROS 2](https://tatwik19.github.io/labs/lab-03-isaac-sim/)
+
+The sequence progresses from digital-twin scene creation and physics simulation to robot manipulation, ROS 2 integration, sensing, localization, and autonomous navigation.
