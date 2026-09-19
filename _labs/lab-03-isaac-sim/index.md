@@ -44,6 +44,68 @@ document.addEventListener("DOMContentLoaded", function () {
 
 ---
 
+> **Required scope:** Students are required to complete Parts A–F and submit the required deliverables. Parts G–J are supplementary and optional after the Part F submission.
+
+## Start Here
+
+Complete the laboratory in the following order:
+
+1. Read the software and hardware requirements.
+2. Download the starter USD file.
+3. Complete Part A before creating any Action Graph.
+4. Save a checkpoint file after every major part.
+5. Do not continue to the next part until the validation command succeeds.
+6. Record screenshots for every checkpoint.
+
+## Contents
+
+- [Lab Overview](#1-lab-overview)
+- [What You Will Do](#2-what-you-will-do)
+- [Learning Goals](#3-learning-goals)
+- [Before You Start](#4-before-you-start)
+- [Part A: Starter USD](#part-a-open-and-validate-the-starter-usd-file)
+- [Part B: ROS 2 Clock](#part-b-create-the-ros-2-clock-graph)
+- [Part C: Drive Graph](#part-c-create-the-turtlebot-drive-action-graph)
+- [Part D: Lidar](#part-d-add-and-publish-a-2d-rtx-lidar)
+- [Part E: Camera](#part-e-add-and-publish-a-camera)
+- [Part F: Odometry and TF](#part-f-publish-odometry-and-robot-tf)
+- [Part G: QoS](#part-g-understand-and-test-ros-2-qos)
+- [Part H: Localization](#part-h-start-localization)
+- [Part I: Nav2](#part-i-start-nav2-navigation)
+- [Part J: Final Diagnostics](#part-j-final-diagnostic-verification)
+- [Required Deliverables](#required-deliverables)
+- [Troubleshooting](#troubleshooting-guide)
+
+## Submission Summary
+
+Submit:
+
+1. Checkpoint USD or USDA files.
+2. Lab report.
+3. Demonstration video.
+4. ROS 2 commands and configuration files.
+5. Required screenshots.
+6. Final diagnostic output.
+
+The required submission covers Parts A–F. Parts G–J may be completed as supplementary work after submission and are not required for the initial check-off.
+
+The report must document each required part, A through F. After completing every part, capture the required screenshots, save the corresponding checkpoint file, record the validation results, and add the procedure, results, and observations to the report before continuing.
+
+## Laboratory Roadmap
+
+| Stage | Main task | Required result |
+|---|---|---|
+| A | Validate the starter USD | Robot simulates without ROS 2 |
+| B | Publish `/clock` | ROS 2 receives simulation time |
+| C | Control the robot | `/cmd_vel` moves the robot |
+| D | Add lidar | `/scan` publishes LaserScan data |
+| E | Add camera | Camera image topics publish |
+| F | Publish odometry and TF | `odom → base_footprint` exists |
+| G | Inspect QoS *(optional)* | QoS compatibility is understood |
+| H | Run localization *(optional)* | AMCL publishes `map → odom` |
+| I | Run Nav2 *(optional)* | Robot reaches a goal |
+| J | Complete diagnostics *(optional)* | All required outputs are verified |
+
 ## 1. Lab Overview
 
 This laboratory transforms a prepared TurtleBot 3 simulation model into a ROS2-enabled mobile robot. You will progressively add and validate the core capabilities needed for autonomous operation in simulation.
@@ -76,6 +138,8 @@ After completing this laboratory, you will be able to:
 > Important: This lab is intentionally structured as a layered robotics integration exercise. Complete each section in order, and do not proceed until the current checkpoint is working.
 
 > Critical constraint: The TF tree must not contain both `world -> odom` and `map -> odom`. Use only the valid transform chain required by this lab.
+
+
 
 The required system architecture is:
 
@@ -4278,13 +4342,28 @@ _Graph_ROS_Odometry_TFWorld2Odom
 
 # Required Deliverables
 
-This section summarizes the required artifacts for submission. Keep every checkpoint file and collect all relevant screenshots, command output, and validation evidence before the final check-off.
+This section summarizes the required artifacts for submission. The required submission ends after Part F. Keep every Part A–F checkpoint file and collect the screenshots, command output, validation evidence, observations, and report notes before the Part F check-off.
+
+## Required Part A–F evidence
+
+Submit the following evidence for each required part:
+
+| Part | Checkpoint file | Required report evidence |
+|---|---|---|
+| A | `Lab3_00_student_start.usda` | Starter USD scene, TurtleBot hierarchy, physics validation, and observations |
+| B | `Lab3_01_ros_clock.usda` | ROS2 clock Action Graph screenshot, `/clock` validation output, and observations |
+| C | `Lab3_02_ros_drive.usda` | Drive Action Graph screenshot, robot motion using `/cmd_vel`, and observations |
+| D | `Lab3_03_lidar.usda` | Lidar Action Graph and RViz2 scan screenshots, `/scan` validation output, and observations |
+| E | `Lab3_04_camera.usda` | Camera Action Graph and camera image screenshots, topic validation output, and observations |
+| F | `Lab3_05_odometry_tf.usda` | Odometry/TF graph and TF tree screenshots, validation output, and observations |
+
+Screenshots are required after each part, not only at the end of the laboratory. Each screenshot should clearly show the relevant Isaac Sim graph or scene, RViz2 result, terminal validation, or other evidence requested by that part.
 
 ## 6.1 USD and USDA checkpoint files
 
 Save the completed stage after each major checkpoint.
 
-Submit the following files:
+Submit the following required Part A–F files:
 
 ```text
 Lab3_00_student_start.usda
@@ -4293,6 +4372,11 @@ Lab3_02_ros_drive.usda
 Lab3_03_lidar.usda
 Lab3_04_camera.usda
 Lab3_05_odometry_tf.usda
+```
+
+The following files are optional supplementary deliverables for Parts G–J:
+
+```text
 Lab3_06_qos_verified.usda
 Lab3_07_localization.usda
 Lab3_08_nav2_complete.usda
@@ -4322,7 +4406,9 @@ Confirm the intended meaning of `.uda` before submission because `.uda` is not a
 
 ## 6.2 Lab report
 
-Submit one formal lab report containing:
+Submit one comprehensive formal lab report in the [RAS 545 Lab Report Template](https://docs.google.com/document/d/1HOYJqnCjeE1o-8Ghffh58nG2FxjORW-J/edit?usp=sharing&ouid=109541660202730576301&rtpof=true&sd=true). The report must contain screenshots after each required part, A through F, and must document the work completed rather than only presenting final results.
+
+The report must contain:
 
 1. Title page
 2. Lab objectives
@@ -4339,11 +4425,16 @@ Submit one formal lab report containing:
 13. Conclusion
 14. References
 
-Report template:
+For each required part, include:
 
-[RAS 545 Lab Report Template](https://docs.google.com/document/d/1HOYJqnCjeE1o-8Ghffh58nG2FxjORW-J/edit?usp=sharing&ouid=109541660202730576301&rtpof=true&sd=true)
+- Procedure followed.
+- Results and validation command output.
+- Observations, including errors or troubleshooting.
+- Supporting screenshots captured immediately after the part.
+- The corresponding checkpoint filename.
+- Key learning or conclusion from that part.
 
-Your report must include supporting images for:
+Your report must include these supporting images for the required Parts A–F submission:
 
 - Starter USD scene
 - TurtleBot hierarchy
@@ -4352,6 +4443,9 @@ Your report must include supporting images for:
 - Lidar graph
 - Camera graph
 - Odometry and TF graph
+
+The following images are optional supplementary evidence for Parts G–J:
+
 - RViz map and lidar
 - RViz initial pose
 - RViz navigation goal
@@ -4359,13 +4453,16 @@ Your report must include supporting images for:
 
 ## 6.3 Demonstration video
 
-Record one or more videos showing:
+For the required submission, record one or more videos showing the working system through Part F:
 
 1. Isaac Sim scene running.
 2. TurtleBot moving from `/cmd_vel`.
 3. Lidar data in RViz2.
 4. Camera image data.
 5. TF tree or transform verification.
+
+Videos showing the following are optional supplementary evidence for Parts G–J:
+
 6. Map and localization.
 7. Nav2 goal execution.
 8. Robot reaching the desired position.
@@ -4394,7 +4491,9 @@ Submit:
 
 # Lab Check-Off
 
-Notify the teaching staff immediately after:
+The Part F check-off is required. After successfully completing and compiling/executing the required work through Part F, notify the teaching staff immediately for verification. Bring or provide the Part A–F checkpoint files, formal report evidence, screenshots, and validation outputs.
+
+The required Part F check-off must confirm:
 
 1. The USD stage saves successfully.
 2. All required ROS2 graphs are created.
@@ -4405,10 +4504,11 @@ Notify the teaching staff immediately after:
 7. `/camera/image_raw` publishes an image.
 8. `/odom` publishes odometry.
 9. The TF tree is connected.
-10. AMCL publishes `map → odom`.
-11. Nav2 reaches a goal.
+10. `odom → base_footprint` exists.
 
-The check-off demonstration must show a working system, not only screenshots or code.
+Parts G–J, including AMCL, Nav2, and final diagnostics, are supplementary after the required Part F check-off. They may be demonstrated separately if completed.
+
+The check-off demonstration must show a working system through Part F, not only screenshots or code.
 
 ---
 
