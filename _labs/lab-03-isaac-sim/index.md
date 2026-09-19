@@ -1680,8 +1680,9 @@ Do not change the `base_scan` link transform.
 Use the Isaac Sim menu:
 
 ```text
-Create → Sensors → RTX Lidar → NVIDIA → Example Rotary 2D
+Create → Issac → Sensors → RTX Lidar → NVIDIA → Example Rotary 2D
 ```
+<img width="541" height="220" alt="Screenshot from 2026-09-18 23-10-37" src="https://github.com/user-attachments/assets/c6172ffd-c605-4ec6-80a7-85afef4152e1" />
 
 A new lidar prim will be created.
 
@@ -1708,6 +1709,7 @@ If Isaac Sim initially creates the sensor under `/World`, drag it in the Stage p
 ```text
 base_scan
 ```
+<img width="1097" height="738" alt="Screenshot from 2026-09-18 23-07-50" src="https://github.com/user-attachments/assets/7bc711d8-25f1-42dc-8096-bb70e1ac0bb9" />
 
 When Isaac Sim asks whether to reparent the prim, accept the operation.
 
@@ -1739,6 +1741,7 @@ X = 1
 Y = 1
 Z = 1
 ```
+<img width="541" height="220" alt="image" src="https://github.com/user-attachments/assets/7a74a4da-e895-4d7e-9593-6f19441290af" />
 
 The sensor should overlap the visual lidar housing.
 
@@ -1777,6 +1780,7 @@ Set:
 ```text
 omni:sensor:tickRate = 10 Hz
 ```
+<img width="545" height="314" alt="image" src="https://github.com/user-attachments/assets/15c12bdd-b41c-42cb-a6a5-1067d8f3e600" />
 
 If the sensor exposes a scan-rate property, set:
 
@@ -1854,6 +1858,7 @@ The expected graph path is:
 ```text
 /turtlebot3_burger/base_scan/Lidar2D/ROS_Lidar2D
 ```
+<img width="544" height="372" alt="image" src="https://github.com/user-attachments/assets/8a102fca-602d-4a8a-a90b-0d39f647c0dd" />
 
 ## D7. Add lidar graph nodes
 
@@ -1894,6 +1899,7 @@ Configure `Isaac Create Render Product`:
 Camera Prim = /turtlebot3_burger/base_scan/Lidar2D
 Enabled = True
 ```
+<img width="1005" height="397" alt="image" src="https://github.com/user-attachments/assets/5f01d044-360b-4920-a83e-d64ad690a82c" />
 
 If width and height fields are visible, use:
 
@@ -1901,6 +1907,7 @@ If width and height fields are visible, use:
 Width = 640
 Height = 480
 ```
+<img width="550" height="402" alt="Screenshot from 2026-09-18 23-22-24" src="https://github.com/user-attachments/assets/bb3a9f99-3b81-4368-bace-81c7efa76be8" />
 
 The exact resolution is not used by the LaserScan message, but these values provide a predictable render-product configuration.
 
@@ -1977,6 +1984,8 @@ Set the render product camera prim exactly to:
 /turtlebot3_burger/base_scan/Lidar2D
 ```
 
+<img width="1322" height="588" alt="image" src="https://github.com/user-attachments/assets/67885264-7321-4650-97c0-d2ac92e29d01" />
+
 ## D9. Test `/scan`
 
 Press Play.
@@ -2038,6 +2047,8 @@ range_max
 ranges
 ```
 
+<img width="725" height="475" alt="image" src="https://github.com/user-attachments/assets/8571e122-c8fb-4400-8070-4761cb019ced" />
+
 ## D10. View the lidar in RViz2
 
 Start RViz2:
@@ -2066,6 +2077,8 @@ In RViz2:
    LaserScan
    ```
 
+<img width="1196" height="845" alt="image" src="https://github.com/user-attachments/assets/7f7c835f-3d81-4d77-b6af-98207455714b" />
+
 4. Set the LaserScan topic to:
 
    ```text
@@ -2083,6 +2096,8 @@ In RViz2:
 The lidar scan should be visible around the robot.
 
 At this stage, it is acceptable to use `base_scan` as the RViz Fixed Frame because the complete robot TF tree has not yet been created.
+
+<img width="1565" height="845" alt="image" src="https://github.com/user-attachments/assets/30221f14-26a9-4cfc-9ab7-ff81836609d1" />
 
 ### Validation checkpoint D
 
@@ -2102,6 +2117,8 @@ Take one screenshot showing:
 - The complete `ROS_Lidar2D` graph.
 - The ROS2 RTX Lidar Helper properties.
 - `/scan` visible in RViz2.
+
+<img width="737" height="452" alt="image" src="https://github.com/user-attachments/assets/e0a7aa39-42dc-4511-9ace-29be42d3fd59" />
 
 Save:
 
@@ -2207,6 +2224,8 @@ The final camera path must be:
 /turtlebot3_burger/base_footprint/Camera_1
 ```
 
+<img width="646" height="355" alt="image" src="https://github.com/user-attachments/assets/84278802-ffe9-470c-bdb3-90dfe639be01" />
+
 ## E4. Configure the camera transform
 
 Select:
@@ -2242,6 +2261,8 @@ Scale Y = 1
 Scale Z = 1
 ```
 
+<img width="646" height="355" alt="image" src="https://github.com/user-attachments/assets/687c1583-6db0-487b-93b4-c53e75e29dc2" />
+
 These values orient the camera approximately forward along the robot X axis.
 
 The equivalent USD quaternion is approximately:
@@ -2274,6 +2295,8 @@ Focal Length = 18.0 mm
 Clipping Range Near = 0.01 m
 Clipping Range Far = 100.0 m
 ```
+
+<img width="646" height="355" alt="image" src="https://github.com/user-attachments/assets/7861adb8-3aa4-499d-a03c-15f77bb9fd4d" />
 
 If the camera exposes an aperture setting, leave the default value.
 
@@ -2321,6 +2344,8 @@ The expected graph path is:
 /turtlebot3_burger/base_footprint/Camera_1/ROS_Camera
 ```
 
+<img width="646" height="355" alt="image" src="https://github.com/user-attachments/assets/64dd6620-52ac-4fc8-9808-6f75d66318cb" />
+
 ## E7. Add camera graph nodes
 
 Add:
@@ -2352,6 +2377,8 @@ Width = 640
 Height = 480
 ```
 
+<img width="1005" height="637" alt="image" src="https://github.com/user-attachments/assets/cd683ca7-7812-4f50-a6a7-263296659e8b" />
+
 Configure ROS2 Camera Helper:
 
 ```text
@@ -2361,6 +2388,8 @@ Frame ID = Camera_1
 Enabled = True
 Queue Size = 10
 ```
+
+<img width="1005" height="637" alt="image" src="https://github.com/user-attachments/assets/3237e56c-dde5-4313-b6dd-9fb54fbdc891" />
 
 If the helper exposes a `Use System Time` property, leave it disabled unless told otherwise.
 
@@ -2372,6 +2401,8 @@ Frame ID = Camera_1
 Enabled = True
 Queue Size = 10
 ```
+
+<img width="582" height="557" alt="image" src="https://github.com/user-attachments/assets/a6972592-3255-450c-8b6b-e5dab9f87abe" />
 
 If the helper exposes a `Use System Time` property, leave it disabled unless told otherwise.
 
@@ -2393,6 +2424,8 @@ If a node contains a `frameSkipCount` field, leave it at the default value. In I
 | `ROS2 Context` | `context` | `ROS2 Camera Info Helper` | `context` |
 
 > **Checkpoint:** The render-product output must connect to both camera helper nodes.
+
+<img width="1261" height="814" alt="image" src="https://github.com/user-attachments/assets/a07756f2-5cd2-46b7-88b3-a8ed8d74f2c6" />
 
 Connect:
 
@@ -2513,6 +2546,8 @@ Check one camera message:
 ros2 topic echo /camera/image_raw --once
 ```
 
+<img width="735" height="744" alt="image" src="https://github.com/user-attachments/assets/2eb967dc-b004-4687-8bf6-0812632c0ab0" />
+
 ## E11. View the image
 
 Run:
@@ -2526,6 +2561,8 @@ In the `rqt_image_view` window, select:
 ```text
 /camera/image_raw
 ```
+
+<img width="645" height="552" alt="image" src="https://github.com/user-attachments/assets/93815cbf-e821-4568-b94f-85e617a40347" />
 
 The image should show the simulated environment.
 
@@ -2568,6 +2605,8 @@ Save:
 ```text
 ~/RAS545/Lab3/work/Lab3_04_camera.usda
 ```
+
+<img width="1832" height="1167" alt="image" src="https://github.com/user-attachments/assets/c1ddc440-f12e-4388-94e9-5a1657d0ecdf" />
 
 ---
 
@@ -2751,6 +2790,8 @@ Set:
 ```text
 Chassis Prim = /turtlebot3_burger/base_footprint
 ```
+
+<img width="1000" height="663" alt="image" src="https://github.com/user-attachments/assets/0febb653-acb9-43b4-810e-49dbbe0c2d9a" />
 
 The node calculates:
 
