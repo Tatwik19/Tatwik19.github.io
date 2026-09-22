@@ -251,9 +251,10 @@
 }
 
 .lab-content table {
-  display: block;
+  display: table;
+  width: 100%;
   max-width: 100%;
-  overflow-x: auto;
+  overflow: visible;
 }
 
 .lab-content blockquote {
