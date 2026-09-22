@@ -1,6 +1,14 @@
 ---
 title: "Lab 3: TurtleBot 3 ROS2 Integration, Sensors, Localization, and Navigation"
-layout: single
+lab_number: 3
+course: "RAS 545: Robotics Systems I"
+status: complete
+summary: "Build a ROS 2-enabled TurtleBot 3 simulation with sensors, odometry, localization, and Nav2 navigation."
+topics:
+  - ROS 2
+  - Sensors and TF
+  - Localization and Nav2
+layout: lab
 permalink: /labs/lab-03-isaac-sim/
 date: 2026-09-12
 author_profile: false
@@ -56,25 +64,6 @@ Complete the laboratory in the following order:
 4. Save a checkpoint file after every major part.
 5. Do not continue to the next part until the validation command succeeds.
 6. Record screenshots for every checkpoint.
-
-## Contents
-
-- [Lab Overview](#1-lab-overview)
-- [What You Will Do](#2-what-you-will-do)
-- [Learning Goals](#3-learning-goals)
-- [Before You Start](#4-before-you-start)
-- [Part A: Starter USD](#part-a-open-and-validate-the-starter-usd-file)
-- [Part B: ROS 2 Clock](#part-b-create-the-ros-2-clock-graph)
-- [Part C: Drive Graph](#part-c-create-the-turtlebot-drive-action-graph)
-- [Part D: Lidar](#part-d-add-and-publish-a-2d-rtx-lidar)
-- [Part E: Camera](#part-e-add-and-publish-a-camera)
-- [Part F: Odometry and TF](#part-f-publish-odometry-and-robot-tf)
-- [Part G: QoS](#part-g-understand-and-test-ros-2-qos)
-- [Part H: Localization](#part-h-start-localization)
-- [Part I: Nav2](#part-i-start-nav2-navigation)
-- [Part J: Final Diagnostics](#part-j-final-diagnostic-verification)
-- [Required Deliverables](#required-deliverables)
-- [Troubleshooting](#troubleshooting-guide)
 
 ## Submission Summary
 

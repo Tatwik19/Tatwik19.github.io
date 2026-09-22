@@ -1,0 +1,32 @@
+---
+layout: single
+---
+
+{% include base_path %}
+
+{% assign status_label = page.status | replace: "-", " " | capitalize %}
+<div class="lab-intro">
+  <div class="lab-intro__label">
+    <span class="lab-card__number">Lab {{ page.lab_number }}</span>
+    <span class="lab-status lab-status--{{ page.status }}">{{ status_label }}</span>
+  </div>
+  {% if page.course %}<p class="lab-intro__course">{{ page.course }}</p>{% endif %}
+  {% if page.summary %}<p class="lab-intro__summary">{{ page.summary }}</p>{% endif %}
+</div>
+
+<div class="lab-page" data-lab-page>
+  <aside class="lab-toc" data-lab-toc aria-label="Laboratory contents">
+    <div class="lab-toc__inner">
+      <h2 class="lab-toc__title">On this page</h2>
+      <nav aria-label="Laboratory sections">
+        <ol class="lab-toc__list" data-lab-toc-list></ol>
+      </nav>
+    </div>
+  </aside>
+
+  <div class="lab-content" data-lab-content>
+    {{ content }}
+  </div>
+</div>
+
+<script src="{{ base_path }}/assets/js/labs.js" defer></script>

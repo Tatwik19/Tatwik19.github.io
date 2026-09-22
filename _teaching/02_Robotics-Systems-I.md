@@ -35,22 +35,24 @@ The semester laboratory sequence covers:
 - **Computer vision:** Camera-based object detection, classification, and automated sorting
 - **Kinematics:** Forward and inverse kinematics using computational tools, symbolic methods, and robot feedback
 
-## Laboratory Materials
-
-- [Lab 1: Robot operation, coordinate recording, and drawing](https://docs.google.com/document/d/1r35rZIE6eMJbCOgBKYOnjAsMB5S-O09UPr9EwQXki4o/edit?usp=sharing)
-- [Lab 2: Pick-and-place with suction and gripper end effectors](https://docs.google.com/document/d/17_BqXxWtdaiDhxp681hOeHnW3Vf4kSwFNafQMaXsWKs/edit?usp=sharing)
-- [Lab 3: Object detection, classification, and sorting](https://docs.google.com/document/d/1Tejjj5kBQG3ShH-OzFCNmrdtLfogi62vPuU-OiIAGu0/edit?usp=sharing)
-- [Lab 4: Forward and inverse kinematics](https://docs.google.com/document/d/1bNFyRt0YSWybgjF3IyrESDEmCBnzn-idEBhzCC7MDIo/edit?usp=sharing)
-
 ## Assessments
 
 - **Midterm 1:** Camera-assisted Tic-Tac-Toe-playing robot
 - **Midterm 2:** 4x4 maze-solving robot using vision, calibration, path planning, and motion control
 - **Final Project:** Physical AI system using an LLM/VLM-based agent to interpret natural-language or spoken instructions and perform context-aware manipulation
 
-## Isaac Sim Laboratory Sequence
+## Articulated RobotLabs
+
+- [Lab 1: Robot operation, coordinate recording, and drawing](https://docs.google.com/document/d/1r35rZIE6eMJbCOgBKYOnjAsMB5S-O09UPr9EwQXki4o/edit?usp=sharing)
+- [Lab 2: Pick-and-place with suction and gripper end effectors](https://docs.google.com/document/d/17_BqXxWtdaiDhxp681hOeHnW3Vf4kSwFNafQMaXsWKs/edit?usp=sharing)
+- [Lab 3: Object detection, classification, and sorting](https://docs.google.com/document/d/1Tejjj5kBQG3ShH-OzFCNmrdtLfogi62vPuU-OiIAGu0/edit?usp=sharing)
+- [Lab 4: Forward and inverse kinematics](https://docs.google.com/document/d/1bNFyRt0YSWybgjF3IyrESDEmCBnzn-idEBhzCC7MDIo/edit?usp=sharing)
+
+## Isaac Sim Labs
 
 Prepared an additional three-laboratory sequence introducing digital twins, physics-based simulation, manipulation, ROS 2, and autonomous navigation:
+
+See the complete [Isaac Sim laboratory hub](https://tatwik19.github.io/labs/) for summaries, status, and links to each laboratory.
 
 - [Lab 1: Isaac Sim Fundamentals and Physics](https://tatwik19.github.io/labs/lab-01-isaac-sim/)
 - [Lab 2: Six-Degree-of-Freedom Robot](https://tatwik19.github.io/labs/lab-02-isaac-sim/)

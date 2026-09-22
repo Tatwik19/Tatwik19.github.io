@@ -1,6 +1,14 @@
 ---
 title: "Lab 1: Isaac Sim Basic Usage and First Physics Simulation"
-layout: single
+lab_number: 1
+course: "RAS 545: Robotics Systems I"
+status: complete
+summary: "Create a USD stage, add scene geometry, and validate rigid-body physics in Isaac Sim."
+topics:
+  - Isaac Sim
+  - USD stages
+  - Rigid-body physics
+layout: lab
 permalink: /labs/lab-01-isaac-sim/
 date: 2026-09-12
 author_profile: false
@@ -56,26 +64,6 @@ Complete the laboratory in order:
 4. Save a checkpoint stage and capture the required screenshot after every part.
 5. Record the procedure, results, observations, and key learning in the formal report.
 6. Notify the teaching staff for check-off after the final physics validation succeeds.
-
-## Contents
-
-- [Reference Tutorial](#reference-tutorial)
-- [What You Will Do](#what-you-will-do)
-- [Learning Goals](#learning-goals)
-- [Required Software and Files](#required-software-and-files)
-- [Laboratory Roadmap](#laboratory-roadmap)
-- [Part A: Launch Isaac Sim](#part-a-launch-isaac-sim)
-- [Part B: Create a Ground Plane](#part-b-create-a-ground-plane)
-- [Part C: Add a Light Source](#part-c-add-a-light-source)
-- [Part D: Add and Transform a Cube](#part-d-add-and-transform-a-cube)
-- [Part E: Run Without Physics](#part-e-run-the-cube-without-physics)
-- [Part F: Add Physics](#part-f-add-physics-to-the-cube)
-- [Part G: Run the Physics Simulation](#part-g-run-the-physics-simulation)
-- [Required Deliverables](#required-deliverables)
-- [Report Expectations](#report-expectations)
-- [Visual Media Guidance](#visual-media-guidance)
-- [Lab Check-Off](#lab-check-off)
-- [Final Validation](#final-validation)
 
 ## Reference Tutorial
 

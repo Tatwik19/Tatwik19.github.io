@@ -1,0 +1,12 @@
+---
+layout: archive
+---
+
+<div class="lab-index">
+  <div class="lab-grid">
+    {% assign labs = site.labs | sort: "lab_number" %}
+    {% for lab in labs %}
+      {% include lab-card.html lab=lab %}
+    {% endfor %}
+  </div>
+</div>
