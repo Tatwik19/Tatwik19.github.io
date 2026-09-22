@@ -27,7 +27,7 @@
 
 .lab-pagination {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   gap: 2rem;
   margin-top: 3rem;
   padding-top: 1.25rem;
@@ -49,10 +49,21 @@
   text-align: right;
 }
 
+.lab-pagination__all {
+  align-self: center;
+  text-align: center;
+  white-space: nowrap;
+}
+
 @media (max-width: 40em) {
   .lab-pagination {
     grid-template-columns: 1fr;
     gap: 1rem;
+  }
+
+  .lab-pagination__all {
+    order: -1;
+    text-align: left;
   }
 
   .lab-pagination__next {
@@ -183,8 +194,29 @@
 }
 
 .lab-toc__title {
-  margin: 0 0 0.75rem;
+  margin: 0;
   font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.lab-toc__title::-webkit-details-marker {
+  display: none;
+}
+
+.lab-toc__title::after {
+  float: right;
+  content: "＋";
+  font-size: 1.1rem;
+}
+
+.lab-toc__inner[open] .lab-toc__title {
+  margin-bottom: 0.75rem;
+}
+
+.lab-toc__inner[open] .lab-toc__title::after {
+  content: "−";
 }
 
 .lab-toc__list {
@@ -210,6 +242,26 @@
   grid-column: 1;
   grid-row: 1;
   min-width: 0;
+  line-height: 1.65;
+}
+
+.lab-content pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.lab-content table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.lab-content blockquote {
+  border-left-width: 4px;
+}
+
+.lab-content .notice {
+  line-height: 1.55;
 }
 
 .lab-content h1,

@@ -833,10 +833,10 @@ Use the following recommended layout. The exact pixel position is not required, 
 Left column                  Middle column             Right column
 
 On Playback Tick  ────────▶  ROS2 Publish Clock
-                                      ▲
+                                    ▲
 ROS2 Context  ──────────────────────┘
-                                      ▲
-Isaac Read Simulation Time ───────────┘
+                                    ▲
+Isaac Read Simulation Time ─────────┘
 ```
 
 

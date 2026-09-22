@@ -26,6 +26,9 @@
           <a href="{{ previous_lab.url | relative_url }}">{{ previous_lab.title }}</a>
         {% endif %}
       </div>
+      <div class="lab-pagination__all">
+        <a href="{{ '/labs/' | relative_url }}">All labs</a>
+      </div>
       <div class="lab-pagination__next">
         {% if next_lab %}
           <span>Next lab</span>
