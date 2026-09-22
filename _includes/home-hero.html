@@ -1,0 +1,21 @@
+{% include base_path %}
+
+<section class="home-hero" aria-labelledby="home-hero-title">
+  <div class="home-hero__content">
+    <p class="home-hero__eyebrow">Robotics PhD Researcher · Arizona State University</p>
+    <h1 id="home-hero-title">Sai Srinivas Tatwik Meesala</h1>
+    <p class="home-hero__lead">Roboticist building intelligent machines that connect perception, autonomy, and physical action.</p>
+    <p class="home-hero__text">My work spans embedded systems, industrial automation, aerial robotics, computer vision, digital twins, and autonomous vehicles.</p>
+
+    <div class="home-hero__actions" aria-label="Primary links">
+      <a class="btn btn--info" href="{{ '/cv/' | relative_url }}">View CV</a>
+      <a class="btn" href="{{ '/portfolio/' | relative_url }}">Explore projects</a>
+      <a class="btn" href="{{ '/labs/' | relative_url }}">Browse labs</a>
+    </div>
+  </div>
+
+  <div class="home-hero__profile">
+    <img src="{{ site.author.avatar | prepend: '/images/' | prepend: base_path }}" alt="Portrait of Sai Srinivas Tatwik Meesala">
+    <p>Research, teaching, and hands-on engineering.</p>
+  </div>
+</section>

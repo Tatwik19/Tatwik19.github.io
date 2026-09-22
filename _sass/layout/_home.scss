@@ -1,0 +1,127 @@
+/* Homepage hero presentation. */
+
+#main.main--home {
+  max-width: 74rem;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 3rem 2rem 5rem;
+}
+
+#main.main--home .page--home {
+  float: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#main.main--home .home-page-header {
+  display: none;
+}
+
+.home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 20rem);
+  gap: 4rem;
+  align-items: center;
+  min-height: 30rem;
+  margin-bottom: 3.5rem;
+  padding: 4rem;
+  border: 1px solid rgba(47, 127, 149, 0.28);
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, rgba(47, 127, 149, 0.12), rgba(47, 127, 149, 0.03));
+}
+
+.home-hero__eyebrow {
+  margin: 0 0 1rem;
+  color: #2f7f95;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-hero h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2.25rem, 5vw, 4.5rem);
+  line-height: 1.05;
+}
+
+.home-hero__lead {
+  max-width: 42rem;
+  margin-bottom: 1rem;
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+  line-height: 1.35;
+}
+
+.home-hero__text {
+  max-width: 42rem;
+  color: var(--global-text-color-light);
+  font-size: 1.05rem;
+}
+
+.home-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.home-hero__actions .btn {
+  margin: 0;
+}
+
+.home-hero__profile {
+  text-align: center;
+}
+
+.home-hero__profile img {
+  width: min(100%, 16rem);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 6px solid var(--global-bg-color);
+  border-radius: 50%;
+  box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.16);
+}
+
+.home-hero__profile p {
+  margin: 1rem auto 0;
+  color: var(--global-text-color-light);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 48em) {
+  #main.main--home {
+    padding: 2rem 1rem 4rem;
+  }
+
+  .home-hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: 0;
+    padding: 2.25rem 1.5rem;
+  }
+
+  .home-hero__profile {
+    grid-row: 1;
+  }
+
+  .home-hero__content {
+    grid-row: 2;
+    text-align: center;
+  }
+
+  .home-hero__lead,
+  .home-hero__text {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .home-hero__actions {
+    justify-content: center;
+  }
+}
+
+html[data-theme="dark"] .home-hero {
+  border-color: #3a444e;
+  background: linear-gradient(135deg, rgba(47, 127, 149, 0.25), rgba(22, 27, 34, 0.9));
+}

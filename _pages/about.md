@@ -1,15 +1,14 @@
 ---
 permalink: /
 title: "About Me"
-author_profile: true
+author_profile: false
+home_hero: true
 redirect_from: 
   - /about/
   - /about.html
 ---
 
-<div style="text-align: justify">Passionate Roboticist with expertise in embedded systems, perception, aerial robotics, industrial automation, and autonomous vehicles. Demonstrated leadership in engineering projects, excelling in documentation, CAD design, embedded components, digital twin, and programming. Inspired to reach the pinnacle in robotics with a meticulous and determined approach to tasks.</div>
-
-<br />
+{% include home-hero.html %}
 
 
 ## News
