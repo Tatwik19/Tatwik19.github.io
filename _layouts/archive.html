@@ -12,10 +12,10 @@ layout: default
   {% endunless %}
 {% endif %}
 
-<div id="main" role="main"{% if page.lab_index %} class="main--labs"{% endif %}>
+<div id="main" role="main"{% if page.lab_index %} class="main--labs"{% elsif page.collection == 'portfolio' or page.permalink == '/portfolio/' %} class="main--portfolio"{% endif %}>
   {% include sidebar.html %}
 
-  <div class="archive{% if page.lab_index %} archive--labs{% endif %}">
+  <div class="archive{% if page.lab_index %} archive--labs{% elsif page.collection == 'portfolio' or page.permalink == '/portfolio/' %} archive--portfolio{% endif %}">
     {% unless page.header.overlay_color or page.header.overlay_image %}
       <h1 class="page__title">{{ page.title }}</h1>
     {% endunless %}

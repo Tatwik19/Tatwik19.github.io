@@ -27,6 +27,38 @@
   }
 }
 
+/* Portfolio projects are presented as readable project cards. */
+
+.archive--portfolio {
+  .list__item {
+    margin-bottom: 1.5rem;
+    padding: 1.35rem 1.5rem;
+    border: 1px solid var(--global-border-color);
+    border-radius: $border-radius;
+    background: var(--global-bg-color);
+    box-shadow: 0 0.2rem 0.75rem rgba(#000, 0.04);
+  }
+
+  .archive__item-title {
+    margin-top: 0;
+    font-size: $type-size-4;
+  }
+
+  .archive__item-excerpt {
+    line-height: 1.55;
+  }
+
+  .archive__item:hover .archive__item-title {
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 40em) {
+  .archive--portfolio .list__item {
+    padding: 1rem;
+  }
+}
+
 .archive__subtitle {
   margin: 1.414em 0 0;
   padding-bottom: 0.5em;
