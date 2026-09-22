@@ -815,6 +815,8 @@ In the Action Graph node search panel, search for and add these nodes:
 2. `ROS2 Context`
 3. `Isaac Read Simulation Time`
 4. `ROS2 Publish Clock`
+
+
 <img width="302" height="367" alt="image" src="https://github.com/user-attachments/assets/fb570d22-591f-4a1b-8d2e-4dc97bed4861" />
 
 Place the nodes from left to right in this order:

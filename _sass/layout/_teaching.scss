@@ -1,0 +1,52 @@
+/* Course-page presentation and reading improvements. */
+
+#main.main--teaching {
+  .page--teaching {
+    .page__inner-wrap {
+      max-width: 72rem;
+    }
+  }
+}
+
+.teaching-header {
+  margin-bottom: 2rem;
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid #2f7f95;
+  background: rgba(47, 127, 149, 0.07);
+}
+
+.teaching-header .page__title {
+  margin-bottom: 0.75rem;
+}
+
+.teaching-header p {
+  margin: 0.35rem 0;
+}
+
+.page--teaching .page__content {
+  max-width: 72rem;
+  line-height: 1.65;
+}
+
+.page--teaching .page__content h2 {
+  margin-top: 2.25rem;
+  margin-bottom: 1rem;
+}
+
+.page--teaching .page__content ul {
+  margin-bottom: 1.5rem;
+}
+
+.page--teaching .page__content li + li {
+  margin-top: 0.35rem;
+}
+
+.page--teaching .page__content a {
+  text-underline-offset: 0.15em;
+}
+
+@media (max-width: 40em) {
+  .teaching-header {
+    padding: 1rem;
+  }
+}

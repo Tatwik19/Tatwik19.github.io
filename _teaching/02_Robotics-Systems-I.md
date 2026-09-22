@@ -41,7 +41,7 @@ The semester laboratory sequence covers:
 - **Midterm 2:** 4x4 maze-solving robot using vision, calibration, path planning, and motion control
 - **Final Project:** Physical AI system using an LLM/VLM-based agent to interpret natural-language or spoken instructions and perform context-aware manipulation
 
-## Articulated RobotLabs
+## Articulated Robot Labs
 
 - [Lab 1: Robot operation, coordinate recording, and drawing](https://docs.google.com/document/d/1r35rZIE6eMJbCOgBKYOnjAsMB5S-O09UPr9EwQXki4o/edit?usp=sharing)
 - [Lab 2: Pick-and-place with suction and gripper end effectors](https://docs.google.com/document/d/17_BqXxWtdaiDhxp681hOeHnW3Vf4kSwFNafQMaXsWKs/edit?usp=sharing)
