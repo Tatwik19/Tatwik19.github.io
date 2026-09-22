@@ -1,5 +1,20 @@
 /* Laboratory index and document layout. Scoped to lab pages only. */
 
+@media screen and (min-width: 64em) {
+  #main.main--lab {
+    max-width: 1600px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .page.page--lab {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 .lab-index-note {
   margin: 1.5rem 0 2rem;
   padding: 1rem 1.25rem;
