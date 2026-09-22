@@ -2,7 +2,8 @@
 
 @media screen and (min-width: 64em) {
   #main.main--lab {
-    max-width: 1600px;
+    width: 100%;
+    max-width: none;
     padding-left: 2rem;
     padding-right: 2rem;
   }
@@ -119,7 +120,7 @@
 
 .lab-page {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(12rem, 15rem);
+  grid-template-columns: minmax(0, 1fr) minmax(16rem, 20rem);
   gap: 2rem;
   align-items: start;
 }
