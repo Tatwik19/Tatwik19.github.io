@@ -6,6 +6,10 @@ layout: default
 
 <div id="main" role="main" class="main--lab">
   <article class="lab-document" itemscope itemtype="http://schema.org/CreativeWork">
+    <nav class="lab-breadcrumb" aria-label="Lab navigation">
+      <a href="{{ '/labs/' | relative_url }}">&larr; Back to all labs</a>
+    </nav>
+
     {% if page.title %}<h1 class="lab-document__title" itemprop="headline">{{ page.title }}</h1>{% endif %}
 
     <div class="lab-intro">
@@ -30,6 +34,8 @@ layout: default
         </div>
       </aside>
     </div>
+
+    {% include lab-pagination.html %}
   </article>
 </div>
 

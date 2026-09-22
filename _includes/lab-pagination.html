@@ -1,0 +1,37 @@
+{% assign lab_sequence = site.labs | sort: "lab_number" %}
+{% assign current_index = nil %}
+
+{% for lab in lab_sequence %}
+  {% if lab.url == page.url %}
+    {% assign current_index = forloop.index0 %}
+  {% endif %}
+{% endfor %}
+
+{% if current_index != nil %}
+  {% assign previous_index = current_index | minus: 1 %}
+  {% assign next_index = current_index | plus: 1 %}
+  {% assign previous_lab = nil %}
+  {% assign next_lab = nil %}
+
+  {% for lab in lab_sequence %}
+    {% if forloop.index0 == previous_index %}{% assign previous_lab = lab %}{% endif %}
+    {% if forloop.index0 == next_index %}{% assign next_lab = lab %}{% endif %}
+  {% endfor %}
+
+  {% if previous_lab or next_lab %}
+    <nav class="lab-pagination" aria-label="Navigate between laboratories">
+      <div class="lab-pagination__previous">
+        {% if previous_lab %}
+          <span>Previous lab</span>
+          <a href="{{ previous_lab.url | relative_url }}">{{ previous_lab.title }}</a>
+        {% endif %}
+      </div>
+      <div class="lab-pagination__next">
+        {% if next_lab %}
+          <span>Next lab</span>
+          <a href="{{ next_lab.url | relative_url }}">{{ next_lab.title }}</a>
+        {% endif %}
+      </div>
+    </nav>
+  {% endif %}
+{% endif %}

@@ -3,7 +3,7 @@ title: "Lab 2: Six-Degree-of-Freedom Robot"
 lab_number: 2
 course: "RAS 545: Robotics Systems I"
 status: under-preparation
-summary: "A planned Isaac Sim laboratory focused on six-degree-of-freedom robot modeling, manipulation, and control."
+summary: "Model and manipulate a six-degree-of-freedom Franka robotic arm in Isaac Sim by placing it in a simple environment, adding an object, and configuring their physical properties."
 topics:
   - Isaac Sim
   - Robot manipulation

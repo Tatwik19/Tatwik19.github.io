@@ -3,7 +3,7 @@ title: "Lab 1: Isaac Sim Basic Usage and First Physics Simulation"
 lab_number: 1
 course: "RAS 545: Robotics Systems I"
 status: complete
-summary: "Create a USD stage, add scene geometry, and validate rigid-body physics in Isaac Sim."
+summary: "Learn how to open Isaac Sim, create a USD stage and simple scene, add lights and objects, and run a basic rigid-body physics simulation."
 topics:
   - Isaac Sim
   - USD stages
