@@ -1,10 +1,8 @@
 {% assign lab = include.lab %}
-{% assign status_label = lab.status | replace: "-", " " | capitalize %}
 
 <article class="lab-card">
   <div class="lab-card__header">
     <span class="lab-card__number">Lab {{ lab.lab_number }}</span>
-    <span class="lab-status lab-status--{{ lab.status }}">{{ status_label }}</span>
   </div>
 
   <h2 class="lab-card__title">
@@ -27,7 +25,5 @@
 
   {% if lab.status == "under-preparation" %}
     <span class="lab-card__availability">Content is under preparation.</span>
-  {% else %}
-    <a class="btn btn--primary lab-card__link" href="{{ lab.url | relative_url }}">Open Lab {{ lab.lab_number }}</a>
   {% endif %}
 </article>

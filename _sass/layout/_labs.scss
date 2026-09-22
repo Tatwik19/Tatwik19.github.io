@@ -73,24 +73,6 @@
   text-transform: uppercase;
 }
 
-.lab-status {
-  padding: 0.2rem 0.55rem;
-  border-radius: 999px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  text-transform: capitalize;
-}
-
-.lab-status--complete {
-  color: #17623a;
-  background: #e2f3e8;
-}
-
-.lab-status--under-preparation {
-  color: #805800;
-  background: #fff1c7;
-}
-
 .lab-card__title {
   margin-top: 0;
   font-size: 1.25rem;
@@ -113,11 +95,6 @@
   background: rgba(47, 127, 149, 0.1);
 }
 
-.lab-card__link {
-  align-self: flex-start;
-  margin-top: 1rem;
-}
-
 .lab-card__availability {
   margin-top: 1rem;
   color: #805800;
@@ -127,12 +104,14 @@
 
 .lab-page {
   display: grid;
-  grid-template-columns: minmax(12rem, 15rem) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(12rem, 15rem);
   gap: 2rem;
   align-items: start;
 }
 
 .lab-toc {
+  grid-column: 2;
+  grid-row: 1;
   position: sticky;
   top: 5rem;
   max-height: calc(100vh - 6rem);
@@ -140,9 +119,12 @@
 }
 
 .lab-toc__inner {
+  max-height: calc(100vh - 6rem);
+  overflow-y: auto;
   padding: 1rem;
   border-left: 3px solid #2f7f95;
   background: rgba(47, 127, 149, 0.07);
+  box-shadow: 0 0.25rem 0.9rem rgba(0, 0, 0, 0.06);
 }
 
 .lab-toc__title {
@@ -170,6 +152,8 @@
 }
 
 .lab-content {
+  grid-column: 1;
+  grid-row: 1;
   min-width: 0;
 }
 
