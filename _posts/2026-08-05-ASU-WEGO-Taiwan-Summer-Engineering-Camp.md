@@ -86,7 +86,9 @@ I would also like to thank **Prof. Binil Starly** and **Alex Lee** for providing
 
 ## Media Coverage
 
-The program was featured in Taiwanese [News](https://tw.news.yahoo.com/%E5%BC%95%E9%80%B2%E5%85%A8%E7%BE%8E%E6%9C%80%E5%85%B7%E5%89%B5%E6%96%B0%E5%8A%9B%E5%A4%A7%E5%AD%B8%E9%A0%82%E5%B0%96%E5%B8%AB%E8%B3%87%E8%88%87%E5%AF%A6%E9%A9%97%E8%A8%AD%E5%82%99-%E8%96%87%E9%96%A3%E5%AD%B8%E5%AD%90%E8%B7%A8%E8%B6%8A%E5%AD%B8%E7%A7%91%E9%82%8A%E7%95%8C%E5%B1%95%E7%8F%BE%E5%BC%B7%E5%A4%A7%E5%AF%A6%E5%8B%99%E9%9F%8C%E6%80%A7-091005908.html)
+The program was featured in Taiwanese [News](https://tw.news.yahoo.com/%E5%BC%95%E9%80%B2%E5%85%A8%E7%BE%8E%E6%9C%80%E5%85%B7%E5%89%B5%E6%96%B0%E5%8A%9B%E5%A4%A7%E5%AD%B8%E9%A0%82%E5%B0%96%E5%B8%AB%E8%B3%87%E8%88%87%E5%AF%A6%E9%A9%97%E8%A8%AD%E5%82%99-%E8%96%87%E9%96%A3%E5%AD%B8%E5%AD%90%E8%B7%A8%E8%B6%8A%E5%AD%B8%E7%A7%91%E9%82%8A%E7%95%8C%E5%B1%95%E7%8F%BE%E5%BC%B7%E5%A4%A7%E5%AF%A6%E5%8B%99%E9%9F%8C%E6%80%A7-091005908.html) and by [ASU Prep Global](https://www.asuprepglobal.org/news/from-taipei-to-tempe-asu-prep-global-brings-world-class-engineering-education-to-taiwan/).
+
+The ASU Prep Global feature describes the inaugural **Summer 2026 Global Engineering Academy**, held July 20–24 at Taipei Wego Private Senior High School. Approximately 90 students participated in hands-on engineering experiences across six tracks, including robotics, automation, artificial intelligence, bioelectronics, semiconductors, energy systems, and 3D bioprinting. The robotics track included work with real robotic arms and introduced students to robot movement, automation, AI, and an opportunity to work toward an industry-recognized SACA certification.
 
 
 
