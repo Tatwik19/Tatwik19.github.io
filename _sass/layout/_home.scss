@@ -122,6 +122,19 @@
   color: var(--global-link-color);
 }
 
+.home-hero__socials .home-hero__social-link--linkedin {
+  color: #0a66c2;
+}
+
+.home-hero__socials .home-hero__social-link--orcid {
+  color: #a6ce39;
+}
+
+.home-hero__socials .home-hero__social-link--linkedin:hover,
+.home-hero__socials .home-hero__social-link--orcid:hover {
+  color: currentColor;
+}
+
 .home-hero__socials i {
   margin-right: 0.3rem;
 }
