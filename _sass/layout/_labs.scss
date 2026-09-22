@@ -3,8 +3,8 @@
 @media screen and (min-width: 64em) {
   #main.main--lab,
   #main:has(.lab-page) {
-    width: 100%;
-    max-width: none;
+    width: 100% !important;
+    max-width: none !important;
     margin-left: 0;
     margin-right: 0;
     box-sizing: border-box;
@@ -14,17 +14,36 @@
 
   .page.page--lab,
   #main:has(.lab-page) > .page {
+    float: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .page.page--lab .page__inner-wrap,
+  #main:has(.lab-page) .page__inner-wrap {
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  #main.main--labs {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .archive.archive--labs {
     float: none;
     width: 100%;
     max-width: none;
     margin-left: 0;
     margin-right: 0;
-  }
-
-  .page.page--lab .page__inner-wrap,
-  #main:has(.lab-page) .page__inner-wrap {
-    width: 100%;
-    max-width: none;
   }
 }
 
