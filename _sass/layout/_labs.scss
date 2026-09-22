@@ -2,8 +2,11 @@
 
 @media screen and (min-width: 64em) {
   #main.main--lab {
-    width: 100%;
-    max-width: none;
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    box-sizing: border-box;
     padding-left: 2rem;
     padding-right: 2rem;
   }
@@ -11,6 +14,7 @@
   .page.page--lab {
     float: none;
     width: 100%;
+    max-width: none;
     margin-left: 0;
     margin-right: 0;
   }
