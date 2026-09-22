@@ -1,0 +1,36 @@
+/* Shared accessibility and responsive-content improvements. */
+
+:focus-visible {
+  outline: 3px solid var(--global-link-color);
+  outline-offset: 3px;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+.page__content table,
+.archive__item table,
+.lab-content table {
+  max-width: 100%;
+}
+
+.page__content figure,
+.lab-content figure {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
