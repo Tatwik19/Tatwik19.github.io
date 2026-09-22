@@ -1,12 +1,19 @@
 ---
-layout: archive
+layout: default
 ---
 
-<div class="lab-index">
-  <div class="lab-grid">
-    {% assign labs = site.labs | sort: "lab_number" %}
-    {% for lab in labs %}
-      {% include lab-card.html lab=lab %}
-    {% endfor %}
+<div id="main" role="main" class="main--labs">
+  <div class="lab-index-container">
+    <h1 class="page__title">{{ page.title }}</h1>
+    {{ content }}
+
+    <div class="lab-index">
+      <div class="lab-grid">
+        {% assign labs = site.labs | sort: "lab_number" %}
+        {% for lab in labs %}
+          {% include lab-card.html lab=lab %}
+        {% endfor %}
+      </div>
+    </div>
   </div>
 </div>
