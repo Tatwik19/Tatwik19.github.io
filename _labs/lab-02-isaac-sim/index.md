@@ -4,6 +4,7 @@ lab_number: 2
 course: "RAS 545: Robotics Systems I"
 status: under-preparation
 summary: "Model and manipulate a six-degree-of-freedom Franka robotic arm in Isaac Sim by placing it in a simple environment, adding an object, and configuring their physical properties."
+description: "A planned Isaac Sim laboratory on modeling and manipulating a six-degree-of-freedom Franka robotic arm and configuring physical properties."
 topics:
   - Isaac Sim
   - Robot manipulation

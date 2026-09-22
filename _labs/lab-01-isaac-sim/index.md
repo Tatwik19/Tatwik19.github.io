@@ -4,6 +4,7 @@ lab_number: 1
 course: "RAS 545: Robotics Systems I"
 status: complete
 summary: "Learn how to open Isaac Sim, create a USD stage and simple scene, add lights and objects, and run a basic rigid-body physics simulation."
+description: "A hands-on Isaac Sim laboratory covering USD stages, scene creation, lighting, objects, and basic rigid-body physics simulation."
 topics:
   - Isaac Sim
   - USD stages

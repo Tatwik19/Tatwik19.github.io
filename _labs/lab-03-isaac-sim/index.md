@@ -4,6 +4,7 @@ lab_number: 3
 course: "RAS 545: Robotics Systems I"
 status: complete
 summary: "Build a ROS 2-enabled TurtleBot 3 simulation: send movement commands, add camera and laser sensors, estimate the robot's position with odometry and localization, visualize the environment, and enable autonomous Nav2 navigation."
+description: "A hands-on ROS 2 and Isaac Sim laboratory covering TurtleBot 3 control, camera and laser sensors, localization, visualization, and Nav2 navigation."
 topics:
   - ROS 2
   - Sensors and TF
