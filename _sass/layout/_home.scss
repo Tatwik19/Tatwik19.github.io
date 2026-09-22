@@ -123,16 +123,25 @@
 }
 
 .home-hero__socials .home-hero__social-link--linkedin {
-  color: #0a66c2;
+  color: var(--global-text-color);
 }
 
 .home-hero__socials .home-hero__social-link--orcid {
+  color: var(--global-text-color);
+}
+
+.home-hero__socials .home-hero__social-link--linkedin i {
+  color: #0a66c2;
+}
+
+.home-hero__socials .home-hero__social-link--orcid i {
   color: #a6ce39;
 }
 
+.home-hero__socials .home-hero__social-link--github:hover,
 .home-hero__socials .home-hero__social-link--linkedin:hover,
 .home-hero__socials .home-hero__social-link--orcid:hover {
-  color: currentColor;
+  color: var(--global-text-color);
 }
 
 .home-hero__socials i {
