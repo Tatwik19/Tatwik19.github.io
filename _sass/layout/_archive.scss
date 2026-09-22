@@ -53,6 +53,12 @@
   }
 }
 
+@media (min-width: 64em) {
+  .archive--portfolio .archive__item-excerpt {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 40em) {
   .archive--portfolio .list__item {
     padding: 1rem;

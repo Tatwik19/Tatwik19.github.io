@@ -277,6 +277,37 @@
   }
 }
 
+html[data-theme="dark"] {
+  .lab-content {
+    div.highlighter-rouge,
+    figure.highlight {
+      border-color: #3a444e;
+      background-color: #161b22;
+      color: #e6edf3;
+
+      &:before {
+        background-color: #21262d;
+        color: #8b949e;
+      }
+    }
+
+    table {
+      border-color: #3a444e;
+      color: #e6edf3;
+    }
+
+    thead {
+      background-color: #21262d;
+      border-bottom-color: #3a444e;
+    }
+
+    th,
+    td {
+      border-color: #3a444e;
+    }
+  }
+}
+
 @media (max-width: 64em) {
   .lab-page {
     display: block;
