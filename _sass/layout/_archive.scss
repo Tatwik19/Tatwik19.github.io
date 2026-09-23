@@ -79,19 +79,99 @@
 .portfolio-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  align-items: center;
+  gap: 0.5rem;
   margin: 0.75rem 0 0;
-  padding: 0;
-  list-style: none;
+  padding: 0 !important;
+  list-style: none !important;
 
   li {
+    display: inline-flex;
+    align-items: center;
     margin: 0;
-    padding: 0.25rem 0.55rem;
-    border-radius: 0.3rem;
-    background: var(--global-code-background-color);
-    color: var(--global-text-color);
-    font-size: 0.78rem;
+    padding: 0.38rem 0.75rem;
+    border: 1px solid #93c5fd;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #eff6ff, #dbeafe);
+    box-shadow: 0 1px 2px rgba(#000, 0.08);
+    color: #1e3a8a;
+    font-size: 0.8rem;
+    font-weight: 600;
     line-height: 1.25;
+    list-style: none !important;
+    cursor: default;
+
+    &::marker,
+    &::before {
+      content: none !important;
+      display: none !important;
+    }
+
+    &:nth-child(6n + 2) {
+      border-color: #c4b5fd;
+      background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+      color: #5b21b6;
+    }
+
+    &:nth-child(6n + 3) {
+      border-color: #86efac;
+      background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+      color: #166534;
+    }
+
+    &:nth-child(6n + 4) {
+      border-color: #fcd34d;
+      background: linear-gradient(135deg, #fffbeb, #fef3c7);
+      color: #92400e;
+    }
+
+    &:nth-child(6n + 5) {
+      border-color: #fda4af;
+      background: linear-gradient(135deg, #fff1f2, #ffe4e6);
+      color: #9f1239;
+    }
+
+    &:nth-child(6n) {
+      border-color: #67e8f9;
+      background: linear-gradient(135deg, #ecfeff, #cffafe);
+      color: #155e75;
+    }
+  }
+}
+
+html[data-theme="dark"] .portfolio-tags li {
+  border-color: #2563eb;
+  background: linear-gradient(135deg, rgba(#2563eb, 0.28), rgba(#1d4ed8, 0.15));
+  color: #bfdbfe;
+
+  &:nth-child(6n + 2) {
+    border-color: #7c3aed;
+    background: linear-gradient(135deg, rgba(#7c3aed, 0.28), rgba(#6d28d9, 0.15));
+    color: #ddd6fe;
+  }
+
+  &:nth-child(6n + 3) {
+    border-color: #16a34a;
+    background: linear-gradient(135deg, rgba(#16a34a, 0.28), rgba(#15803d, 0.15));
+    color: #bbf7d0;
+  }
+
+  &:nth-child(6n + 4) {
+    border-color: #d97706;
+    background: linear-gradient(135deg, rgba(#d97706, 0.28), rgba(#b45309, 0.15));
+    color: #fde68a;
+  }
+
+  &:nth-child(6n + 5) {
+    border-color: #e11d48;
+    background: linear-gradient(135deg, rgba(#e11d48, 0.28), rgba(#be123c, 0.15));
+    color: #fecdd3;
+  }
+
+  &:nth-child(6n) {
+    border-color: #0891b2;
+    background: linear-gradient(135deg, rgba(#0891b2, 0.28), rgba(#0e7490, 0.15));
+    color: #a5f3fc;
   }
 }
 
