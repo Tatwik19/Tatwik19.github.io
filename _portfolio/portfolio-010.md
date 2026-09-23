@@ -1,69 +1,65 @@
 ---
-title: "Inchworm Foldable Robotics"
-
-excerpt: 
-    "Oct 2025 – Dec 2025<br/>  
-    Driven by the principles of foldable robotics, this compact inchworm robot demonstrates how far creativity, clever mechanisms, and a single sheet of material can go.
-    <br/>
-    <img src= 'https://inchworm-foldable-robotics.github.io/assets/01_Home/Inch_Worm.jpg'>"
-    
-
+title: "ArcFold: Foldable Inchworm Robot"
 collection: portfolio
+date: 2025-12-20
+project_period: "Oct 2025 – Dec 2025"
+summary: "Designed, simulated, fabricated, and tested a laminate inchworm robot whose gait combines a foldable linkage, alternating friction anchors, and ESP32-controlled actuation."
+role: "Mechanism design, MuJoCo simulation, fabrication, control, and experimental validation"
+featured_image: "https://inchworm-foldable-robotics.github.io/assets/01_Home/Inch_Worm.jpg"
+featured_image_alt: "ArcFold foldable inchworm robot prototype"
+technologies:
+  - MuJoCo
+  - SolidWorks
+  - ESP32
+  - Foldable robotics
+  - Laser cutting
+  - Experimental tracking
+project_url: "https://inchworm-foldable-robotics.github.io/"
+repository_url: "https://github.com/Inchworm-Foldable-Robotics/Inchworm-Foldable-Robotics.github.io"
 ---
 
+## Project Overview
 
-Check the website [here](https://inchworm-foldable-robotics.github.io/)
+ArcFold is a compact crawling robot inspired by the alternating anchor-and-arch gait of an inchworm. The robot uses a rigid foldable body, a central compression mechanism, and front and rear friction-modulated feet to turn periodic shape change into forward motion.
 
-<br/>
-
-# ArcFold 
-
+[View project website]({{ page.project_url }}) · [View repository]({{ page.repository_url }})
 
 <video width="700" controls>
   <source src="https://raw.githubusercontent.com/Inchworm-Foldable-Robotics/Inchworm-Foldable-Robotics.github.io/master/assets/04_Results/P4_Inchworm_Good.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
-<br/>
+## Design and Fabrication
 
-ArcFold is an inchworm‑inspired crawling robot based on the locomotion of [Manduca sexta larvae](https://en.wikipedia.org/wiki/Manduca_sexta). The robot uses rigid foldable linkages and friction‑modulated pads to realize a planar, two‑anchor lift‑and‑drag gait whose parameters can be modeled, fabricated, and systematically varied.  
+The design progressed through four major iterations. Early box-like and hardware-heavy concepts clarified the required geometry but introduced excessive mass and mechanical complexity. The final prototype returned to a lightweight triangular structure made from a five-layer laminate: cardstock outer layers, adhesive layers, and a flexible hinge-film core.
 
+The flat pattern was created in CAD and produced with staged laser-cutting operations for hinge lines and through-cuts. Registration features aligned the layers during heat-press lamination. Three SG92R micro servos—one at the central joint and one at each foot—were controlled by an ESP32 to execute the anchor, compress, release, and extend sequence.
 
-The project team consists of:
+## Modeling and Control
 
-- [Sai Srinivas Tatwik Meesala](https://tatwik19.github.io/)
-- [Colin Fricke](https://www.linkedin.com/in/colin-fricke)
-- Nathan Vairora  
+A MuJoCo model represented linkage geometry, compliant flexures, actuator dynamics, mass, damping, and measured friction. Gait periods of 4, 2, 1, and 0.5 seconds were swept to study how actuation frequency affected forward progress and stability.
 
-## Simulation in MuJoCo
+Physical testing showed that foot engagement had to complete before body compression. Approximately twelve timing variants were explored before settling on the most reliable sequence:
 
-<img src= 'https://inchworm-foldable-robotics.github.io/assets/04_Results/inchworm_crawlP4.gif'>"
+```text
+foot engage → body compress → opposite foot release → body extend
+```
 
+## My Contributions
 
+- Contributed to mechanism development and CAD iteration from concept through the laminate prototype.
+- Built and tuned the MuJoCo model for gait-period studies.
+- Supported laser-cut fabrication, ESP32/servo integration, and gait sequencing.
+- Analyzed tracked hardware motion against the simulated trajectories.
 
-## Biological Inspiration
+## Results
 
-The primary biological inspiration is the Manduca sexta larva, a geometrid inchworm‑type crawler that uses a characteristic two‑anchor looping gait. Posterior prolegs anchor while the anterior body arches and extends; then the anterior prolegs anchor while the posterior body is pulled forward, generating large stride‑to‑body‑length ratios with relatively simple control [1]. Manduca’s crawling is driven by friction modulation between “anchored” and “sliding” contacts and by controlled body curvature rather than by discrete legs or wheels [1], [2].  
+The 4-second gait traveled about 0.26 m in 28 seconds, while the 1-second and 0.5-second trials traveled approximately 0.33–0.36 m in 11–12 seconds—near 30 mm/s and roughly three times the speed of the 4-second trial. The 2-second trial underperformed because of foot slip.
 
-Biomechanics studies provide quantitative targets for the robot’s kinematics and contact conditions. Manduca exhibits nearly orientation‑invariant proleg timing, stride periods on the order of 2–3 s, and stride lengths of roughly 0.3–0.5 body lengths [1]. Multi‑contact ground‑reaction measurements show that anterior prolegs generate forward thrust while posterior prolegs often serve as high‑friction anchors, with effective friction ratios between anchored and sliding states of approximately 3:1 [2]. Beam‑bending models of inchworm locomotion relate curvature, arc length, and forward displacement, constraining the lift height and deformation envelope that the mechanical analog should reproduce [3].  
+Simulation and hardware agreed on the overall relationship between gait timing and forward progress, but the idealized model generally overpredicted stride consistency. At 0.5 seconds, the simulation developed lateral drift while the physical prototype continued forward with greater slip and variability. These differences identified clear next steps: better actuator dynamics, improved hinge reinforcement, engineered friction pads, stronger mounting, and closed-loop sensing.
 
-These insights motivate a foldable, rigid‑link crawler with two friction‑modulated pads and a controllable arching motion: a mechanism that abstracts the biological gait while remaining compatible with laminated fabrication and dynamic simulation.  
+![MuJoCo simulation of ArcFold](https://inchworm-foldable-robotics.github.io/assets/04_Results/inchworm_crawlP4.gif)
 
+## Team
 
-
-
-## References
-
-[1] N. P. L. Griethuijsen and B. A. Trimmer, “Crawling kinematics of Manduca sexta larvae on horizontal and vertical substrates,” *J. Exp. Biol.*, 2009.
-
-[2] H. T. Lin and B. A. Trimmer, “Multi‑contact ground reaction forces of crawling Manduca sexta,” *J. Exp. Biol.*, 2010 (with 2011 corrigendum).
-
-[3] R. H. Plaut, “Large deflection model of inchworm locomotion using a flexible beam,” *Int. J. Non‑Linear Mech.*, 2015.
-
-[4] X. Wang *et al.*, “A mini‑modular climbing caterpillar robot with inchworm‑like gait,” *Prog. Nat. Sci.*, 2009.
-
-[5] Y. Li *et al.*, “An inchworm‑like climbing robot based on cable‑driven grippers,” 2024.
-
-[6] M. Pan *et al.*, “Bio‑inspired soft crawling robots: mechanisms, actuation, and control,” *Adv. Sci.*, 2025.
-
-[7] F. Wu, “Kinematic analysis of a line robot based on inchworm biomimicry,” 2024.  
+Sai Srinivas Tatwik Meesala, Colin Fricke, and Nathan Vairora. Developed for RAS 557 at Arizona State University under Prof. Daniel M. Aukes.

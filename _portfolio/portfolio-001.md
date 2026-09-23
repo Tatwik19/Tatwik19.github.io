@@ -1,41 +1,58 @@
 ---
-title: "Interactive Decoration/Animatronics with Embedded System Control"
-# excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
-excerpt: 
-    "Aug 2021 – Dec 2021<br/>
-    Developed a Halloween decoration using embedded systems. In-depth research was done to design a functioning Printed Circuit Board."
+title: "Not Creepy Elf: Interactive Holiday Animatronic"
 collection: portfolio
+date: 2021-12-06
+project_period: "Aug 2021 – Dec 2021"
+summary: "Designed and built a dual-mode holiday animatronic around a custom PSoC-based PCB, motion sensing, motor control, LEDs, and Bluetooth communication."
+role: "Embedded systems, PCB design, and prototype integration"
+featured_image: "https://raw.githubusercontent.com/Tatwik19/Tatwik19.github.io/master/assets/Projects/Final%20Design%20-%20Not%20Creepy%20Elf/PCB%20photos/FRONT%20-%20TATWIK.jpg"
+featured_image_alt: "Front of the custom Not Creepy Elf printed circuit board"
+technologies:
+  - PSoC 4100S Plus
+  - C
+  - Cadence Allegro
+  - Bluetooth Low Energy
+  - PCB design
+repository_url: "https://github.com/Tatwik19/Tatwik19.github.io/tree/master/assets/Projects/Final%20Design%20-%20Not%20Creepy%20Elf"
+report_url: "https://raw.githubusercontent.com/Tatwik19/Tatwik19.github.io/master/assets/Projects/Final%20Design%20-%20Not%20Creepy%20Elf/00_Final_Report.pdf"
 ---
 
-Developed a Halloween decoration using embedded systems. In-depth research was done to design a functioning Printed Circuit Board.<br/>
-[Link](https://github.com/Tatwik19/Tatwik19.github.io/tree/master/assets/Projects/Final%20Design%20-%20Not%20Creepy%20Elf)
+## Project Overview
 
-## Not Creepy Elf
+Not Creepy Elf is an electronic decoration designed to switch between a playful Christmas character and a motion-activated Halloween animatronic. The project combined embedded hardware, firmware, sensing, lighting, and mechanical actuation in a compact prototype.
 
-The *Not Creepy Elf* project aims to create a distinctive electronic decoration to enhance holiday celebrations, specifically for Halloween and Christmas. This product is designed to meet users' desire for a spooky decoration during Halloween and seamlessly transition into a playful “Elf on the Shelf” character for Christmas. The Not Creepy Elf is intended to delight guests with a combination of fright, humor, and excitement, making it an appealing addition not only for holiday gatherings but also for year-round enjoyment.
+[View project files]({{ page.repository_url }}) · [Read the final report]({{ page.report_url }})
 
-This interactive decoration offers two customizable modes for Halloween and Christmas. In Halloween mode, it delivers lighthearted scares to create a thrilling atmosphere, while in Christmas mode, it provides a family-friendly, festive experience. Although the Not Creepy Elf is crafted to entertain, it may also surprise users, achieving the intended spooky effect for Halloween but with a gentler approach for Christmas.
+## System Design
 
-[Report](https://raw.githubusercontent.com/Tatwik19/Tatwik19.github.io/master/assets/Projects/Final%20Design%20-%20Not%20Creepy%20Elf/Team_106.pdf)
- <br />
+The prototype used a PSoC 4100S Plus microcontroller and a custom PCB designed in Cadence Allegro. Its main subsystems were:
 
-#### Technical Specifications
+- a PIR sensor for motion detection;
+- an analog accelerometer for orientation and movement sensing;
+- a temperature sensor using I²C communication;
+- a DC motor and motor driver controlled with PWM;
+- eye LEDs and a diagnostic LED; and
+- Bluetooth Low Energy communication for selecting the operating mode.
 
-The Not Creepy Elf’s design incorporates a PSoC microcontroller, programmed within the PSoC Creator IDE, to control and manage interactions. Key components and features include:
+When motion was detected, the firmware activated different motor and lighting sequences for the Christmas and Halloween modes. The final implementation also used accelerometer input to vary LED brightness.
 
-*	A PIR motion sensor, controlled via analog input, to detect nearby movement.
-*	A DC motor connected to a motor driver, regulated through pulse-width modulation (PWM).
-*	An accelerometer, read through analog input, to enable responsive, interactive movement.
-*	A temperature sensor using I2C communication, adding environmental adaptability.
+## My Contributions
 
-The schematic and PCB layout for the Not Creepy Elf were developed using Cadence Allegro.
+- Designed, assembled, and debugged an individual custom PCB for the shared team architecture.
+- Integrated the PSoC, sensor, motor-driver, LED, power, and communication circuits.
+- Supported firmware development and hardware bring-up across the sensing and actuation subsystems.
+- Helped revise the design when component compatibility and schedule constraints required a stepper-to-DC-motor change and replacement of the planned RFID reader.
 
-Front
-![plot](https://raw.githubusercontent.com/Tatwik19/Tatwik19.github.io/master/assets/Projects/Final%20Design%20-%20Not%20Creepy%20Elf/PCB%20photos/FRONT%20-%20TATWIK.jpg)
+## Results and Lessons Learned
 
-Back <br />
-![plot](https://raw.githubusercontent.com/Tatwik19/Tatwik19.github.io/master/assets/Projects/Final%20Design%20-%20Not%20Creepy%20Elf/PCB%20photos/BACK%20-%20TATWIK.jpg)
+The final prototype demonstrated motion-triggered behavior, LED control, motor actuation, sensor acquisition, and one-way Bluetooth communication. Measured results included a 5 m detection range, a 0.4 kg prototype mass, and approximately 120° of mechanical motion.
 
+The project also exposed practical PCB-development constraints. Component substitutions required fly-wiring, a voltage-follower redesign for the analog front end, updated LED resistor values, and firmware changes. Those changes reinforced the value of early breadboard validation, careful datasheet review, and designing for testability before fabrication.
 
-<br />
-<br />
+![Front of the custom PCB]({{ page.featured_image }})
+
+![Back of the custom PCB](https://raw.githubusercontent.com/Tatwik19/Tatwik19.github.io/master/assets/Projects/Final%20Design%20-%20Not%20Creepy%20Elf/PCB%20photos/BACK%20-%20TATWIK.jpg)
+
+## Team
+
+Adriana Juarez, Sai Srinivas Tatwik Meesala, Noah Blevins, and Ian Mansfield. Developed for EGR 304 at Arizona State University.

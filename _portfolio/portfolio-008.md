@@ -1,43 +1,56 @@
 ---
-title: "Robotics Dynamics and Force Control Package"
-
-excerpt: 
-    "April 2024<br/>
-    Developed Robotics Package, integrating manipulator dynamics, force control, and Interactive GUI."
-# excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "Robo_SIM: Manipulator Dynamics and Force-Control Package"
 collection: portfolio
+date: 2024-04-30
+project_period: "Apr 2024"
+summary: "Developed a MATLAB robotics package for user-defined manipulators, dynamics simulation, compliance control, impedance control, and interactive analysis."
+role: "Manipulator dynamics, force-control simulation, and GUI development"
+featured_image: "https://raw.githubusercontent.com/thulsonASU/robot_sim/main/images/DHGUI_3R.png"
+featured_image_alt: "Robo_SIM Denavit-Hartenberg parameter interface"
+technologies:
+  - MATLAB
+  - Simulink
+  - Robot dynamics
+  - Compliance control
+  - Impedance control
+repository_url: "https://github.com/thulsonASU/robot_sim"
 ---
 
-Developed Robotics Package, integrating manipulator dynamics, force control, and Interactive GUI.<br/>
-[Link](https://github.com/thulsonASU/robot_sim)
+## Project Overview
 
+Robo_SIM is a MATLAB package for modeling and studying the dynamics and force control of serial robotic manipulators. A user supplies a Denavit–Hartenberg table, configures the simulation through a graphical interface, and analyzes the resulting joint and end-effector behavior.
 
-# robot_sim
+[View repository]({{ page.repository_url }})
 
+## Core Capabilities
 
-Welcome to Robo_SIM – a MATLAB package developed to explore and implement advanced dynamics and force control techniques for robotic manipulators. This package is designed for educational and research purposes, integrating core concepts in manipulator dynamics, force control methods, and interactive GUI features to provide an accessible and comprehensive tool for robotics simulations.
+### Dynamics Simulation
 
-## Features
-* **Dynamics Simulation**
+The package derives the manipulator equations of motion and simulates joint position, velocity, and acceleration for a selected mechanism and input trajectory. The plots expose both transient and steady-state behavior for model checking and controller evaluation.
 
-  * Derives and outputs governing equations of motion for robotic systems.
-  * Simulates system dynamics, providing plots for joint positions (q), velocities (q_dot), and 
- accelerations (q_ddot) over time for given inputs.
+### Compliance Control
 
-* **Force Control Methods**
-  * **Compliance Control:** Implements PD control with gravity compensation, enabling indirect force control through compliance with external interactive forces. Visualizes desired vs. actual end-effector positions and contact forces.
-  * **Impedance Control:** This method uses inverse dynamics control to achieve indirect force control under environmental interactions. It plots desired vs. actual end-effector positions and end-effector contact forces over time.
+The compliance-control module combines proportional-derivative control with gravity compensation. It lets the end effector yield to external interaction forces while tracking a desired motion, and plots desired versus actual end-effector position together with contact force.
 
-* **Interactive GUI**
-  * A user-friendly graphical interface facilitates intuitive interaction with the package, allowing users to configure, simulate, and analyze robotic manipulator behavior easily.
+### Impedance Control
 
+The impedance controller uses inverse dynamics to shape the relationship between motion and environmental force. This provides a second indirect force-control strategy for comparing tracking behavior and interaction response.
 
-MATLAB/SIMULINK Robotic Simulator for a user-defined DH table
+### Interactive GUI
 
-![DHGUI](https://raw.githubusercontent.com/thulsonASU/robot_sim/main/images/DHGUI_3R.png)
+The interface organizes DH-table entry, robot generation, simulation parameters, controller selection, and plotting so that users can explore different manipulators without rewriting the full analysis pipeline.
 
-![DySimGUI](https://raw.githubusercontent.com/thulsonASU/robot_sim/main/images/DySimGUI_3R.png)
+## My Contributions
 
-![LQRGUI](https://raw.githubusercontent.com/thulsonASU/robot_sim/main/images/LQRGUI_3R.png)
+- Implemented and tested manipulator-dynamics calculations and simulation workflows.
+- Developed force-control functionality for compliance and impedance experiments.
+- Contributed to the interactive GUI and result visualization.
+- Integrated user-defined robot geometry with the dynamics and control modules.
 
-![PlotGUI](https://raw.githubusercontent.com/thulsonASU/robot_sim/main/images/PlotGUI_3R.png)
+## Outcome
+
+The completed package provides a reusable educational environment for moving from kinematic description to dynamic simulation and force-control analysis. It supports rapid comparison of controller behavior while keeping the underlying robot model configurable.
+
+![DH parameter interface]({{ page.featured_image }})
+
+![Dynamics simulation interface](https://raw.githubusercontent.com/thulsonASU/robot_sim/main/images/DySimGUI_3R.png)
