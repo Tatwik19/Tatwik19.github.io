@@ -13,20 +13,6 @@ redirect_from:
 
 Passionate Roboticist with expertise in embedded systems, perception, aerial robotics, industrial automation, and autonomous vehicles. Demonstrated leadership in engineering projects, excelling in documentation, CAD design, embedded components, digital twin, and programming. Inspired to reach the pinnacle in robotics with a meticulous and determined approach to tasks.
 
-<section class="home-photo-gallery" aria-labelledby="home-photo-gallery-title">
-  <div class="home-photo-gallery__header">
-    <h2 id="home-photo-gallery-title">Hands-on robotics</h2>
-    <p>LANL Hackathon 2026</p>
-  </div>
-  <div class="home-photo-gallery__grid">
-    <figure>
-      <img src="{{ '/assets/lanl-hackthon/01_LANL-Hackathon-2026-AK2--16.png' | relative_url }}" alt="Working with a team on collaborative robot hardware during the LANL Hackathon" width="2048" height="1365" loading="lazy" decoding="async">
-    </figure>
-    <figure>
-      <img src="{{ '/assets/lanl-hackthon/02_LANL-Hackathon-2026-AK2--13.png' | relative_url }}" alt="Testing a collaborative robotic arm during the LANL Hackathon" width="2048" height="1365" loading="lazy" decoding="async">
-    </figure>
-  </div>
-</section>
 
 ## News
 
@@ -63,3 +49,18 @@ td:last-child {
         <td>I graduated with a Master's in Robotics from Arizona State University with a full tuition award.</td>
     </tr>
 </table>
+
+<section class="home-photo-gallery" aria-labelledby="home-photo-gallery-title">
+  <div class="home-photo-gallery__header">
+    <h2 id="home-photo-gallery-title">Hands-on robotics</h2>
+    <p>LANL Hackathon 2026</p>
+  </div>
+  <div class="home-photo-gallery__grid">
+    <figure>
+      <img src="{{ '/assets/lanl-hackthon/01_LANL-Hackathon-2026-AK2--16.png' | relative_url }}" alt="Working with a team on collaborative robot hardware during the LANL Hackathon" width="2048" height="1365" loading="lazy" decoding="async">
+    </figure>
+    <figure>
+      <img src="{{ '/assets/lanl-hackthon/02_LANL-Hackathon-2026-AK2--13.png' | relative_url }}" alt="Testing a collaborative robotic arm during the LANL Hackathon" width="2048" height="1365" loading="lazy" decoding="async">
+    </figure>
+  </div>
+</section>
