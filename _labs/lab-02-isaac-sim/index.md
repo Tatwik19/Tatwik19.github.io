@@ -1,14 +1,13 @@
 ---
-title: "Lab 2: Six-Degree-of-Freedom Robot"
+title: "Lab 2: UR5e Joint and TCP Control in Isaac Sim"
 lab_number: 2
 course: "RAS 545: Robotics Systems I"
-status: under-preparation
-summary: "Model and manipulate a six-degree-of-freedom Franka robotic arm in Isaac Sim by placing it in a simple environment, adding an object, and configuring their physical properties."
-description: "A planned Isaac Sim laboratory on modeling and manipulating a six-degree-of-freedom Franka robotic arm and configuring physical properties."
+summary: "Model and manipulate a six-degree-of-freedom UR5e robotic arm in Isaac Sim and control its joints with OmniGraph, command its tool-center point through GUI inverse kinematics, and perform joint and TCP control from Python."
+description: "A hands-on Isaac Sim laboratory covering UR5e articulation control, OmniGraph joint commands, Robot Site configuration, Robot Poser inverse kinematics, and Script Editor control through a reusable Python module."
 topics:
   - Isaac Sim
   - Robot manipulation
-  - Six-degree-of-freedom systems
+  - Python Scripting
 layout: lab
 permalink: /labs/lab-02-isaac-sim/
 date: 2026-09-12
@@ -16,49 +15,6 @@ author_profile: false
 classes: wide
 hide_page_metadata: true
 ---
-
----
-title: "Lab 2: UR5e Joint and TCP Control in Isaac Sim"
-lab_number: 2
-course: "RAS 545: Robotics Systems I"
-summary: "Import a UR5e robot, control its joints with OmniGraph, command its tool-center point through GUI inverse kinematics, and perform joint and TCP control from Python."
-description: "A hands-on Isaac Sim laboratory covering UR5e articulation control, OmniGraph joint commands, Robot Site configuration, Robot Poser inverse kinematics, and Script Editor control through a reusable Python module."
-topics:
-  - Isaac Sim
-  - UR5e
-  - OmniGraph
-  - Articulation control
-  - Forward and inverse kinematics
-  - Tool-center point control
-  - Python robotics
-permalink: /labs/lab-02-ur5e-control/
----
-
-<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  mermaid.initialize({ startOnLoad: false, theme: "default" });
-  document.querySelectorAll("pre > code.language-mermaid").forEach(function (code) {
-    var pre = code.parentElement;
-    var div = document.createElement("div");
-    div.className = "mermaid";
-    div.textContent = code.textContent;
-    pre.replaceWith(div);
-  });
-  mermaid.run();
-});
-</script>
-<style>
-@media print {
-  .mermaid,
-  pre,
-  table,
-  blockquote {
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-}
-</style>
 
 **Instructor:** Prof. [Sangram Redkar](mailto:Sangram.Redkar@asu.edu)
 
