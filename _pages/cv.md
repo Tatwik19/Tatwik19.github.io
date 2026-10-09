@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-[Download Resume](https://raw.githack.com/Tatwik19/Tatwik19.github.io/master/files/Socials/03_Resume.pdf)
+[Download Resume](https://raw.githack.com/Tatwik19/Tatwik19.github.io/master/files/Socials/04_Resume.pdf)
 
 ## Professional Summary
 
