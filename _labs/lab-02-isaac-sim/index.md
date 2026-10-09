@@ -1,6 +1,7 @@
 ---
 title: "Lab 2: UR5e Joint and TCP Control in Isaac Sim"
 lab_number: 2
+lab_series: isaac-sim
 course: "RAS 545: Robotics Systems I"
 summary: "Model and manipulate a six-degree-of-freedom UR5e robotic arm in Isaac Sim and control its joints with OmniGraph, command its tool-center point through GUI inverse kinematics, and perform joint and TCP control from Python."
 description: "A hands-on Isaac Sim laboratory covering UR5e articulation control, OmniGraph joint commands, Robot Site configuration, Robot Poser inverse kinematics, and Script Editor control through a reusable Python module."
