@@ -7,13 +7,25 @@ layout: default
     <h1 class="page__title">{{ page.title }}</h1>
     {{ content | markdownify }}
 
-    <div class="lab-index">
+    <section class="lab-index" aria-labelledby="isaac-sim-labs-title">
+      <h2 id="isaac-sim-labs-title">Isaac Sim and ROS 2 Labs</h2>
       <div class="lab-grid">
-        {% assign labs = site.labs | sort: "lab_number" %}
-        {% for lab in labs %}
+        {% assign isaac_labs = site.labs | where: "lab_series", "isaac-sim" | sort: "lab_number" %}
+        {% for lab in isaac_labs %}
           {% include lab-card.html lab=lab %}
         {% endfor %}
       </div>
-    </div>
+    </section>
+
+    <section class="lab-index" aria-labelledby="industrial-automation-labs-title">
+      <h2 id="industrial-automation-labs-title">Industrial Automation Labs</h2>
+      <p>Six progressive laboratories covering industrial controllers, PLC programming, automated workcells, HMI/SCADA development, collaborative robots, and smart-factory integration.</p>
+      <div class="lab-grid">
+        {% assign automation_labs = site.labs | where: "lab_series", "automation" | sort: "lab_number" %}
+        {% for lab in automation_labs %}
+          {% include lab-card.html lab=lab %}
+        {% endfor %}
+      </div>
+    </section>
   </div>
 </div>

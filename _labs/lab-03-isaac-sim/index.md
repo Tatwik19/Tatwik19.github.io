@@ -1,6 +1,7 @@
 ---
 title: "Lab 3: TurtleBot 3 ROS2 Integration, Sensors, Localization, and Navigation"
 lab_number: 3
+lab_series: isaac-sim
 course: "RAS 545: Robotics Systems I"
 status: complete
 summary: "Build a ROS 2-enabled TurtleBot 3 simulation: send movement commands, add camera and laser sensors, estimate the robot's position with odometry and localization, visualize the environment, and enable autonomous Nav2 navigation."

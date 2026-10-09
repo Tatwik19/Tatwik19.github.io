@@ -1,4 +1,4 @@
-{% assign lab_sequence = site.labs | sort: "lab_number" %}
+{% assign lab_sequence = site.labs | where: "lab_series", page.lab_series | sort: "lab_number" %}
 {% assign current_index = nil %}
 
 {% for lab in lab_sequence %}

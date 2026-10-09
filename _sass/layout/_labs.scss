@@ -106,6 +106,22 @@
   gap: 1.5rem;
 }
 
+.lab-index + .lab-index {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--global-border-color);
+}
+
+.lab-index > h2 {
+  margin-bottom: 0.5rem;
+}
+
+.lab-index > p {
+  max-width: 58rem;
+  margin: 0 0 1.25rem;
+  color: var(--global-text-color-light);
+}
+
 .lab-card {
   display: flex;
   flex-direction: column;

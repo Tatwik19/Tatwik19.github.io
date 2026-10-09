@@ -1,6 +1,7 @@
 ---
 title: "Lab 1: Isaac Sim Basic Usage and First Physics Simulation"
 lab_number: 1
+lab_series: isaac-sim
 course: "RAS 545: Robotics Systems I"
 status: complete
 summary: "Learn how to open Isaac Sim, create a USD stage and simple scene, add lights and objects, and run a basic rigid-body physics simulation."
