@@ -5,10 +5,12 @@ date: 2026-10-21
 project_period: "Sep 2026 - Oct 2026"
 summary: "Integrated and deployed an industrial collaborative-robot workcell that connected UR5e motion execution through Wandelbots NOVA with an NVIDIA Isaac Sim digital twin."
 role: "Workcell integration, industrial networking, NOVA application deployment, Isaac Sim digital-twin integration, commissioning, and on-site validation"
+featured_image: "/assets/Projects/Industrial_Physical_AI_Robot_Demonstrator/01_Digital_twin_and_physical_workcell.png"
+featured_image_alt: "NVIDIA Isaac Sim digital twin and physical collaborative-robot workcell"
 technologies:
   - Universal Robots UR5e
   - Wandelbots NOVA
-  - Kontron KBox industrial PC
+  - Industrial PC
   - NVIDIA Isaac Sim
   - OpenUSD
   - Kubernetes and containerd
@@ -19,28 +21,46 @@ technologies:
 
 ## Project Overview
 
-The Stellantis Industrial Physical AI Robot Demonstrator was developed at Arizona State University in collaboration with Wandelbots GmbH for **Stellantis Factory Booster Day 2026** in Michigan. The project integrated a physical Universal Robots UR5e collaborative robot, a Kontron KBox industrial PC running NOVA OS, containerized automation applications, and an NVIDIA Isaac Sim digital twin.
+Developed at Arizona State University in collaboration with [Wandelbots](https://www.wandelbots.com/), this demonstrator connected a physical Universal Robots UR5e collaborative robot to an NVIDIA Isaac Sim digital twin through [Wandelbots NOVA](https://www.wandelbots.com/wandelbots-nova-the-physical-ai-platform). The completed workcell was presented at [Stellantis Factory Booster Day 2026](https://www.media.stellantis.com/uk-en/corporate/press/factory-booster-day-2026-accelerates-innovation-across-stellantis-global-manufacturing-network) in Michigan.
 
-The physical demonstration used one UR5e as the helper robot for predefined pickup and transfer motions. The Isaac Sim environment represented the complete dual-robot workcell, including the helper station and the virtual screwdriving operation. This arrangement connected physical robot execution with a broader virtual manufacturing scenario without representing the virtual screwdriving sequence as a completed physical operation.
+The physical robot executed validated pickup and transfer motions while NOVA coordinated planning, execution, telemetry, and application services. Isaac Sim represented the broader dual-robot manufacturing concept and mirrored the physical robot's joint state in the virtual workcell.
+
+### Project Highlights
+
+- Integrated industrial robot control, edge computing, containerized applications, and digital-twin visualization.
+- Established repeatable networking and deployment procedures for transportation and recommissioning.
+- Validated physical motion execution, live state streaming, and physical-to-virtual articulation updates.
+
+## Media
+
+<figure class="portfolio-project__media portfolio-project__media--wide">
+  <img src="/assets/Projects/Industrial_Physical_AI_Robot_Demonstrator/01_Digital_twin_and_physical_workcell.png" alt="Isaac Sim digital twin beside the physical collaborative-robot workcell">
+  <figcaption>Isaac Sim digital twin and the commissioned physical workcell.</figcaption>
+</figure>
+
+<figure class="portfolio-project__media portfolio-project__media--portrait">
+  <video controls playsinline preload="metadata">
+    <source src="/assets/Projects/Industrial_Physical_AI_Robot_Demonstrator/Demo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <figcaption>Portrait-format demonstration of the integrated physical and virtual system.</figcaption>
+</figure>
 
 ## My Contributions
 
-- Integrated the UR5e controller with the NOVA industrial PC through a dedicated Ethernet network.
-- Configured persistent static addressing and automatic network activation for repeatable startup after transportation.
-- Installed, updated, and validated containerized NOVA applications on the IPC.
-- Imported application images into the IPC container runtime and deployed their manifests through the NOVA command-line interface.
-- Configured robot-controller identities, motion groups, application services, and state-monitoring interfaces.
-- Integrated the Isaac Sim workcell with the NOVA motion group through the NOVA Isaac Sim extension.
-- Supported camera-device integration and application-level verification.
-- Performed system commissioning, troubleshooting, relocation testing, and on-site demonstration support.
-- Verified robot communication, motion execution, controller-state streaming, TCP-pose reporting, and virtual articulation updates.
+- Integrated the UR5e controller and industrial PC through a dedicated Ethernet network with persistent addressing and automatic startup.
+- Installed, updated, and validated containerized NOVA applications and deployment manifests.
+- Configured controller identities, motion groups, application services, and state-monitoring interfaces.
+- Connected the Isaac Sim workcell to the physical NOVA motion group for live articulation updates.
+- Supported camera integration, system commissioning, troubleshooting, relocation testing, and on-site operation.
+- Verified motion execution, controller and joint-state streaming, TCP-pose reporting, and digital-twin synchronization.
 
 ## System Architecture
 
 | Layer | Implementation | Function |
 |---|---|---|
 | Physical execution | Universal Robots UR5e controller | Executes robot trajectories and retains responsibility for physical motion and safety functions. |
-| Industrial edge | Kontron KBox running NOVA OS | Hosts robot configuration, planning, communication, application, and monitoring services. |
+| Industrial edge | IPC running NOVA OS | Hosts robot configuration, planning, communication, application, and monitoring services. |
 | Application runtime | Kubernetes, k3s, and containerd | Runs and manages the containerized demonstration applications on the IPC. |
 | Service interface | HTTP/REST API | Provides robot models, controller configurations, motion-group descriptions, and planning resources. |
 | Execution and telemetry | WebSocket interfaces | Transmits trajectories and streams joint states, TCP poses, controller modes, and execution status. |
@@ -48,11 +68,11 @@ The physical demonstration used one UR5e as the helper robot for predefined pick
 | Digital twin | NVIDIA Isaac Sim and OpenUSD | Represents the workcell and maps physical joint states to the corresponding virtual robot articulation. |
 | Network | Dedicated static Ethernet | Maintains deterministic communication between the robot controller and industrial PC. |
 
-## Communication and Digital-Twin Workflow
+## Integration Workflow
 
-The UR5e controller connected directly to the industrial PC through a dedicated Ethernet interface with persistent static addressing. NOVA represented the robot through its cell, controller, and motion-group hierarchy, allowing the application layer to reference a stable robot identity independently of the physical deployment location.
+The UR5e controller connected directly to the industrial PC through dedicated Ethernet with persistent static addressing. NOVA represented the robot through a cell, controller, and motion-group hierarchy, giving the application layer a stable robot identity across deployment locations.
 
-The integrated workflow followed this sequence:
+### Command and Execution
 
 ```text
 Application command
@@ -63,7 +83,7 @@ Application command
   -> Physical robot motion
 ```
 
-During execution, separate communication paths streamed robot and system information:
+### State and Digital-Twin Synchronization
 
 ```text
 UR5e joint states and TCP pose
@@ -73,19 +93,15 @@ UR5e joint states and TCP pose
   -> Isaac Sim virtual articulation
 ```
 
-The NOVA Isaac Sim extension associated the OpenUSD robot articulation with the physical NOVA motion group. Streamed joint states updated the simulated robot configuration and provided a live physical-to-virtual visualization of the workcell state.
+The NOVA Isaac Sim extension associated the OpenUSD articulation with the physical motion group. Streamed joint states updated the simulated robot configuration, creating a live physical-to-virtual view of the workcell.
 
 ## Application Deployment
 
-The demonstration applications were delivered as container images and NOVA application manifests. The images were transferred to the industrial PC, imported into the local container runtime, and deployed as workloads in the NOVA cell namespace.
-
-This deployment process supported controlled application updates without rebuilding the industrial PC. Image tags identified each software revision, while the application manifests defined the corresponding service configuration. Camera and hardware-device access were applied through deployment configuration patches and verified through application status endpoints.
+Demonstration applications were delivered as versioned container images and NOVA manifests. They were imported into the local runtime and deployed in the NOVA cell namespace, enabling controlled updates without rebuilding the industrial PC. Deployment patches provided camera and hardware access, and application status endpoints supported verification.
 
 ## Demonstration Workflow
 
-The physical demonstration focused on the helper robot and used predefined joint-space and Cartesian trajectories. The operator initialized the workcell through NOVA, selected the configured motion group, and executed the demonstration sequence. NOVA distributed controller states and execution status to the application services while Isaac Sim visualized the corresponding robot configuration.
-
-The digital environment showed the broader dual-robot manufacturing concept. One virtual robot represented the helper and material-handling role, while the second represented the screwdriving operation. This separated the verified physical behavior from the extended virtual process concept.
+The operator initialized the workcell through NOVA, selected the configured motion group, and executed predefined joint-space and Cartesian trajectories. NOVA distributed controller and execution states while Isaac Sim visualized the corresponding configuration. A second virtual robot represented the extended screwdriving concept, clearly separating verified physical behavior from the broader simulated process.
 
 ## Deployment and Validation
 
@@ -107,22 +123,12 @@ The on-site demonstration established functional integration across the physical
 
 The project demonstrated that a portable industrial robot workcell requires coordinated configuration across several technical layers. Stable controller identities, persistent network profiles, versioned application images, and repeatable startup procedures were essential for reliable relocation and recommissioning.
 
-The work also clarified the division of responsibility across the architecture. The UR5e controller retained physical execution and safety functions. NOVA supplied planning, application integration, execution management, and state distribution. Isaac Sim provided the virtual workcell representation and live robot-state visualization.
+The resulting architecture maintained a clear division of responsibility: the UR5e controller retained physical execution and safety functions; NOVA supplied planning, application integration, execution management, and state distribution; and Isaac Sim provided virtual workcell representation and live state visualization.
 
 ## Research Output
 
-A two-page technical paper based on this work was submitted to the **2026 Southwest Robotics Symposium**:
+A two-page technical paper, *Physical-Virtual Integration of an Industrial Collaborative Robot Manipulator for Digital-Twin-Assisted Assembly*, was submitted to the **2026 Southwest Robotics Symposium**. The paper documents the edge architecture, communication interfaces, motion-group abstraction, physical execution, and Isaac Sim integration.
 
-**“Physical-Virtual Integration of an Industrial Collaborative Robot Manipulator for Digital-Twin-Assisted Assembly.”**
+## Collaboration and Showcase
 
-The paper documents the edge architecture, communication interfaces, motion-group abstraction, physical robot execution, and Isaac Sim digital-twin integration.
-
-## Event
-
-**Stellantis Factory Booster Day 2026**
-
-The completed system was transported from Arizona State University to Michigan for an industrial technology demonstration. The event presented the workcell to manufacturing and automation professionals in a production-oriented setting.
-
-## Acknowledgment
-
-This project was conducted at Arizona State University in collaboration with Wandelbots GmbH.
+This project was conducted at Arizona State University in collaboration with [Wandelbots](https://www.wandelbots.com/) and presented to manufacturing and automation professionals at [Stellantis Factory Booster Day 2026](https://www.media.stellantis.com/uk-en/corporate/press/factory-booster-day-2026-accelerates-innovation-across-stellantis-global-manufacturing-network) in Michigan.
