@@ -38,7 +38,7 @@ The physical robot executed validated pickup and transfer motions while NOVA coo
 </figure>
 
 <figure class="portfolio-project__media portfolio-project__media--portrait">
-  <video controls playsinline preload="metadata">
+  <video width="240" controls playsinline preload="metadata" style="display: block; width: 240px; max-width: 100%; height: auto; margin: 0 auto;">
     <source src="/assets/Projects/Industrial_Physical_AI_Robot_Demonstrator/Demo.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
