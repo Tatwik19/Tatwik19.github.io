@@ -35,7 +35,6 @@ The physical robot executed validated pickup and transfer motions while NOVA coo
 
 <figure class="portfolio-project__media portfolio-project__media--wide">
   <img src="/assets/Projects/Industrial_Physical_AI_Robot_Demonstrator/01_Digital_twin_and_physical_workcell.png" alt="Isaac Sim digital twin beside the physical collaborative-robot workcell">
-  <figcaption>Isaac Sim digital twin and the commissioned physical workcell.</figcaption>
 </figure>
 
 <figure class="portfolio-project__media portfolio-project__media--portrait">
@@ -43,7 +42,6 @@ The physical robot executed validated pickup and transfer motions while NOVA coo
     <source src="/assets/Projects/Industrial_Physical_AI_Robot_Demonstrator/Demo.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <figcaption>Portrait-format demonstration of the integrated physical and virtual system.</figcaption>
 </figure>
 
 ## My Contributions
