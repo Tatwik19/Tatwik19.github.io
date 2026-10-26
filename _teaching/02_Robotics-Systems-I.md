@@ -41,6 +41,17 @@ The semester laboratory sequence covers:
 - **Midterm 2:** 4x4 maze-solving robot using vision, calibration, path planning, and motion control
 - **Final Project:** Physical AI system using an LLM/VLM-based agent to interpret natural-language or spoken instructions and perform context-aware manipulation
 
+## Physical AI Demonstrator
+
+The final-project showcase connects a digital twin with a physical robotic workcell for AI-enabled perception, reasoning, and manipulation.
+
+![Digital twin and physical workcell](/assets/Projects/Industrial_Physical_AI_Robot_Demonstrator/01_Digital_twin_and_physical_workcell.png)
+
+<video controls playsinline style="display: block; max-width: 360px; width: 100%; height: auto;">
+  <source src="/assets/Projects/Industrial_Physical_AI_Robot_Demonstrator/Demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ## Articulated Robot Labs
 
 - [Lab 1: Robot operation, coordinate recording, and drawing](https://docs.google.com/document/d/1r35rZIE6eMJbCOgBKYOnjAsMB5S-O09UPr9EwQXki4o/edit?usp=sharing)
