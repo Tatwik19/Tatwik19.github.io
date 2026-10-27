@@ -104,6 +104,20 @@
   }
 }
 
+.portfolio-project__video-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem auto;
+
+  .portfolio-project__media--portrait {
+    flex: 0 1 15rem;
+    min-width: 0;
+    margin: 0;
+  }
+}
+
 .portfolio-tags {
   display: flex;
   flex-wrap: wrap;
