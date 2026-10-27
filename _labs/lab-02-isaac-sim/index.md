@@ -134,8 +134,10 @@ UR5e motion
 - Isaac Sim 6.0.1
 - A working NVIDIA graphics driver and Isaac Sim installation
 - Access to the Isaac Sim asset library
-- The instructor-provided `ur5e_control.py` file
+- The provided [`ur5e_control.py`]({{ '/labs/lab-02-isaac-sim/ur5e_control.py' | relative_url }}) controller module
 - A directory for the lab stage, code, screenshots, and GIF
+
+> **Controller file:** [Download `ur5e_control.py`]({{ '/labs/lab-02-isaac-sim/ur5e_control.py' | relative_url }})
 
 Create the following structure before beginning:
 
@@ -730,7 +732,7 @@ Before continuing, verify:
 - The OmniGraph joint controller is disabled or absent in the Python-stage copy.
 - The flange Site API remains configured.
 
-## F2. Place `ur5e_control.py`
+## F2. Download and place `ur5e_control.py`
 
 Create this directory using the Ubuntu file manager:
 
@@ -738,7 +740,7 @@ Create this directory using the Ubuntu file manager:
 /home/<username>/isaac_sim_projects/lab2/
 ```
 
-Copy the instructor-provided file into that directory:
+Download [`ur5e_control.py`]({{ '/labs/lab-02-isaac-sim/ur5e_control.py' | relative_url }}) and copy it into that directory:
 
 ```text
 /home/<username>/isaac_sim_projects/lab2/ur5e_control.py
@@ -1172,11 +1174,9 @@ Lab2_05_python_ready.usda
 Lab2_06_final.usda
 ```
 
-Submit the Python file:
+Submit the linked Python file:
 
-```text
-ur5e_control.py
-```
+- [`ur5e_control.py`]({{ '/labs/lab-02-isaac-sim/ur5e_control.py' | relative_url }})
 
 Submit these screenshots:
 
