@@ -3,12 +3,12 @@ title: "Stellantis Industrial Physical AI Robot Demonstrator"
 collection: portfolio
 date: 2026-10-21
 project_period: "Sep 2026 - Oct 2026"
-summary: "Architected and validated an industrial Physical AI workcell that unified collaborative-robot execution, software-defined orchestration, and an NVIDIA Isaac Sim digital twin."
+summary: "Integrated an industrial Physical AI workcell that unified collaborative-robot execution, software-defined orchestration, and an NVIDIA Isaac Sim digital twin."
 role: "System architecture, physical-virtual integration, edge application deployment, commissioning, and experimental validation"
 featured_image: "/assets/Projects/Industrial_Physical_AI_Robot_Demonstrator/01_Digital_twin_and_physical_workcell.png"
 featured_image_alt: "NVIDIA Isaac Sim digital twin and physical collaborative-robot workcell"
 technologies:
-  - Universal Robots UR5e
+  - Colaberative Industrial Robots
   - Wandelbots NOVA
   - NVIDIA Isaac Sim
   - OpenUSD
@@ -65,7 +65,7 @@ The Universal Robots UR5e executed manipulation tasks through [Wandelbots NOVA](
 
 | Layer | Implementation | Function |
 |---|---|---|
-| Physical system | Universal Robots UR5e | Executes collaborative manipulation tasks and enforces controller-level motion and safety functions. |
+| Physical system | Industrial RObot | Executes collaborative manipulation tasks and enforces controller-level motion and safety functions. |
 | Physical AI platform | Wandelbots NOVA OS | Provides robot abstraction, motion planning, execution management, and application integration. |
 | Edge runtime | Kubernetes and containerd | Hosts versioned, containerized services for portable and repeatable deployment. |
 | Application interface | REST and WebSocket APIs | Exposes robot models, motion groups, planning resources, trajectory execution, and telemetry. |
@@ -77,8 +77,8 @@ The Universal Robots UR5e executed manipulation tasks through [Wandelbots NOVA](
 NOVA decoupled task-level application logic from the robot controller through a common cell and motion-group abstraction. This architecture connected planning and physical execution with continuous state synchronization in Isaac Sim.
 
 ```text
-Task application -> NOVA planning and execution -> UR5e motion
-UR5e state -> NOVA telemetry and events -> Isaac Sim digital twin
+Task application -> NOVA planning and execution -> Robot motion
+Robot state -> NOVA telemetry and events -> Isaac Sim digital twin
 ```
 
 The OpenUSD articulation and physical robot shared the same motion-group identity. This enabled the virtual workcell to reflect executed robot motion while supporting a broader dual-robot assembly scenario for process development and visualization.
