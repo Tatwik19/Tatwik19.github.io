@@ -142,7 +142,7 @@ class UR5eController:
         result = self.poser.solve_ik(target)
 
         if result.success:
-            self.poser.apply_pose(result)
+            self.poser.apply_pose(result.joints)
 
         return {
             "success": bool(result.success),
@@ -186,7 +186,7 @@ class UR5eController:
         result = self.poser.solve_ik(target)
 
         if result.success:
-            self.poser.apply_pose(result)
+            self.poser.apply_pose(result.joints)
 
         return {
             "success": bool(result.success),
@@ -221,7 +221,7 @@ class UR5eController:
         result = self.poser.solve_ik(target)
 
         if result.success:
-            self.poser.apply_pose(result)
+            self.poser.apply_pose(result.joints)
 
         return {
             "success": bool(result.success),
