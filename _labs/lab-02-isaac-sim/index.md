@@ -264,6 +264,99 @@ The screenshot must show the ground plane and Physics Scene in the Stage panel.
 3. Select the Universal Robots UR5e asset.
 4. Drag the asset into the viewport or under `/World` in the Stage panel.
 
+Add the following immediately after **B1. Locate the robot asset** as an alternative method.
+
+---
+
+### Troubleshooting: Add the UR5e Using the Script Editor
+
+If the **Isaac Sim** asset collection does not appear in the Content Browser, the UR5e can be added directly using Python.
+
+1. Stop the simulation using the timeline controls.
+
+2. Open the Script Editor:
+
+   ```text
+   Window → Script Editor
+   ```
+<img width="870" height="882" alt="image" src="https://github.com/user-attachments/assets/11e15d08-bc8c-4355-9465-080954ebc54e" />
+
+3. Paste the following code into the Script Editor:
+
+   ```python
+   from isaacsim.storage.native import get_assets_root_path
+   import isaacsim.core.experimental.utils.stage as stage_utils
+
+   assets_root = get_assets_root_path()
+   ur5e_path = (
+       assets_root
+       + "/Isaac/Robots/UniversalRobots/ur5e/ur5e.usd"
+   )
+
+   print("Loading UR5e from:", ur5e_path)
+
+   stage_utils.add_reference_to_stage(
+       usd_path=ur5e_path,
+       path="/World/ur5e",
+   )
+
+   print("UR5e added at /World/ur5e")
+   ```
+
+4. Click **Run** at the bottom of the Script Editor.
+
+5. Wait for the robot asset and its materials to load.
+
+6. In the Stage panel, confirm that the following prim exists:
+
+   ```text
+   /World/ur5e
+   ```
+
+7. Select `/World/ur5e` and press `F` to focus the viewport camera on the robot.
+
+8. Confirm that the UR5e is visible and positioned above the ground plane.
+<img width="870" height="882" alt="image" src="https://github.com/user-attachments/assets/7b5855d2-44c3-412a-9511-c3400e547b29" />
+
+
+> **Important:** Run this script only once. Running it again after `/World/ur5e` already exists may produce a duplicate-reference warning or unexpected stage behavior.
+
+#### Troubleshooting the asset root
+
+If the Script Editor reports that the asset root cannot be found:
+
+1. Close Isaac Sim.
+2. Open a terminal.
+3. Relaunch Isaac Sim with the official cloud asset root:
+
+   ```bash
+   cd ~/isaacsim
+
+   ./isaac-sim.sh \
+     --/persistent/isaac/asset_root/default="https://omniverse-content-production.s3-us-west-2.amazonaws.com/Assets/Isaac/6.0"
+   ```
+
+4. Reopen the stage and repeat the Script Editor procedure.
+
+#### Expected result
+
+The Stage panel should contain:
+
+```text
+/World
+├── PhysicsScene
+├── GroundPlane
+└── ur5e
+```
+
+The robot root must remain:
+
+```text
+/World/ur5e
+```
+
+Do not rename the robot’s internal links or joints.
+
 Asset folder organization can vary slightly between Isaac Sim installations. Use the search field if the robot is not visible in the expected Universal Robots folder.
 
 <img width="3134" height="1030" alt="image-1" src="https://github.com/user-attachments/assets/e22b2aa8-1e3a-4cfa-a434-de1023de41ff" />
