@@ -55,6 +55,11 @@ Manual joystick commands and autonomous commands pass through a mode-switch node
 
 The team characterized the propulsion system on a thrust stand and used those relationships in the control-allocation model. SolidWorks mass properties, added-mass estimates, flight-test damping observations, and Vicon motion tracking supported the dynamic model and experimental validation.
 
+<video controls playsinline preload="metadata" style="display: block; width: 100%; max-width: 52rem; height: auto; margin: 1.5rem auto;">
+  <source src="https://ras598-2025-s-team03.github.io/videos/BLIMP_ObjectDetection_Control.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ![AeroFusion BLIMP model]({{ page.featured_image }})
 
 ![Browser-based ROS telemetry interface](https://ras598-2025-s-team03.github.io/figures/blimp_gui.png)

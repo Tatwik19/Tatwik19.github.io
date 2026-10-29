@@ -200,6 +200,22 @@
   }
 }
 
+.home-photo-gallery__grid--research {
+  figure:first-child,
+  figure:last-child {
+    grid-column: 1 / -1;
+
+    img {
+      aspect-ratio: 1901 / 766;
+    }
+  }
+
+  figure:nth-child(2) img,
+  figure:nth-child(3) img {
+    aspect-ratio: 536 / 526;
+  }
+}
+
 @media (max-width: 48em) {
   #main.main--home {
     padding: 2rem 1rem 4rem;

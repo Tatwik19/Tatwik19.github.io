@@ -50,6 +50,27 @@ td:last-child {
     </tr>
 </table>
 
+<section class="home-photo-gallery" aria-labelledby="marinella-research-gallery-title">
+  <div class="home-photo-gallery__header">
+    <h2 id="marinella-research-gallery-title">Research and prototyping</h2>
+    <p>Marinella Research Lab</p>
+  </div>
+  <div class="home-photo-gallery__grid home-photo-gallery__grid--research">
+    <figure>
+      <img src="{{ '/assets/Marinella-research/MR1.avif' | relative_url }}" alt="Researchers assembling experimental hardware in the Marinella Research Lab" width="1901" height="766" loading="lazy" decoding="async">
+    </figure>
+    <figure>
+      <img src="{{ '/assets/Marinella-research/MR2.avif' | relative_url }}" alt="Positioning a calibration target beneath a machine-vision camera" width="536" height="526" loading="lazy" decoding="async">
+    </figure>
+    <figure>
+      <img src="{{ '/assets/Marinella-research/MR3.avif' | relative_url }}" alt="Instrumented research prototypes on a laboratory workbench" width="536" height="526" loading="lazy" decoding="async">
+    </figure>
+    <figure>
+      <img src="{{ '/assets/Marinella-research/MR4.avif' | relative_url }}" alt="Research team reviewing experimental results" width="1901" height="766" loading="lazy" decoding="async">
+    </figure>
+  </div>
+</section>
+
 <section class="home-photo-gallery" aria-labelledby="home-photo-gallery-title">
   <div class="home-photo-gallery__header">
     <h2 id="home-photo-gallery-title">Hands-on robotics</h2>

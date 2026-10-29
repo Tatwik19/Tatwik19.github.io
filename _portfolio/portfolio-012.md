@@ -36,6 +36,12 @@ The Universal Robots UR5e executed manipulation tasks through [Wandelbots NOVA](
   <img src="/assets/Projects/Industrial_Physical_AI_Robot_Demonstrator/01_Digital_twin_and_physical_workcell.png" alt="Isaac Sim digital twin beside the physical collaborative-robot workcell">
 </figure>
 
+<figure class="portfolio-project__media" style="max-width: 34rem;">
+  <a href="https://www.media.stellantis.com/uk-en/corporate/press/factory-booster-day-2026-accelerates-innovation-across-stellantis-global-manufacturing-network">
+    <img src="/assets/Projects/Industrial_Physical_AI_Robot_Demonstrator/2026BoosterDay-logo.jfif" alt="Factory Booster Day 2026 in Detroit" width="800" height="329" loading="lazy" decoding="async">
+  </a>
+</figure>
+
 <div class="portfolio-project__video-row">
   <figure class="portfolio-project__media portfolio-project__media--portrait">
     <video width="240" controls playsinline preload="metadata" style="display: block; width: 240px; max-width: 100%; height: auto; margin: 0 auto;">
