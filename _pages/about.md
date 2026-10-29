@@ -37,6 +37,10 @@ td:last-child {
 
 <table>
     <tr>
+        <td>Oct 2026</td>
+        <td>Presented an industrial Physical AI robot demonstrator developed at Arizona State University with <a href="https://www.wandelbots.com/">Wandelbots</a> at <a href="https://www.media.stellantis.com/uk-en/corporate/press/factory-booster-day-2026-accelerates-innovation-across-stellantis-global-manufacturing-network">Stellantis Factory Booster Day 2026</a> in Michigan, showcasing collaborative-robot execution, software-defined orchestration, and a high-fidelity digital twin.</td>
+    </tr>
+    <tr>
         <td>Jul 2026</td>
         <td>As part of the <a href="https://www.globalchamber.org/events/2026/05/08/collaborator/us-taiwan-technology-partnership-forum-2026/">US-Taiwan Technology Partnership</a> and <a href="https://www.us-taiwan.org/events/us-taiwan-technology-partnership-forum-2026/">US-Taiwan Technology Partnership Forum</a>, I visited Taiwan for the Summer 2026 Engineering Experience (July 20–24) with ASU Prep Global and Taipei Wego Private Senior High School to support a hands-on STEM and robotics initiative. The program was later featured by <a href="https://www.asuprepglobal.org/news/from-taipei-to-tempe-asu-prep-global-brings-world-class-engineering-education-to-taiwan/">ASU Prep Global</a>.</td>
     </tr>
