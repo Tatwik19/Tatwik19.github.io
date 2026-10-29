@@ -50,6 +50,21 @@ td:last-child {
     </tr>
 </table>
 
+<section class="home-photo-gallery" aria-labelledby="home-photo-gallery-title">
+  <div class="home-photo-gallery__header">
+    <h2 id="home-photo-gallery-title">Hands-on robotics</h2>
+    <p>LANL Hackathon 2026</p>
+  </div>
+  <div class="home-photo-gallery__grid">
+    <figure>
+      <img src="{{ '/assets/lanl-hackthon/01_LANL-Hackathon-2026-AK2--16.png' | relative_url }}" alt="Working with a team on collaborative robot hardware during the LANL Hackathon" width="2048" height="1365" loading="lazy" decoding="async">
+    </figure>
+    <figure>
+      <img src="{{ '/assets/lanl-hackthon/02_LANL-Hackathon-2026-AK2--13.png' | relative_url }}" alt="Testing a collaborative robotic arm during the LANL Hackathon" width="2048" height="1365" loading="lazy" decoding="async">
+    </figure>
+  </div>
+</section>
+
 <section class="home-photo-gallery" aria-labelledby="marinella-research-gallery-title">
   <div class="home-photo-gallery__header">
     <h2 id="marinella-research-gallery-title">Research and prototyping</h2>
@@ -67,21 +82,6 @@ td:last-child {
     </figure>
     <figure>
       <img src="{{ '/assets/Marinella-research/MR4.avif' | relative_url }}" alt="Research team reviewing experimental results" width="1901" height="766" loading="lazy" decoding="async">
-    </figure>
-  </div>
-</section>
-
-<section class="home-photo-gallery" aria-labelledby="home-photo-gallery-title">
-  <div class="home-photo-gallery__header">
-    <h2 id="home-photo-gallery-title">Hands-on robotics</h2>
-    <p>LANL Hackathon 2026</p>
-  </div>
-  <div class="home-photo-gallery__grid">
-    <figure>
-      <img src="{{ '/assets/lanl-hackthon/01_LANL-Hackathon-2026-AK2--16.png' | relative_url }}" alt="Working with a team on collaborative robot hardware during the LANL Hackathon" width="2048" height="1365" loading="lazy" decoding="async">
-    </figure>
-    <figure>
-      <img src="{{ '/assets/lanl-hackthon/02_LANL-Hackathon-2026-AK2--13.png' | relative_url }}" alt="Testing a collaborative robotic arm during the LANL Hackathon" width="2048" height="1365" loading="lazy" decoding="async">
     </figure>
   </div>
 </section>
