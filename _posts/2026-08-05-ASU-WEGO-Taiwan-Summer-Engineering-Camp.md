@@ -13,7 +13,9 @@ tags:
 ---
 
 
-I had the opportunity to represent **Arizona State University** at the **ASU + WEGO Taiwan Summer Engineering Camp** hosted by **Taipei Wego Private Bilingual Senior High School** in Taipei, Taiwan.
+I had the opportunity to represent **Arizona State University** at the **ASU + WEGO Taiwan Summer Engineering Camp** hosted by [Taipei Wego Private Bilingual Senior High School](https://www.wghs.tp.edu.tw/nss/s/eng/index) in Taipei, Taiwan.
+
+![Group photo from the ASU + WEGO Taiwan Summer Engineering Camp](/assets/04_BlogPosts/05_ASU_Wego/group_photo.webp)
 
 The program brought together faculty, graduate students, and high school students for a week of hands-on engineering education centered around robotics, artificial intelligence, computer vision, and autonomous systems.
 
@@ -82,7 +84,7 @@ I was grateful to represent **Arizona State University** alongside:
 
 and the broader **ASU/WEGO** team.
 
-I would also like to thank **Prof. Binil Starly** and **Alex Lee** for providing me with the opportunity to contribute to this international program.
+I would also like to thank **Prof. Binil Starly** and **Alex Lee** for providing me with the opportunity to contribute to this international program. The [ASU Prep Global feature on the ASU--WEGO partnership](https://asuprep.asu.edu/news/from-taipei-to-tempe-asu-prep-global-brings-world-class-engineering-education-to-taiwan/) provides additional information about the program and its organizers.
 
 ## Media Coverage
 
