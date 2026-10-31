@@ -14,7 +14,7 @@ layout: default
 
     <div class="lab-intro">
       <div class="lab-intro__label">
-        <span class="lab-card__number">Lab {{ page.lab_number }}</span>
+        <span class="lab-card__number">{% if page.card_label %}{{ page.card_label }}{% else %}Lab {{ page.lab_number }}{% endif %}</span>
       </div>
       {% if page.course %}<p class="lab-intro__course">{{ page.course }}</p>{% endif %}
       {% if page.summary %}<p class="lab-intro__summary">{{ page.summary }}</p>{% endif %}

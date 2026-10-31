@@ -2,7 +2,7 @@
 
 <article class="lab-card">
   <div class="lab-card__header">
-    <span class="lab-card__number">Lab {{ lab.lab_number }}</span>
+    <span class="lab-card__number">{% if lab.card_label %}{{ lab.card_label }}{% else %}Lab {{ lab.lab_number }}{% endif %}</span>
   </div>
 
   <h2 class="lab-card__title">

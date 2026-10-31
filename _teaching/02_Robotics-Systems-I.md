@@ -35,18 +35,18 @@ The semester laboratory sequence covers:
 - **Computer vision:** Camera-based object detection, classification, and automated sorting
 - **Kinematics:** Forward and inverse kinematics using computational tools, symbolic methods, and robot feedback
 
-## Assessments
-
-- **Midterm 1:** Camera-assisted Tic-Tac-Toe-playing robot
-- **Midterm 2:** 4x4 maze-solving robot using vision, calibration, path planning, and motion control
-- **Final Project:** Physical AI system using an LLM/VLM-based agent to interpret natural-language or spoken instructions and perform context-aware manipulation
-
 ## Articulated Robot Labs
 
 - [Lab 1: Robot operation, coordinate recording, and drawing](https://docs.google.com/document/d/1r35rZIE6eMJbCOgBKYOnjAsMB5S-O09UPr9EwQXki4o/edit?usp=sharing)
 - [Lab 2: Pick-and-place with suction and gripper end effectors](https://docs.google.com/document/d/17_BqXxWtdaiDhxp681hOeHnW3Vf4kSwFNafQMaXsWKs/edit?usp=sharing)
 - [Lab 3: Object detection, classification, and sorting](https://docs.google.com/document/d/1Tejjj5kBQG3ShH-OzFCNmrdtLfogi62vPuU-OiIAGu0/edit?usp=sharing)
 - [Lab 4: Forward and inverse kinematics](https://docs.google.com/document/d/1bNFyRt0YSWybgjF3IyrESDEmCBnzn-idEBhzCC7MDIo/edit?usp=sharing)
+
+## Assessments
+
+- **[Midterm 1]({{ '/labs/midterm-01-tic-tac-toe/' | relative_url }}):** Camera-assisted Tic-Tac-Toe-playing robot
+- **[Midterm 2]({{ '/labs/midterm-02-maze-solving/' | relative_url }}):** 4 × 4 maze-solving robot using vision, calibration, path planning, and motion control
+- **[Final Project]({{ '/labs/final-project-physical-ai/' | relative_url }}):** Physical AI system using an LLM/VLM-based agent to interpret natural-language or spoken instructions and perform context-aware manipulation
 
 ## Isaac Sim Labs
 

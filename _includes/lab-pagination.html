@@ -1,4 +1,6 @@
 {% assign lab_sequence = site.labs | where: "lab_series", page.lab_series | sort: "lab_number" %}
+{% assign navigation_item = "lab" %}
+{% if page.lab_series == "assessments" %}{% assign navigation_item = "assessment" %}{% endif %}
 {% assign current_index = nil %}
 
 {% for lab in lab_sequence %}
@@ -19,10 +21,10 @@
   {% endfor %}
 
   {% if previous_lab or next_lab %}
-    <nav class="lab-pagination" aria-label="Navigate between laboratories">
+    <nav class="lab-pagination" aria-label="Navigate between course materials">
       <div class="lab-pagination__previous">
         {% if previous_lab %}
-          <span>Previous lab</span>
+          <span>Previous {{ navigation_item }}</span>
           <a href="{{ previous_lab.url | relative_url }}">{{ previous_lab.title }}</a>
         {% endif %}
       </div>
@@ -31,7 +33,7 @@
       </div>
       <div class="lab-pagination__next">
         {% if next_lab %}
-          <span>Next lab</span>
+          <span>Next {{ navigation_item }}</span>
           <a href="{{ next_lab.url | relative_url }}">{{ next_lab.title }}</a>
         {% endif %}
       </div>

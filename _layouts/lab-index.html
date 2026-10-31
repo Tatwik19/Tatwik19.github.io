@@ -7,6 +7,17 @@ layout: default
     <h1 class="page__title">{{ page.title }}</h1>
     {{ content | markdownify }}
 
+    <section class="lab-index" aria-labelledby="course-assessments-title">
+      <h2 id="course-assessments-title">Midterms and Projects</h2>
+      <p>Integrated robotics assessments spanning perception, calibration, planning, manipulation, and Physical AI.</p>
+      <div class="lab-grid">
+        {% assign assessment_pages = site.labs | where: "lab_series", "assessments" | sort: "lab_number" %}
+        {% for lab in assessment_pages %}
+          {% include lab-card.html lab=lab %}
+        {% endfor %}
+      </div>
+    </section>
+
     <section class="lab-index" aria-labelledby="isaac-sim-labs-title">
       <h2 id="isaac-sim-labs-title">Isaac Sim and ROS 2 Labs</h2>
       <div class="lab-grid">
