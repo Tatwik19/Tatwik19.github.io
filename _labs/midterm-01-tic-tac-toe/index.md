@@ -27,7 +27,7 @@ hide_page_metadata: true
 
 ## Assessment Overview
 
-This midterm integrates perception, reasoning, and physical robot motion in a human-robot Tic-Tac-Toe game. The robot creates the board, observes the evolving game state, selects a valid move, and draws its mark in the corresponding cell.
+This midterm integrates perception, reasoning, and physical robot motion in a human-robot Tic-Tac-Toe game. The robot creates the board, observes the evolving game state, selects a valid move, and draws its mark in the corresponding cell. The human plays first and may choose either X or O; the robot uses the remaining mark.
 
 The assessment emphasizes complete system behavior rather than an isolated algorithm: camera observations must be interpreted in board coordinates, game logic must maintain a consistent state, and the resulting decision must be converted into safe robot motion.
 
@@ -48,19 +48,21 @@ Map the selected cell to robot coordinates
         ↓
 Draw the robot mark
         ↓
-Detect win, draw, or next turn
+Detect a human win, robot win, draw, or next turn
 ~~~
 
 ## Core Requirements
 
 - Generate a repeatable 3 × 3 game grid with the robot.
-- Support a human player using either X or O.
+- Allow the human player to move first and choose either X or O; assign the opposite mark to the robot.
 - Detect the human move and associate it with the correct board cell.
 - Maintain the board state across alternating turns.
-- Select legal robot moves using a rule-based, MATLAB-based, or AI-assisted decision method.
+- Select legal robot moves using minimax or another suitable strategy. Rule-based, MATLAB, GitHub-sourced, and generative-AI-assisted implementations are permitted.
 - Draw the robot mark inside the selected cell.
-- Identify wins and full-board draws.
+- Detect both human and robot wins.
+- Detect a full-board draw and command the robot to draw **D** beside the grid.
 - Prevent overwriting an occupied cell.
+- Maintain approximately **1–2 cm of vertical clearance** above the drawing surface during travel motions between strokes and grid cells.
 
 ## Technical Components
 
@@ -71,29 +73,38 @@ Detect win, draw, or next turn
 | Game-state model | Track occupancy, active player, legal moves, wins, and draws. |
 | Decision engine | Select the next robot move from the current state. |
 | Motion generation | Convert a board-cell decision into a repeatable drawing trajectory. |
-| Safety logic | Maintain a safe approach height and controlled contact with the drawing surface. |
+| Safety logic | Maintain approximately 1–2 cm of vertical clearance during travel motions and controlled contact with the drawing surface. |
 
-## Extended Scenarios
+## Demonstration Policy
 
-The original specification also identifies advanced cases for a more complete implementation:
-
-- configurable first player, including a robot opening move;
-- recovery from ambiguous, duplicate, or incorrectly recognized marks;
-- explicit draw and inconclusive-state handling; and
-- two robots playing against one another.
-
-Extended functionality should be documented in the report and demonstration video.
+- The complete project setup must be assembled, calibrated, powered, and ready to run **before the TA or grader is called**.
+- Each project is limited to a maximum of **two official demonstration attempts**.
 
 ## Deliverables and Grading
 
-| Deliverable | Weight |
+| Assessment | Points |
 |---|---:|
-| Individual report | 10 points |
-| Live demonstration | 10 points |
-| Video presentation | 20 points |
-| **Total** | **40 points** |
+| Core project: program the robot to play Tic-Tac-Toe against a human | **10** |
+| Bonus 1: selectable first player and mark | **+5** |
+| Bonus 2: consecutive-human-turn edge-case detection | **+5** |
+| Bonus 3: robot-versus-robot game | **+5** |
+| **Maximum available** | **25** |
 
-The original brief specifies a three-page individual report, a live demonstration, and a video presentation. The demonstration allows two attempts and is evaluated as a complete system behavior.
+### Core Project — 10 points
+
+Program the robot to draw the grid and play a complete game against a human. The human moves first and selects X or O. The robot must use the opposite mark, recognize each move, select legal responses, detect a win by either player, and identify a draw by writing **D** beside the grid.
+
+### Bonus 1 — 5 points
+
+Support configurable game setup. The system must ask whether the human or robot moves first and allow selection of X or O.
+
+### Bonus 2 — 5 points
+
+Handle the edge case in which the human takes two consecutive turns before the robot responds. The robot must identify the invalid turn sequence and draw **E** beside the grid.
+
+### Bonus 3 — 5 points
+
+Demonstrate a robot-versus-robot Tic-Tac-Toe game completed by two teams.
 
 ## Presentation Resources
 
@@ -107,5 +118,6 @@ The original brief specifies a three-page individual report, a live demonstratio
 - [ ] Human and robot marks are represented correctly in the internal game state.
 - [ ] The robot selects only legal moves.
 - [ ] Drawing trajectories remain within the selected cells.
-- [ ] Win and draw conditions terminate the game correctly.
-- [ ] The report and video explain the perception, decision, calibration, and motion pipeline.
+- [ ] Travel motions maintain approximately 1–2 cm of vertical clearance above the drawing surface.
+- [ ] Human-win and robot-win conditions terminate the game correctly.
+- [ ] A draw terminates the game and causes the robot to write **D** beside the grid.

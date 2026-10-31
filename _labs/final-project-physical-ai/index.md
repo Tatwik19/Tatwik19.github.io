@@ -106,6 +106,11 @@ Credible validation should include:
 - execution monitoring and recovery behavior; and
 - repeatable completion of multi-step manipulation tasks.
 
+## Demonstration Policy
+
+- The complete project setup must be assembled, calibrated, powered, and ready to run **before the TA or grader is called**.
+- Each project is limited to a maximum of **two official demonstration attempts**.
+
 ## Deliverables and Grading
 
 | Deliverable | Weight |

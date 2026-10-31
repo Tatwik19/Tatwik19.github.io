@@ -111,6 +111,11 @@ The cell path should be simplified into straight sections before robot execution
 - Complete the task efficiently and robustly.
 - Include a safe stop or return-to-home behavior.
 
+## Demonstration Policy
+
+- The complete project setup must be assembled, calibrated, powered, and ready to run **before the TA or grader is called**.
+- Each project is limited to a maximum of **two official demonstration attempts**.
+
 ## Evaluation
 
 The original assessment is worth **40 points**. Evaluation emphasizes:
