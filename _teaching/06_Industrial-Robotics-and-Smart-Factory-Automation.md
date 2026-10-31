@@ -8,7 +8,7 @@ date: 2026-08-01
 location: "Arizona"
 ---
 
-Served as a Teaching Assistant for this graduate course during the **Spring 2026** and **Summer 2026** semesters.
+Served as a [Graduate Teaching Assistant](https://search.asu.edu/profile/3467992) for this course during the **Spring 2026** and **Summer 2026** semesters.
 
 Developed laboratory exercises and supported instruction in industrial robotics, programmable logic controllers (PLCs), human-machine interfaces (HMIs), smart manufacturing, and Industry 4.0 technologies.
 

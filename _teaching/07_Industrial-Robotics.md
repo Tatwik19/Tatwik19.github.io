@@ -8,7 +8,7 @@ date: 2026-01-01
 location: "Arizona"
 ---
 
-Served as a Teaching Assistant for this undergraduate course during the **Spring 2026** semester.
+Served as a [Graduate Teaching Assistant](https://search.asu.edu/profile/3467992) for this undergraduate course during the **Spring 2026** semester.
 
 Supported laboratory instruction in industrial robot programming, simulation, analysis, deployment, and AI-enabled robotic systems.
 

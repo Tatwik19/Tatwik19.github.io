@@ -134,12 +134,17 @@
   color: #0a66c2;
 }
 
+.home-hero__socials .home-hero__social-link--asu i {
+  color: #8c1d40;
+}
+
 .home-hero__socials .home-hero__social-link--orcid i {
   color: #a6ce39;
 }
 
 .home-hero__socials .home-hero__social-link--github:hover,
 .home-hero__socials .home-hero__social-link--linkedin:hover,
+.home-hero__socials .home-hero__social-link--asu:hover,
 .home-hero__socials .home-hero__social-link--orcid:hover {
   color: var(--global-text-color);
 }
