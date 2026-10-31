@@ -1,5 +1,5 @@
 ---
-title: "RAS 598: Robotic Systems: Industrial Robotics & Smart Factory Automation"
+title: "RAS 598: Industrial Robotics and Smart Factory Automation"
 collection: teaching
 type: "Teaching Assistant Graduate course"
 permalink: /teaching/Industrial-Robotics-Smart-Factory
@@ -8,25 +8,25 @@ date: 2026-08-01
 location: "Arizona"
 ---
 
-Served as a Teaching Assistant for **RAS 598: Industrial Robotics & Smart Factory Automation** during the **Spring 2026** and **Summer 2026** semester.
+Served as a Teaching Assistant for this graduate course during the **Spring 2026** and **Summer 2026** semesters.
 
-Prepared laboratory exercises and assisted students in industrial robotics, PLC programming, Human-Machine Interfaces (HMIs), smart manufacturing, and Industry 4.0 technologies.
+Developed laboratory exercises and supported instruction in industrial robotics, programmable logic controllers (PLCs), human-machine interfaces (HMIs), smart manufacturing, and Industry 4.0 technologies.
 
-Course Link:
-- [Spring 2026](https://catalog.apps.asu.edu/catalog/classes/classlist?keywords=39648&searchType=all&term=2261#detailsOpen=39648-131738)
-- [Summer 2026](https://catalog.apps.asu.edu/catalog/classes/classlist?keywords=48743&searchType=all&term=2264#detailsOpen=48743-131738)
+## Course Sections
+
+- [Spring 2026 · Class 39648](https://catalog.apps.asu.edu/catalog/classes/classlist?keywords=39648&searchType=all&term=2261#detailsOpen=39648-131738)
+- [Summer 2026 · Class 48743](https://catalog.apps.asu.edu/catalog/classes/classlist?keywords=48743&searchType=all&term=2264#detailsOpen=48743-131738)
 
 ## Course Description
 
-This graduate-level course focuses on the integration of robotics, programmable logic controllers (PLCs), Human-Machine Interfaces (HMIs), and Industry 4.0 technologies for smart manufacturing. Students gain hands-on experience designing, programming, and optimizing automated production systems using industrial robots, real-time communication protocols, digital twins, and modern factory automation tools.
+This graduate-level course examines the integration and optimization of industrial robots, PLCs, HMIs, and connected manufacturing systems. Laboratory work covers multi-axis robotic automation, industrial communication, digital twins, diagnostics, predictive maintenance, and data-driven process optimization.
 
 ## Student Learning Outcomes
 
-- Integrate industrial robotic systems with PLCs and HMIs.
-- Design and optimize smart manufacturing workflows.
-- Apply industrial communication protocols such as Ethernet/IP, OPC UA, and Modbus.
-- Develop and validate automation systems using simulation and digital twin technologies.
-- Implement data-driven monitoring, diagnostics, and predictive maintenance strategies.
-- Troubleshoot integrated robotic and industrial automation systems.
-- Apply Industry 4.0 concepts to modern manufacturing environments.
-- Gain practical experience toward SACA industrial automation certifications.
+- Integrate industrial robots with PLC, HMI, MES, SCADA, and edge systems.
+- Design and optimize connected manufacturing workflows.
+- Apply industrial communication protocols, including EtherNet/IP, OPC UA, and Modbus.
+- Develop and validate automation systems through simulation and digital twins.
+- Implement monitoring, diagnostics, adaptive control, and predictive maintenance.
+- Evaluate industrial safety, cybersecurity, and collaborative robotic operation.
+- Build practical competencies aligned with SACA and Ignition certification pathways.
