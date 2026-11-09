@@ -1,8 +1,8 @@
 ---
 title: "SmartFollower & Tracker: Autonomous TurtleBot 4 Object Tracking"
 collection: portfolio
-date: 2026-05-01
-project_period: "2026"
+date: 2026-04-30
+project_period: "Mar 2026 - Apr 2026"
 summary: "Developed an autonomous TurtleBot 4 system that follows an ArUco-tagged target, predicts through short occlusions, enforces LiDAR safety, and records a 2D reconstruction."
 role: "Perception, tracking, recovery behavior, hardware integration, and validation"
 featured_image: "https://mobile-robots-ugv.github.io/milestones/hardware%20demo.gif"
