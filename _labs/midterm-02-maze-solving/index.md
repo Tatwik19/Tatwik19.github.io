@@ -127,6 +127,10 @@ The original assessment is worth **40 points**. Evaluation emphasizes:
 - robustness to image and setup variation; and
 - safe robot behavior.
 
+## Example Demonstration
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/d2KFqwhLtJA" title="Robot maze detection and solving demonstration" loading="lazy" style="width: 100%; max-width: 44rem; aspect-ratio: 16 / 9; height: auto; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## References
 
 ### Vision and Calibration

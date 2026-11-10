@@ -106,6 +106,10 @@ Credible validation should include:
 - execution monitoring and recovery behavior; and
 - repeatable completion of multi-step manipulation tasks.
 
+## Example Demonstration
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ppjOnzXohbc" title="LLM-guided block pick-and-place demonstration" loading="lazy" style="width: 100%; max-width: 44rem; aspect-ratio: 16 / 9; height: auto; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Demonstration Policy
 
 - The complete project setup must be assembled, calibrated, powered, and ready to run **before the TA or grader is called**.

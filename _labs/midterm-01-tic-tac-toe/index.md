@@ -106,6 +106,10 @@ Handle the edge case in which the human takes two consecutive turns before the r
 
 Demonstrate a robot-versus-robot Tic-Tac-Toe game completed by two teams.
 
+## Example Demonstration
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Gvnxh9V4Tv8" title="Robot playing Tic-Tac-Toe" loading="lazy" style="width: 100%; max-width: 44rem; aspect-ratio: 16 / 9; height: auto; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## Presentation Resources
 
 - [Sample video presentation](https://youtu.be/HTXOMVjY4V4)
