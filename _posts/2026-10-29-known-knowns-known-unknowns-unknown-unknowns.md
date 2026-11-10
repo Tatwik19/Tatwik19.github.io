@@ -55,6 +55,10 @@ For insurers and business leaders, this evidence can support a more precise view
 
 The central principle is simple: trustworthy autonomy requires more than an intelligent model. It requires traceable data, clear operating boundaries, testing across expected and unexpected conditions, safe human interaction, and a documented response when the system encounters something outside its experience.
 
+## LinkedIn Post
+
+<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7524524314226851840?collapsed=1" height="628" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+
 ## Building manufacturing systems that can explain themselves
 
 The next generation of manufacturing will combine physical automation with models that can explain what the system observed, what it predicted, and why it took a particular action. Digital twins provide a structured environment for testing those decisions. AI provides tools for learning from operational data. Robotics turns decisions into physical activity.
