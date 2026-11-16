@@ -38,11 +38,15 @@ td:last-child {
 <table>
     <tr>
         <td>Nov 2026</td>
-        <td>Passed my PhD comprehensive examination in <a href="https://msn.engineering.asu.edu/degrees/graduate/robotics-and-autonomous-systems-mechatronics-and-automation-phd/">Robotics and Autonomous Systems</a> at Arizona State University, marking an important milestone in my doctoral research.</td>
+        <td>Successfully completed my final PhD defense in <a href="https://msn.engineering.asu.edu/degrees/graduate/robotics-and-autonomous-systems-mechatronics-and-automation-phd/">Robotics and Autonomous Systems</a> at Arizona State University.</td>
     </tr>
     <tr>
         <td>Oct 2026</td>
         <td>Presented an industrial Physical AI robot demonstrator developed at Arizona State University with <a href="https://www.wandelbots.com/">Wandelbots</a> at <a href="https://www.media.stellantis.com/uk-en/corporate/press/factory-booster-day-2026-accelerates-innovation-across-stellantis-global-manufacturing-network">Stellantis Factory Booster Day 2026</a> in Michigan, showcasing collaborative-robot execution, software-defined orchestration, and a high-fidelity digital twin.</td>
+    </tr>
+    <tr>
+        <td>Aug 2026</td>
+        <td>Completed my PhD comprehensive examination in <a href="https://msn.engineering.asu.edu/degrees/graduate/robotics-and-autonomous-systems-mechatronics-and-automation-phd/">Robotics and Autonomous Systems</a> at Arizona State University.</td>
     </tr>
     <tr>
         <td>Jul 2026</td>
